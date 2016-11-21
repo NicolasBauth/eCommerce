@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-@RequestMapping(value="/index")
-public class IndexController {
+@RequestMapping(value="/categories")
+public class CategoriesController {
 
 	@RequestMapping(method=RequestMethod.GET)
 	public String home(Model model){
-		return "integrated:index";
+		return "integrated:categories";
 	}
 
 	

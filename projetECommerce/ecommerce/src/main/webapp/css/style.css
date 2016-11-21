@@ -240,6 +240,31 @@ span.active.uls-trigger {
     border-color: #FDFDFD;
 	outline: none;
 }
+
+
+/********** QT *********/
+.input-qt {
+	width:50px;
+	margin-right:15px;
+	border:none;
+	padding:5px 10px;
+	
+}
+
+.button-qt {
+	text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    background-color: #f3c500;
+    padding: 10px 20px;
+    border: none;
+}
+
+.button-qt:hover {
+	background-color:#01a185;
+}
+
+
 /*-- focus --*/
 .categories {
     padding: 40px 0;
@@ -295,7 +320,7 @@ border:1px solid #e7eaed;
 	text-align: center;
 }
 .focus-layout:hover {
-    background-color: #01a185;
+    background-color: #34495e;
     transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
@@ -347,39 +372,26 @@ border:1px solid #e7eaed;
 	-o-transition:0.5s all;
 	-ms-transition:0.5s all;
 }
-.focus-image i.fa-laptop {
-	background:#ff9e29;
+
+.focus-image i.fa-flask {
+	background:#1abc9c;
 }
-.focus-image i.fa-car {
-	background:#3fb7d2;
+.focus-image i.fa-diamond {
+	background:#9b59b6;
 }
-.focus-image i.fa-motorcycle {
-	background:#15c01c;
+.focus-image i.fa-key {
+	background:#3498db;
 }
-.focus-image i.fa-wheelchair {
-	background:#7e3b07;
-}
-.focus-image i.fa-paw {
-	background:#1963ce;
+.focus-image i.fa-magic {
+	background:#e67e22;
 }
 .focus-image i.fa-book {
-	background:#c119ce;
+	background:#e74c3c;
 }
-.focus-image i.fa-asterisk {
-	background:#7fbad8;
+.focus-image i.fa-leaf {
+	background:#2ecc71;
 }
-.focus-image i.fa-gamepad {
-	background:#1ca39d;
-}
-.focus-image i.fa-shield {
-	background:#f49ecf;
-}
-.focus-image i.fa-at {
-	background:#070c1f;
-}
-.focus-image i.fa-home {
-	background:#df8012;
-}
+
 .focus-layout:hover div.focus-image i.mobile{
 }
 i.laptop {
@@ -1157,7 +1169,7 @@ ul.location li:nth-child(2) {
     position: absolute;
     top: 50%;
     left: 0;
-    width: 44%;
+    width: 40%;
     height: 1px;
     background: #545556;
 }
@@ -1166,7 +1178,7 @@ ul.location li:nth-child(2) {
     position: absolute;
     top: 50%;
     right: 0;
-    width: 44%;
+    width: 40%;
     height: 1px;
     background: #545556;
 }
@@ -1582,7 +1594,7 @@ ul.all-cat-list li a:hover {
     font-size: 25px;
 }
 /*-- //All-classifieds --*/
-/*-- mobile app --*/
+/*-- mobile app --
 .app {
     padding: 70px 0px;
 }
@@ -1667,8 +1679,11 @@ ul.all-cat-list li a:hover {
 	font-size: 50px;
     color: #01A185;
 }
-/*-- //mobile app --*/
+-- //mobile app --*/
 
+footer {
+	background: #f1c40f;
+}
 
 /*-- work-section --*/
 .work-section {
@@ -3347,6 +3362,8 @@ label {
   background-color: #e51c23;
 }
 
+
+
 /*-- responsive media queries --*/
 @media (max-width: 1366px){
 	.main-banner {
@@ -3387,6 +3404,7 @@ label {
 		margin: 3px;
 		padding: 20px 0px 20px 0;
 	}
+
 	.footer-bottom {
 		padding: 20px 0 25px;
 	}
