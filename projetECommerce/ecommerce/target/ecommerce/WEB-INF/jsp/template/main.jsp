@@ -79,6 +79,103 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</script>
 </head>
 <body>
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html"><span>Magic</span>abrac</a>
+			</div>
+			<div class="header-right">
+				<a class="account" href=""><i class="glyphicon glyphicon-shopping-cart"></i> 0 article(s)</a>
+				<a href=""><span class="lng-sprite all">Allemand</span></a>
+				<a href=""><span class="lng-sprite ngl">Anglais</span></a>
+				<a href=""><span class="lng-sprite fr">Français</span></a>
+				
+		
+			</div>
+		</div>
+	</div>
+	<div class="main-banner banner text-center">
+	  <div class="container">    
+			<h1>Votre magasin de magie professionnel</h1>
+			<p>Découvrez et laissez vous tenter par tous nos <span class="segment-heading">accessoires</span> de magie</p>
+			<a href="post-ad.html">Découvrez notre catalogue</a>
+	  </div>
+	</div>
+		
 	<tiles:insertAttribute name="main-content" />
+	
+	<!--footer section start-->		
+		<footer>
+			<div class="footer-top">
+				<div class="container">
+					<div class="foo-grids">
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">Qui sommes-nous?</h4>
+							<p>Nous sommes l'unique magasin de magie professionnel en ligne qui propose des objets uniques et rare. <br/>
+							Nous sélectionnons pour vous les produits les meilleurs produits de magie.</p>
+						</div>
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">Aide</h4>
+							<ul>
+								<li><a href="sitemap.html">Plan du site</a></li>
+								<li><a href="faq.html">Faq</a></li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</div>
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">Information</h4>
+							<ul>
+								<li><a href="terms.html">Conditions d'utilisations</a></li>
+								<li><a href="popular-search.html">Livraisons</a></li>	
+								<li><a href="privacy.html">Politique de confidentialité</a></li>	
+							</ul>
+						</div>
+						<div class="col-md-3 footer-grid">
+							<h4 class="footer-head">Nous contacter</h4>
+							<address>
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-map-marker"></span></li>
+									<li>1 Place Wiertz, 5000 Namur (Belgique)</li>
+									<div class="clearfix"></div>
+								</ul>	
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-earphone"></span></li>
+									<li>+32 81 75 75 65</li>
+									<div class="clearfix"></div>
+								</ul>	
+								<ul class="location">
+									<li><span class="glyphicon glyphicon-envelope"></span></li>
+									<li><a href="mailto:info@example.com">info@magicabrac.com</a></li>
+									<div class="clearfix"></div>
+								</ul>						
+							</address>
+						</div>
+						<div class="clearfix"></div>
+					</div>						
+				</div>	
+			</div>	
+			<div class="footer-bottom text-center">
+			<div class="container">
+				<div class="footer-logo">
+					<a href="index.html"><span>Magic</span>abrac</a>
+				</div>
+				<div class="footer-social-icons">
+					<ul>
+						<li><a class="facebook" href="#"><span>Facebook</span></a></li>
+						<li><a class="twitter" href="#"><span>Twitter</span></a></li>
+						<li><a class="flickr" href="#"><span>Flickr</span></a></li>
+						<li><a class="googleplus" href="#"><span>Google+</span></a></li>
+						<li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
+					</ul>
+				</div>
+				<div class="copyrights">
+					<p> © 2016 Magicabrac. Tous droits réservés | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		</footer>
+        <!--footer section end-->
+        
 </body>
 </html>

@@ -240,6 +240,56 @@ span.active.uls-trigger {
     border-color: #FDFDFD;
 	outline: none;
 }
+
+
+/********** QT *********/
+.input-qt {
+	width:50px;
+	margin-right:15px;
+	border:none;
+	padding:5px 10px;
+	
+}
+
+.button-qt {
+	text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    background-color: #f3c500;
+    padding: 10px 20px;
+    border: none;
+}
+
+.button-qt:hover {
+	background-color:#01a185;
+}
+
+.lng-sprite {
+	text-indent: 99999px;
+	display: block;
+	width: 35px;
+	height: 21px;
+	margin: 25px 10px;
+	float: right;
+}
+
+.lng-sprite.all {
+	background:url("../images/flags.png") center center;
+	background-size: cover;
+}
+
+.lng-sprite.fr {
+	background:url("../images/flags.png") center right;
+	background-size: cover;
+	margin-left:50px;
+}
+
+.lng-sprite.ngl {
+	background:url("../images/flags.png") center left;
+	background-size: cover;
+}
+
+
 /*-- focus --*/
 .categories {
     padding: 40px 0;
@@ -974,11 +1024,11 @@ span.price:after {
 }
 h4.footer-head {
     font-size: 28px;
-    color: #01a185;
+    color: #3c3d41;
     margin-bottom: 16px;
 }
 .footer-grid p {
-    color: #979797;
+    color: #4e4e4e;
     font-size: 13px;
     line-height: 26px;
     margin-top: 15px;
@@ -988,7 +1038,7 @@ h4.footer-head {
     margin: 13px 0;
 }
 .footer-grid ul li a {
-    color: #979797;
+    color: #4e4e4e;
     font-size: 13px;
     font-weight: 400;
 }
@@ -1030,10 +1080,9 @@ span.glyphicon.glyphicon-map-marker, span.glyphicon.glyphicon-earphone, .glyphic
 ul.location li:nth-child(2) {
     float: right;
     width: 85%;
-    color: #979797;
+    color: #4e4e4e;
     font-size: 0.95em;
     line-height: 2em;
-    text-transform: lowercase;
     margin: 0;
 }
 .copyrights p,.diff p {
@@ -1657,7 +1706,8 @@ ul.all-cat-list li a:hover {
 -- //mobile app --*/
 
 footer {
-	background: #f1c40f;
+	/*background: rgba(89, 194, 175, 0.79);*/
+	background:#01a185;
 }
 
 /*-- work-section --*/
@@ -2230,12 +2280,12 @@ h3.rate {
 
 /*-- products-page --*/
 .ads-list {
-	width:33.333%;
+	width:50%;
 	float:left;
 }
 .select-box {
     background: rgba(1, 161, 133, 0.39);
-    padding: 30px 30px;
+    padding: 30px 100px;
     margin: 40px 0;
     border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -2248,10 +2298,11 @@ h3.rate {
     font-size: 14px;
     font-weight: 400;
     color: #000;
-    margin-bottom: 6px;
+    float: left;
+    margin: 10px;
 }
 .ads-list select {
-	width: 70%;
+	width: 80%;
     outline: none;
     color: #000;
     font-size: 15px;
@@ -2262,7 +2313,7 @@ h3.rate {
     padding: 8px 10px;
 }
 .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
-    width: 260px;
+    width: 300px;
 }
 #custom-search-input {
     padding: 3px;
@@ -3614,10 +3665,10 @@ label {
 		padding: 30px 0 50px 0;
 	}
 	.footer-logo a:before {
-		width: 40%;
+		width: 30%;
 	}
 	.footer-logo a:after {
-		width: 40%;
+		width: 30%;
 	}
 	.app-left {
 		width: 40%;
@@ -3938,7 +3989,7 @@ label {
 		width: 100%;
 	}	
 	#custom-search-input {
-		width: 48.5%;
+		/*width: 48.5%;*/
 	}
 	.sitemap-region-grid {
 		width: 50%;
@@ -4055,11 +4106,11 @@ label {
 		margin-top: 2px;
 	}
 	.footer-logo a:before {
-		width: 38%;
+		width: 28%;
 		top: 54%;
 	}
 	.footer-logo a:after {
-		width: 38%;
+		width: 28%;
 		top: 54%;
 	}
 	.col-md-3.footer-grid:nth-child(2) {
@@ -4220,7 +4271,7 @@ label {
 		display:none;
 	}
 	.ads-list select,#custom-search-input {
-		width: 69.5%;
+		/*width: 69.5%;*/
 	}
 	.search-hotel input[type="text"] {
 		width: 86%;
@@ -4409,11 +4460,11 @@ label {
 		font-size: 13px;
 	}
 	.footer-logo a:before {
-		width: 36%;
+		width: 26%;
 		top: 53%;
 	}
 	.footer-logo a:after {
-		width: 36%;
+		width: 26%;
 		top: 53%;
 	}
 	.uls-wide {
@@ -4664,10 +4715,10 @@ label {
 		width: 85%;
 	}
 	.footer-logo a:before {
-		width: 31%;
+		width: 21%;
 	}
 	.footer-logo a:after {
-		width: 31%;
+		width: 21%;
 	}
 	.pagination-sm>li>a, .pagination-sm>li>span {
 		padding: 5px 7px;

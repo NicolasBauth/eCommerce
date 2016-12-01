@@ -76,24 +76,76 @@
 								<li>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="images/p1.jpg"/>
-											<span class="price">&#8364; 450</span>
+											<img src="images/poudre-de-dragon.jpg"/>
+											<span class="price">&#8364; 14,50</span>
 										</a> 
 										<div class="ad-info">
-											<h5>There are many variations of passages</h5>
-											<span>1 hour ago</span>
+											<h5>Poudre de dragon</h5>
+										</div>
+									</div>
+									<div class="col-md-3 biseller-column">
+										<a href="single.html">
+											<img src="images/poudre-de-dragon.jpg"/>
+											<span class="price">&#8364; 14,50</span>
+										</a> 
+										<div class="ad-info">
+											<h5>Poudre de dragon</h5>
+										</div>
+									</div>
+									<div class="col-md-3 biseller-column">
+										<a href="single.html">
+											<img src="images/poudre-de-dragon.jpg"/>
+											<span class="price">&#8364; 14,50</span>
+										</a> 
+										<div class="ad-info">
+											<h5>Poudre de dragon</h5>
+										</div>
+									</div>
+									<div class="col-md-3 biseller-column">
+										<a href="single.html">
+											<img src="images/poudre-de-dragon.jpg"/>
+											<span class="price">&#8364; 14,50</span>
+										</a> 
+										<div class="ad-info">
+											<h5>Poudre de dragon</h5>
 										</div>
 									</div>
 								</li>
 								<li>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="images/p5.jpg"/>
-											<span class="price">&#8364; 1599</span>
+											<img src="images/poudre-de-dragon.jpg"/>
+											<span class="price">&#8364; 14,50</span>
 										</a> 
 										<div class="ad-info">
-											<h5>There are many variations of passages</h5>
-											<span>1 hour ago</span>
+											<h5>Poudre de dragon</h5>
+										</div>
+									</div>
+									<div class="col-md-3 biseller-column">
+										<a href="single.html">
+											<img src="images/poudre-de-dragon.jpg"/>
+											<span class="price">&#8364; 14,50</span>
+										</a> 
+										<div class="ad-info">
+											<h5>Poudre de dragon</h5>
+										</div>
+									</div>
+									<div class="col-md-3 biseller-column">
+										<a href="single.html">
+											<img src="images/poudre-de-dragon.jpg"/>
+											<span class="price">&#8364; 14,50</span>
+										</a> 
+										<div class="ad-info">
+											<h5>Poudre de dragon</h5>
+										</div>
+									</div>
+									<div class="col-md-3 biseller-column">
+										<a href="single.html">
+											<img src="images/poudre-de-dragon.jpg"/>
+											<span class="price">&#8364; 14,50</span>
+										</a> 
+										<div class="ad-info">
+											<h5>Poudre de dragon</h5>
 										</div>
 									</div>
 									
@@ -101,12 +153,38 @@
 								<li>
 									<div class="col-md-3 biseller-column">
 										<a href="single.html">
-											<img src="images/p9.jpg"/>
-											<span class="price">&#8364; 2599</span>
+											<img src="images/poudre-de-dragon.jpg"/>
+											<span class="price">&#8364; 14,50</span>
 										</a> 
 										<div class="ad-info">
-											<h5>Lorem Ipsum is simply dummy</h5>
-											<span>3 hour ago</span>
+											<h5>Poudre de dragon</h5>
+										</div>
+									</div>
+									<div class="col-md-3 biseller-column">
+										<a href="single.html">
+											<img src="images/poudre-de-dragon.jpg"/>
+											<span class="price">&#8364; 14,50</span>
+										</a> 
+										<div class="ad-info">
+											<h5>Poudre de dragon</h5>
+										</div>
+									</div>
+									<div class="col-md-3 biseller-column">
+										<a href="single.html">
+											<img src="images/poudre-de-dragon.jpg"/>
+											<span class="price">&#8364; 14,50</span>
+										</a> 
+										<div class="ad-info">
+											<h5>Poudre de dragon</h5>
+										</div>
+									</div>
+									<div class="col-md-3 biseller-column">
+										<a href="single.html">
+											<img src="images/poudre-de-dragon.jpg"/>
+											<span class="price">&#8364; 14,50</span>
+										</a> 
+										<div class="ad-info">
+											<h5>Poudre de dragon</h5>
 										</div>
 									</div>
 									
@@ -146,80 +224,4 @@
 			</div>
 			
 		</div>
-		<!--footer section start-->		
-		<footer>
-			<div class="footer-top">
-				<div class="container">
-					<div class="foo-grids">
-						<div class="col-md-3 footer-grid">
-							<h4 class="footer-head">Qui sommes-nous?</h4>
-							<p>??</p>
-							<p>??</p>
-						</div>
-						<div class="col-md-3 footer-grid">
-							<h4 class="footer-head">Aide</h4>
-							<ul>
-								<li><a href="howitworks.html">How it Works</a></li>						
-								<li><a href="sitemap.html">Sitemap</a></li>
-								<li><a href="faq.html">Faq</a></li>
-								<li><a href="feedback.html">Feedback</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="typography.html">Shortcodes</a></li>
-							</ul>
-						</div>
-						<div class="col-md-3 footer-grid">
-							<h4 class="footer-head">Information</h4>
-							<ul>
-								<li><a href="regions.html">Locations Map</a></li>	
-								<li><a href="terms.html">Terms of Use</a></li>
-								<li><a href="popular-search.html">Popular searches</a></li>	
-								<li><a href="privacy.html">Privacy Policy</a></li>	
-							</ul>
-						</div>
-						<div class="col-md-3 footer-grid">
-							<h4 class="footer-head">Nous contactez</h4>
-							<span class="hq">???</span>
-							<address>
-								<ul class="location">
-									<li><span class="glyphicon glyphicon-map-marker"></span></li>
-									<li>Namur</li>
-									<div class="clearfix"></div>
-								</ul>	
-								<ul class="location">
-									<li><span class="glyphicon glyphicon-earphone"></span></li>
-									<li>+0 561 111 235</li>
-									<div class="clearfix"></div>
-								</ul>	
-								<ul class="location">
-									<li><span class="glyphicon glyphicon-envelope"></span></li>
-									<li><a href="mailto:info@example.com">info@magicabrac.com</a></li>
-									<div class="clearfix"></div>
-								</ul>						
-							</address>
-						</div>
-						<div class="clearfix"></div>
-					</div>						
-				</div>	
-			</div>	
-			<div class="footer-bottom text-center">
-			<div class="container">
-				<div class="footer-logo">
-					<a href="index.html"><span>Magic</span>abrac</a>
-				</div>
-				<div class="footer-social-icons">
-					<ul>
-						<li><a class="facebook" href="#"><span>Facebook</span></a></li>
-						<li><a class="twitter" href="#"><span>Twitter</span></a></li>
-						<li><a class="flickr" href="#"><span>Flickr</span></a></li>
-						<li><a class="googleplus" href="#"><span>Google+</span></a></li>
-						<li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
-					</ul>
-				</div>
-				<div class="copyrights">
-					<p> © 2016 Magicabrac. All Rights Reserved | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-		</footer>
-        <!--footer section end-->
+		
