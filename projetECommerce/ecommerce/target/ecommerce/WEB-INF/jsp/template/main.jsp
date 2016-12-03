@@ -112,7 +112,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="col-md-3 footer-grid">
 							<h4 class="footer-head">Qui sommes-nous?</h4>
 							<p>Nous sommes l'unique magasin de magie professionnel en ligne qui propose des objets uniques et rare. <br/>
-							Nous sélectionnons pour vous les produits les meilleurs produits de magie.</p>
+							Nous sélectionnons pour vous les meilleurs produits de magie.</p>
 						</div>
 						<div class="col-md-3 footer-grid">
 							<h4 class="footer-head">Aide</h4>

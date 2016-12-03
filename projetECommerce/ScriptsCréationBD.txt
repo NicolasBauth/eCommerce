@@ -1,0 +1,165 @@
+﻿SET FOREIGN_KEY_CHECKS=0;
+drop table if exists `magicabrac`.`produit`;
+drop table if exists`magicabrac`.`promotion`;
+drop table if exists `magicabrac`.`ligne`;
+drop table if exists `magicabrac`.`categorie`;
+drop table if exists `magicabrac`.`type`;
+drop table if exists `magicabrac`.`utilisateur`;
+drop table if exists `magicabrac`.`commande`;
+drop table if exists `magicabrac`.`langue`;
+drop table if exists `magicabrac`.`traduction`;
+SET FOREIGN_KEY_CHECKS=1;
+
+CREATE TABLE `magicabrac`.`produit` (
+  `idProduit` INT(5) NOT NULL auto_increment,
+  `nom` VARCHAR(45) NOT NULL,
+  `dateCommercialisation` DATE NOT NULL,
+  `prixUnitaire` DECIMAL NOT NULL,
+  PRIMARY KEY (`idProduit`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE `magicabrac`.`promotion` (
+  `idPromo` INT(6) NOT NULL auto_increment,
+  `dateDeb` DATE NOT NULL,
+  `dateFin` DATE NOT NULL,
+  `pourcentage` DECIMAL NOT NULL,
+  PRIMARY KEY (`idPromo`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+ALTER TABLE `magicabrac`.`produit` 
+CHARACTER SET = utf8 , ENGINE = InnoDB ,
+ADD COLUMN `fkPromo` INT(6) NULL AFTER `prixUnitaire`,
+ADD INDEX `fkPromo_idx` (`fkPromo` ASC);
+ALTER TABLE `magicabrac`.`produit` 
+ADD CONSTRAINT `fkPromo`
+  FOREIGN KEY (`fkPromo`)
+  REFERENCES `magicabrac`.`promotion` (`idPromo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+CREATE TABLE `magicabrac`.`ligne` (
+  `numero` INT NOT NULL auto_increment,
+  `quantite` INT NOT NULL,
+  `prixUnitaire` DECIMAL NOT NULL,
+  `produitFK` INT(6) NOT NULL,
+  PRIMARY KEY (`numero`),
+  INDEX `produit_fk_idx` (`produitFK` ASC),
+  CONSTRAINT `produit_fk`
+    FOREIGN KEY (`produitFK`)
+    REFERENCES `magicabrac`.`produit` (`idProduit`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+CREATE TABLE `magicabrac`.`categorie` (
+  `idcategorie` INT NOT NULL,
+  PRIMARY KEY (`idcategorie`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+CREATE TABLE `magicabrac`.`type` (
+  `idType` INT NOT NULL auto_increment,
+  `fkProduit` INT NOT NULL,
+  `fkCategorie` INT NOT NULL,
+  PRIMARY KEY (`idType`),
+  INDEX `produit_fk_idx` (`fkProduit` ASC),
+  INDEX `categorie_fk_idx` (`fkCategorie` ASC),
+  CONSTRAINT `type_produit_fk`
+    FOREIGN KEY (`fkProduit`)
+    REFERENCES `magicabrac`.`produit` (`idProduit`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `type_categorie_fk`
+    FOREIGN KEY (`fkCategorie`)
+    REFERENCES `magicabrac`.`categorie` (`idcategorie`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+ALTER TABLE `magicabrac`.`produit` 
+DROP FOREIGN KEY `fkPromo`;
+ALTER TABLE `magicabrac`.`produit` 
+ADD CONSTRAINT `produit_promotion_fk`
+  FOREIGN KEY (`fkPromo`)
+  REFERENCES `magicabrac`.`promotion` (`idPromo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+ALTER TABLE `magicabrac`.`ligne` 
+DROP FOREIGN KEY `produit_fk`;
+ALTER TABLE `magicabrac`.`ligne` 
+ADD CONSTRAINT `ligne_produit_fk`
+  FOREIGN KEY (`produitFK`)
+  REFERENCES `magicabrac`.`produit` (`idProduit`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+CREATE TABLE `magicabrac`.`utilisateur` (
+  `idUtilisateur` INT NOT NULL auto_increment,
+  `nom` VARCHAR(45) NOT NULL,
+  `prenom` VARCHAR(45) NOT NULL,
+  `pseudo` VARCHAR(30) NOT NULL,
+  `telephone` VARCHAR(20) NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `motDePasse` VARCHAR(30) NOT NULL,
+  `dateNaissance` date NOT NULL,
+  `rue` VARCHAR(70) NOT NULL,
+  `numero` INT(5) NOT NULL,
+  `ville` VARCHAR(45) NOT NULL,
+  `codePostal` INT(6) NOT NULL,
+  `pays` VARCHAR(30) NOT NULL,
+  PRIMARY KEY (`idUtilisateur`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE `magicabrac`.`commande` (
+  `numero` INT NOT NULL AUTO_INCREMENT,
+  `dateCommande` DATE NOT NULL,
+  PRIMARY KEY (`numero`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+ALTER TABLE `magicabrac`.`ligne` 
+ADD COLUMN `commandeFK` INT(11) NULL AFTER `produitFK`,
+ADD INDEX `ligne_commande_fk_idx` (`commandeFK` ASC);
+ALTER TABLE `magicabrac`.`ligne` 
+ADD CONSTRAINT `ligne_commande_fk`
+  FOREIGN KEY (`commandeFK`)
+  REFERENCES `magicabrac`.`commande` (`numero`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+CREATE TABLE `magicabrac`.`langue` (
+  `idLangue` INT(3) NOT NULL,
+  `nom` VARCHAR(35) NOT NULL,
+  PRIMARY KEY (`idLangue`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+CREATE TABLE `magicabrac`.`traduction` (
+  `idTraduction` INT(10) NOT NULL auto_increment,
+  `libelle` VARCHAR(45) NOT NULL,
+  `categorieFK` INT(11) NOT NULL,
+  `langueFK` INT(3) NOT NULL,
+  PRIMARY KEY (`idTraduction`),
+  INDEX `traduction_categorie_fk_idx` (`categorieFK` ASC),
+  INDEX `traduction_langue_fk_idx` (`langueFK` ASC),
+  CONSTRAINT `traduction_categorie_fk`
+    FOREIGN KEY (`categorieFK`)
+    REFERENCES `magicabrac`.`categorie` (`idcategorie`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `traduction_langue_fk`
+    FOREIGN KEY (`langueFK`)
+    REFERENCES `magicabrac`.`langue` (`idLangue`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+ALTER TABLE `magicabrac`.`commande` 
+ADD COLUMN `utilisateurFK` INT(11) NOT NULL AFTER `dateCommande`,
+ADD INDEX `commande_utilisateur_fk_idx` (`utilisateurFK` ASC);
+ALTER TABLE `magicabrac`.`commande` 
+ADD CONSTRAINT `commande_utilisateur_fk`
+  FOREIGN KEY (`utilisateurFK`)
+  REFERENCES `magicabrac`.`utilisateur` (`idUtilisateur`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
