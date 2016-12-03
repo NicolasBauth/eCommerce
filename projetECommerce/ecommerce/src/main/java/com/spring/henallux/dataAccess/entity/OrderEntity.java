@@ -1,9 +1,14 @@
 package com.spring.henallux.dataAccess.entity;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="commande")
 public class OrderEntity 
 {
 	@Id
@@ -12,7 +17,7 @@ public class OrderEntity
 	@Column(name="dateCommande")
 	private java.util.Date orderDate;
 	@ManyToOne
-	@Column(name="utilisateurFK")
+	@JoinColumn(name="utilisateurFK", referencedColumnName="idUtilisateur")
 	private UserEntity customer;
 	public OrderEntity()
 	{
