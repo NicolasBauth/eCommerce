@@ -1,4 +1,4 @@
-﻿SET FOREIGN_KEY_CHECKS=0;
+SET FOREIGN_KEY_CHECKS=0;
 drop table if exists `magicabrac`.`produit`;
 drop table if exists`magicabrac`.`promotion`;
 drop table if exists `magicabrac`.`ligne`;
@@ -15,6 +15,8 @@ CREATE TABLE `magicabrac`.`produit` (
   `nom` VARCHAR(45) NOT NULL,
   `dateCommercialisation` DATE NOT NULL,
   `prixUnitaire` DECIMAL NOT NULL,
+  `quantiteIndividuelle` VARCHAR(45) NOT NULL, 
+  `quantiteEnStock` INT(5) NOT NULL,
   PRIMARY KEY (`idProduit`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
@@ -30,7 +32,7 @@ DEFAULT CHARACTER SET = utf8;
 
 ALTER TABLE `magicabrac`.`produit` 
 CHARACTER SET = utf8 , ENGINE = InnoDB ,
-ADD COLUMN `fkPromo` INT(6) NULL AFTER `prixUnitaire`,
+ADD COLUMN `fkPromo` INT(6) NULL AFTER `quantiteEnStock`,
 ADD INDEX `fkPromo_idx` (`fkPromo` ASC);
 ALTER TABLE `magicabrac`.`produit` 
 ADD CONSTRAINT `fkPromo`
@@ -38,6 +40,7 @@ ADD CONSTRAINT `fkPromo`
   REFERENCES `magicabrac`.`promotion` (`idPromo`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+
 CREATE TABLE `magicabrac`.`ligne` (
   `numero` INT NOT NULL auto_increment,
   `quantite` INT NOT NULL,
@@ -52,11 +55,13 @@ CREATE TABLE `magicabrac`.`ligne` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
 CREATE TABLE `magicabrac`.`categorie` (
   `idcategorie` INT NOT NULL,
   PRIMARY KEY (`idcategorie`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
 CREATE TABLE `magicabrac`.`type` (
   `idType` INT NOT NULL auto_increment,
   `fkProduit` INT NOT NULL,
@@ -76,6 +81,7 @@ CREATE TABLE `magicabrac`.`type` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
+
 ALTER TABLE `magicabrac`.`produit` 
 DROP FOREIGN KEY `fkPromo`;
 ALTER TABLE `magicabrac`.`produit` 
@@ -84,6 +90,7 @@ ADD CONSTRAINT `produit_promotion_fk`
   REFERENCES `magicabrac`.`promotion` (`idPromo`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+
 ALTER TABLE `magicabrac`.`ligne` 
 DROP FOREIGN KEY `produit_fk`;
 ALTER TABLE `magicabrac`.`ligne` 
@@ -92,6 +99,7 @@ ADD CONSTRAINT `ligne_produit_fk`
   REFERENCES `magicabrac`.`produit` (`idProduit`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
+
 CREATE TABLE `magicabrac`.`utilisateur` (
   `idUtilisateur` INT NOT NULL auto_increment,
   `nom` VARCHAR(45) NOT NULL,
