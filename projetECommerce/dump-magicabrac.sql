@@ -47,6 +47,17 @@ CREATE TABLE `magicabrac`.`produit` (
 
 
 --
+-- Structure de la table IMAGE
+--
+
+CREATE TABLE `magicabrac`.`image` (
+`idImage` INT(5) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`nom` VARCHAR(45) NOT NULL,
+`chemin` VARCHAR(255) NOT NULL,
+`id_produit` INT(5) NOT NULL);
+
+
+--
 -- Structure de la table PROMOTION
 --
 
@@ -183,3 +194,12 @@ ADD FOREIGN KEY (`id_utilisateur`)
   ON UPDATE NO ACTION;
 
 
+--
+-- Clés étrangères de la table COMMANDE
+--
+
+ALTER TABLE `magicabrac`.`images` 
+ADD FOREIGN KEY (`id_produit`) 
+  REFERENCES `magicabrac`.`promotion` (`idProduit`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION
