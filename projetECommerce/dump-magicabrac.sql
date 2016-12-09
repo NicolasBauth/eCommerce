@@ -19,7 +19,7 @@
 --
 -- Suppression des tables existantes
 --
-
+SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE if exists `magicabrac`.`ligne`;
 DROP TABLE if exists `magicabrac`.`traduction`;
 DROP TABLE if exists `magicabrac`.`langue`;
@@ -28,7 +28,8 @@ DROP TABLE if exists `magicabrac`.`promotion`;
 DROP TABLE if exists `magicabrac`.`categorie`;
 DROP TABLE if exists `magicabrac`.`commande`;
 DROP TABLE if exists `magicabrac`.`utilisateur`;
-
+DROP TABLE if exists `magicabrac`.`image`;
+SET FOREIGN_KEY_CHECKS=1;
 
 --
 -- Structure de la table PRODUIT
@@ -36,13 +37,13 @@ DROP TABLE if exists `magicabrac`.`utilisateur`;
 
 CREATE TABLE `magicabrac`.`produit` (
   `idProduit` INT(5) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `nom` VARCHAR(45) NOT NULL,
+  `nom` VARCHAR(70) NOT NULL,
   `dateCommercialisation` DATE NOT NULL,
   `prixUnitaire` DECIMAL NOT NULL,
   `description` VARCHAR(255) NOT NULL,
   `quantiteIndividuelle` VARCHAR(15) NOT NULL, 
   `quantiteEnStock` INT(5) NOT NULL,
-  `id_promotion` INT(5) NOT NULL),
+  `id_promotion` INT(5) NOT NULL,
   `id_categorie` INT(5) NOT NULL);
 
 
@@ -198,8 +199,8 @@ ADD FOREIGN KEY (`id_utilisateur`)
 -- Clés étrangères de la table COMMANDE
 --
 
-ALTER TABLE `magicabrac`.`images` 
+ALTER TABLE `magicabrac`.`image` 
 ADD FOREIGN KEY (`id_produit`) 
-  REFERENCES `magicabrac`.`promotion` (`idProduit`)
+  REFERENCES `magicabrac`.`produit` (`idProduit`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION

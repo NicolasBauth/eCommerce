@@ -1,4 +1,6 @@
 package com.spring.henallux.dataAccess.entity;
+import java.util.Collection;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,9 +16,22 @@ public class ProductEntity
 	private java.util.Date marketingDate;
 	@Column(name="prixUnitaire")
 	private java.math.BigDecimal unitPrice;
-	@JoinColumn(name="fkPromo", referencedColumnName="idPromo")
+	@Column(name="description")
+	private String description;
+	@Column(name="quantiteIndividuelle")
+	private String quantityPerPack;
+	@Column(name="quantiteEnStock")
+	private Integer storedQuantity;
+	@JoinColumn(name="id_promotion", referencedColumnName="idPromo")
 	@ManyToOne
 	private PromotionEntity promotion;
+	@JoinColumn(name="id_categorie",referencedColumnName="idCategorie")
+	@ManyToOne
+	private CategoryEntity category;
+	@OneToMany(mappedBy="referencedProduct")
+	private Collection<ImageEntity> images;
+	@OneToMany(mappedBy="orderedProduct")
+	private Collection<OrderLineEntity> orderLines;
 	public ProductEntity()
 	{
 		
@@ -51,5 +66,43 @@ public class ProductEntity
 	public void setPromotion(PromotionEntity promotion) {
 		this.promotion = promotion;
 	}
+	public CategoryEntity getCategory() {
+		return category;
+	}
+	public void setCategory(CategoryEntity category) {
+		this.category = category;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getQuantityPerPack() {
+		return quantityPerPack;
+	}
+	public void setQuantityPerPack(String quantityPerPack) {
+		this.quantityPerPack = quantityPerPack;
+	}
+	public Integer getStoredQuantity() {
+		return storedQuantity;
+	}
+	public void setStoredQuantity(Integer storedQuantity) {
+		this.storedQuantity = storedQuantity;
+	}
+	public Collection<ImageEntity> getImages() {
+		return images;
+	}
+	public void setImages(Collection<ImageEntity> images) {
+		this.images = images;
+	}
+	public Collection<OrderLineEntity> getOrderLines() {
+		return orderLines;
+	}
+	public void setOrderLines(Collection<OrderLineEntity> orderLines) {
+		this.orderLines = orderLines;
+	}
+	
+	
 	
 }

@@ -1,4 +1,6 @@
 package com.spring.henallux.dataAccess.entity;
+import java.util.Collection;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,7 +16,8 @@ public class PromotionEntity
 	private java.util.Date endDate;
 	@Column(name="pourcentage")
 	private java.math.BigDecimal percentage;
-	
+	@OneToMany(mappedBy="promotion")
+	private Collection<ProductEntity> products;
 	public PromotionEntity()
 	{
 		
@@ -50,6 +53,14 @@ public class PromotionEntity
 
 	public void setPercentage(java.math.BigDecimal percentage) {
 		this.percentage = percentage;
+	}
+
+	public Collection<ProductEntity> getProducts() {
+		return products;
+	}
+
+	public void setProducts(Collection<ProductEntity> products) {
+		this.products = products;
 	}
 	
 }

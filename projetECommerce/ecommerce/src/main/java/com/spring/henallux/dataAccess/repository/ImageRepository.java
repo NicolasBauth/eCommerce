@@ -1,14 +1,17 @@
 package com.spring.henallux.dataAccess.repository;
+
 import javax.transaction.Transactional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.spring.henallux.dataAccess.entity.TypeEntity;
+import com.spring.henallux.dataAccess.entity.ImageEntity;
+
+
 
 @Repository
 @Transactional
-public interface TypeRepository extends JpaRepository<TypeEntity,Integer>
+public interface ImageRepository extends JpaRepository<ImageEntity,Integer>
 {
-	
+
 }

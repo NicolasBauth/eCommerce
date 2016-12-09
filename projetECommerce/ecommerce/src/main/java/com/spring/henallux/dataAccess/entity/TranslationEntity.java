@@ -17,10 +17,10 @@ public class TranslationEntity
 	@Column(name="libelle")
 	private String categoryTranslation;
 	@ManyToOne
-	@JoinColumn(name="categorieFK",referencedColumnName="idcategorie")
+	@JoinColumn(name="id_categorie",referencedColumnName="idCategorie")
 	private CategoryEntity translatedCategory;
 	@ManyToOne
-	@JoinColumn(name="langueFK", referencedColumnName="idLangue")
+	@JoinColumn(name="id_langue", referencedColumnName="idLangue")
 	private LanguageEntity targetedLanguage;
 	public TranslationEntity()
 	{

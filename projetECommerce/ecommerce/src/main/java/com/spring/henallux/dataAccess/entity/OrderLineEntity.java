@@ -13,11 +13,11 @@ public class OrderLineEntity
 	@Column(name="prixUnitaire")
 	private java.math.BigDecimal unitPrice;
 	@ManyToOne
-	@JoinColumn(name="produitFK", referencedColumnName="idProduit")
-	ProductEntity orderedProduct;
+	@JoinColumn(name="id_produit", referencedColumnName="idProduit")
+	private ProductEntity orderedProduct;
 	@ManyToOne
-	@JoinColumn(name="commandeFK", referencedColumnName="numero")
-	OrderEntity order;
+	@JoinColumn(name="id_commande", referencedColumnName="numero")
+	private OrderEntity order;
 	public OrderLineEntity()
 	{
 		

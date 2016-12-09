@@ -1,10 +1,13 @@
 package com.spring.henallux.dataAccess.entity;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,8 +20,10 @@ public class OrderEntity
 	@Column(name="dateCommande")
 	private java.util.Date orderDate;
 	@ManyToOne
-	@JoinColumn(name="utilisateurFK", referencedColumnName="idUtilisateur")
+	@JoinColumn(name="id_utilisateur", referencedColumnName="idUtilisateur")
 	private UserEntity customer;
+	@OneToMany(mappedBy="order")
+	private Collection<OrderLineEntity> orderLines;
 	public OrderEntity()
 	{
 		
@@ -40,6 +45,12 @@ public class OrderEntity
 	}
 	public void setCustomer(UserEntity customer) {
 		this.customer = customer;
+	}
+	public Collection<OrderLineEntity> getOrderLines() {
+		return orderLines;
+	}
+	public void setOrderLines(Collection<OrderLineEntity> orderLines) {
+		this.orderLines = orderLines;
 	}
 	
 }

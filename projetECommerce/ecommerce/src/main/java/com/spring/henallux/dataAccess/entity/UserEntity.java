@@ -1,9 +1,15 @@
 package com.spring.henallux.dataAccess.entity;
 
+
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="utilisateur")
@@ -19,7 +25,7 @@ public class UserEntity
 	@Column(name="pseudo")
 	private String pseudo;
 	@Column(name="telephone")
-	private String phoneNumber;
+	private Integer phoneNumber;
 	@Column(name="email")
 	private String email;
 	@Column(name="motDePasse")
@@ -29,13 +35,15 @@ public class UserEntity
 	@Column(name="rue")
 	private String street;
 	@Column(name="numero")
-	private Integer numero;
+	private Integer numberOfStreet;
 	@Column(name="ville")
 	private String town;
 	@Column(name="codePostal")
 	private Integer zipCode;
 	@Column(name="pays")
 	private String country;
+	@OneToMany(mappedBy="customer")
+	private Collection<OrderEntity> orders; 
 	public UserEntity()
 	{
 		
@@ -64,10 +72,10 @@ public class UserEntity
 	public void setPseudo(String pseudo) {
 		this.pseudo = pseudo;
 	}
-	public String getPhoneNumber() {
+	public Integer getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(Integer phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public String getEmail() {
@@ -94,11 +102,11 @@ public class UserEntity
 	public void setStreet(String street) {
 		this.street = street;
 	}
-	public Integer getNumero() {
-		return numero;
+	public Integer getNumberOfStreet() {
+		return numberOfStreet;
 	}
-	public void setNumero(Integer numero) {
-		this.numero = numero;
+	public void setNumberOfStreet(Integer numberOfStreet) {
+		this.numberOfStreet = numberOfStreet;
 	}
 	public String getTown() {
 		return town;
@@ -118,5 +126,12 @@ public class UserEntity
 	public void setCountry(String country) {
 		this.country = country;
 	}
+	public Collection<OrderEntity> getOrders() {
+		return orders;
+	}
+	public void setOrders(Collection<OrderEntity> orders) {
+		this.orders = orders;
+	}
+	
 	
 }

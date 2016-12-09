@@ -49,7 +49,7 @@ INSERT INTO `magicabrac`.`produit` (`idProduit`, `nom`, `dateCommercialisation`,
 (4, 'Poudre d’escampette', '2016-09-21', 17.99, '', '15gr', 200, 1, 1),
 (5, 'Bave de crapaud', '2016-09-21', 8.99, '', '15cl', 200, 1, 1),
 (6, 'Eau du loch ness', '2016-10-21', 12.50, '', '15cl', 200, 1, 1),
-(7, 'Larmes de sirènes', '2016-10-21', 19.99, '', '15cl', 200), 1, 1,
+(7, 'Larmes de sirènes', '2016-10-21', 19.99, '', '15cl', 200, 1, 1),
 (8, 'Sang de vampire', '2016-10-21', 13.50, '', '15cl', 200, 1, 1),
 (9, 'Larmes de crocodiles', '2016-10-21', 18.50, '', '15cl', 200, 1, 1),
 
