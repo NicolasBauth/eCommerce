@@ -8,6 +8,7 @@ body{
 	padding:0;
 	font-family: 'Open Sans', sans-serif;
 	background:#fff;
+	overflow:hidden;
 }
 body a{
     transition:0.5s all;
@@ -1563,7 +1564,7 @@ h4.mpcwc {
 	padding-top:0;
 	padding-bottom:0;
 }
-.panel-body p {
+.panel-body p, .panel-body ol, .panel-body ul {
     color: #9A9A9A;
     font-size: 13.5px;
     margin-left: 17px;
@@ -2990,7 +2991,7 @@ section.list-right span.price:after {
     line-height: 2em;
     padding: 0 0 16px 0;
 }
-ol.privacy-start li a,ul.privacy-start li a{
+ol.privacy-start li ,ul.privacy-start li {
 	display:block;
 	text-decoration: none;
 	color:#a3a3a3;
@@ -2998,9 +2999,7 @@ ol.privacy-start li a,ul.privacy-start li a{
 	font-size:13px;
 	line-height: 30px;
 }
-ol.privacy-start li a:hover,ul.privacy-start li a:hover {
-  color: #01a185;
-}
+
 .use-privay{
 	padding: 4px 0;
 }

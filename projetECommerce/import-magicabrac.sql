@@ -104,13 +104,25 @@ INSERT INTO `magicabrac`.`traduction` (`idTraduction`, `libelle`, `id_categorie`
 (4, 'Baguettes Magiques', 4, 1), 
 (5, 'Grimoires et Parchemins', 5, 1), 
 (6, 'Plantes et Champignons', 6, 1),
-(7, 'Poudres et Potions', 1, 2), 
-(8, 'Poudres et Potions', 2, 2), 
-(9, 'Poudres et Potions', 3, 2), 
-(10, 'Poudres et Potions', 4, 2), 
-(11, 'Poudres et Potions', 5, 2), 
-(12, 'Poudres et Potions', 6, 2);
 
+(7, 'Powders and Potions', 1, 2), 
+(8, 'Gemstones and Eggs', 2, 2), 
+(9, 'Single Items', 3, 2), 
+(10, 'Magic Wands', 4, 2), 
+(11, 'Grimoires and Parchments', 5, 2), 
+(12, 'Plants and Mushrooms', 6, 2),
+
+(13, 'Pulver und Tränke', 1, 3), 
+(14, 'Gems und Eier', 2, 3), 
+(15, 'Einzigartige Objekte', 3, 3), 
+(16, 'Stäbe', 4, 3), 
+(17, 'Tomes und Blättert', 5, 3), 
+(18, 'Pflanzen und Pilze', 6, 3);
+
+
+--
+-- Contenu de table UTILISATEUR
+--
 
 INSERT INTO `magicabrac`.`utilisateur` (`idUtilisateur`, `nom`, `prenom`, `pseudo`, `telephone`, `email`, `motDePasse`, `dateNaissance`, `rue`, `numero`, `ville`, `codePostal`, `pays`) VALUES
 (1, 'Denis', 'Jennifer', 'Brodylive', 0472757565, 'brodylive@gmail.com', '456456', '1992-11-04', 'Rue de Mons', 10, 'Estinnes', 7120, 'Belgique');

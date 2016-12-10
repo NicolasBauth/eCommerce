@@ -6,7 +6,7 @@
 			<div class="categories">
 				<div class="container">
 					<div class="col-md-2 focus-grid">
-						<a href="<spring:url value='/ecommerce/index/categories' />">
+						<a href="<spring:url value='categorie' />">
 							<div class="focus-border">
 								<div class="focus-layout"> 
 									<div class="focus-image"><i class="fa fa-flask"></i></div>
@@ -16,17 +16,17 @@
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab3">
+						<a href="categorie">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-diamond"></i></div>
-									<h4 class="clrchg">Pierre Précieuses et Oeufs</h4>
+									<h4 class="clrchg">Pierres Précieuses et Oeufs</h4>
 								</div>
 							</div>
 						</a>
 					</div>	
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab4">
+						<a href="categorie">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-key"></i></div>
@@ -36,17 +36,17 @@
 						</a>
 					</div>	
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab5">
+						<a href="categorie">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-magic"></i></div>
-									<h4 class="clrchg">Baguettes</h4>
+									<h4 class="clrchg">Baguettes Magiques</h4>
 								</div>
 							</div>
 						</a>
 					</div>		
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab8">
+						<a href="categorie">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-book"></i></div>
@@ -56,11 +56,11 @@
 						</a>
 					</div>	
 					<div class="col-md-2 focus-grid">
-						<a href="categories.html#parentVerticalTab9">
+						<a href="categorie">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-leaf"></i></div>
-									<h4 class="clrchg">Plantes</h4>
+									<h4 class="clrchg">Plantes et Champignons</h4>
 								</div>
 							</div>
 						</a>
@@ -72,6 +72,24 @@
 				<!-- slider -->
 				<div class="trend-ads">
 					<h2>Nouveautés</h2>
+					${lastProducts}
+					<ul><c:forEach var="nom"  items="${lastProducts}">
+ 
+						          <li>Nom : ${nom.name}<li/>
+						</c:forEach>
+						</ul>
+						
+						<c:choose>
+						  <c:when test="${empty lastProducts}">
+						    pas d'information
+						  </c:when>
+						  <c:otherwise>
+						    <c:forEach items="${lastProducts}" var="p">
+						      ${p.name}
+						    </c:forEach>
+						  </c:otherwise>
+						</c:choose>
+						
 							<ul id="flexiselDemo3">
 								<li>
 									<div class="col-md-3 biseller-column">

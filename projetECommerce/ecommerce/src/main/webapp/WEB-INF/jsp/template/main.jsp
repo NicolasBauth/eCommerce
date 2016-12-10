@@ -86,9 +86,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 			<div class="header-right">
 				<a class="account" href=""><i class="glyphicon glyphicon-shopping-cart"></i> 0 article(s)</a>
-				<a href=""><span class="lng-sprite all">Allemand</span></a>
-				<a href=""><span class="lng-sprite ngl">Anglais</span></a>
-				<a href=""><span class="lng-sprite fr">Français</span></a>
+				<spring:url var="localeFr" value="">
+					<spring:param name="locale" value="fr"/>
+				</spring:url>
+				
+				<spring:url var="localeEng" value="">
+					<spring:param name="locale" value="eng"/>
+				</spring:url>
+				
+				<spring:url var="localeDe" value="">
+					<spring:param name="locale" value="de"/>
+				</spring:url>
+				
+				<a href="${localeDe}"><span class="lng-sprite all">Allemand</span></a>
+				<a href="${localeEng}"><span class="lng-sprite ngl">Anglais</span></a>
+				<a href="${localeFr}"><span class="lng-sprite fr">Français</span></a>
 				
 		
 			</div>
@@ -96,8 +108,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="main-banner banner text-center">
 	  <div class="container">    
-			<h1>Votre magasin de magie professionnel</h1>
-			<p>Découvrez et laissez vous tenter par tous nos <span class="segment-heading">accessoires</span> de magie</p>
+			<h1><spring:message code="bannerMainText"/></h1>
+			<p><spring:message code="bannerSecText"/></p>
 			<a href="post-ad.html">Découvrez notre catalogue</a>
 	  </div>
 	</div>
@@ -126,7 +138,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<h4 class="footer-head">Information</h4>
 							<ul>
 								<li><a href="terms.html">Conditions d'utilisations</a></li>
-								<li><a href="popular-search.html">Livraisons</a></li>	
+								<li><a href="livraison.html">Livraison, expédition et retour</a></li>	
 								<li><a href="privacy.html">Politique de confidentialité</a></li>	
 							</ul>
 						</div>

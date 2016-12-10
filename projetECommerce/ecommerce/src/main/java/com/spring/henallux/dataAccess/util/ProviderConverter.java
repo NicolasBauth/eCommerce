@@ -2,6 +2,7 @@ package com.spring.henallux.dataAccess.util;
 
 import org.springframework.stereotype.Component;
 import com.spring.henallux.model.*;
+import com.spring.henallux.model.OrderLine;
 import com.spring.henallux.dataAccess.entity.*;
 @Component
 public class ProviderConverter 
@@ -99,7 +100,7 @@ public class ProviderConverter
 	}
 	
 	
-	public OrderLine orderLineEntityToOrderLineModel(OrderLineEntity orderLineEntity)
+	/*public OrderLine orderLineEntityToOrderLineModel(OrderLineEntity orderLineEntity)
 	{
 		OrderLine orderLineModel = new OrderLine();
 		Order order = orderEntityToOrderModel(orderLineEntity.getOrder());
@@ -110,7 +111,7 @@ public class ProviderConverter
 		orderLineModel.setQuantity(orderLineEntity.getQuantity());
 		orderLineModel.setUnitPrice(orderLineEntity.getUnitPrice());
 		return orderLineModel;
-	}
+	}*/
 	
 	
 	public ProductEntity productModelToProductEntity(Product productModel)
@@ -236,6 +237,12 @@ public class ProviderConverter
 		userModel.setUserId(userEntity.getUserId());
 		userModel.setZipCode(userEntity.getZipCode());
 		return userModel;
+	}
+
+
+	public OrderLine orderLineEntityToOrderLineModel(OrderLineEntity orderLineEntity) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

@@ -5,6 +5,13 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="produit")
+/*@NamedQueries({
+	@NamedQuery(
+			name = "findProductbyNewArrivals",
+			query = "from productEntity p where p.dateCommercialisation > :date"
+			),
+})*/
+
 public class ProductEntity 
 {
 	@Id
