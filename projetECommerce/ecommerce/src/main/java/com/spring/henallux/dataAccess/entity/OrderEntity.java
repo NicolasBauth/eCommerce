@@ -17,10 +17,10 @@ public class OrderEntity
 	@Id
 	@Column(name="numero")
 	private Integer orderId;
-	@Column(name="dateCommande")
+	@Column(name="datecommande")
 	private java.util.Date orderDate;
 	@ManyToOne
-	@JoinColumn(name="id_utilisateur", referencedColumnName="idUtilisateur")
+	@JoinColumn(name="id_utilisateur", referencedColumnName="idutilisateur")
 	private UserEntity customer;
 	@OneToMany(mappedBy="order")
 	private Collection<OrderLineEntity> orderLines;

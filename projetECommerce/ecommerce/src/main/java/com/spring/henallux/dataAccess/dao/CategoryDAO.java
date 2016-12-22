@@ -29,6 +29,13 @@ public class CategoryDAO
 		return providerConverter.categoryEntityToCategoryModel(categoryEntity);	
 	}
 	
+	public Category getCategory(Integer categoryId){
+		CategoryEntity categoryEntity = categoryRepository.findOne(categoryId);
+		Category category = new Category();
+		category = providerConverter.categoryEntityToCategoryModel(categoryEntity);
+		return category;
+	}
+	
 	
 	public ArrayList<Category> getAllCategories()
 	{

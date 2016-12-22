@@ -10,10 +10,10 @@ public class OrderLineEntity
 	private Integer orderLineId;
 	@Column(name="quantite")
 	private Integer quantity;
-	@Column(name="prixUnitaire")
+	@Column(name="prixunitaire")
 	private java.math.BigDecimal unitPrice;
 	@ManyToOne
-	@JoinColumn(name="id_produit", referencedColumnName="idProduit")
+	@JoinColumn(name="id_produit", referencedColumnName="idproduit")
 	private ProductEntity orderedProduct;
 	@ManyToOne
 	@JoinColumn(name="id_commande", referencedColumnName="numero")

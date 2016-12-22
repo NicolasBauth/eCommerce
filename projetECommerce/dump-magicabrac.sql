@@ -23,12 +23,12 @@
 DROP TABLE if exists `magicabrac`.`ligne`;
 DROP TABLE if exists `magicabrac`.`traduction`;
 DROP TABLE if exists `magicabrac`.`langue`;
+DROP TABLE if exists `magicabrac`.`image`;
 DROP TABLE if exists `magicabrac`.`produit`;
 DROP TABLE if exists `magicabrac`.`promotion`;
 DROP TABLE if exists `magicabrac`.`categorie`;
 DROP TABLE if exists `magicabrac`.`commande`;
 DROP TABLE if exists `magicabrac`.`utilisateur`;
-DROP TABLE if exists `magicabrac`.`image`;
 -- SET FOREIGN_KEY_CHECKS=1;
 
 --
@@ -53,7 +53,7 @@ CREATE TABLE `magicabrac`.`produit` (
 
 CREATE TABLE `magicabrac`.`image` (
 `idImage` INT(5) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-`nom` VARCHAR(45) NOT NULL,
+`nom` VARCHAR(100) NOT NULL,
 `chemin` VARCHAR(255) NOT NULL,
 `id_produit` INT(5) NOT NULL);
 
@@ -74,7 +74,8 @@ CREATE TABLE `magicabrac`.`promotion` (
 --
 
 CREATE TABLE `magicabrac`.`categorie` (
-  `idCategorie` INT(5) NOT NULL PRIMARY KEY AUTO_INCREMENT);
+  `idCategorie` INT(5) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `icon` VARCHAR(15) NOT NULL);
 
 
 --

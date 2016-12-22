@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="include/importTags.jsp" %>
 
 	<!-- Regions -->
 		<div class="container">
@@ -6,21 +8,17 @@
 		<div class="sitemap-regions">
 			<div class="container">
 				<div class="sitemap-region-grid">
-					<div class="sitemap-region">
-						<h4>Poudres et Potions</h4>
-						<ul>
-							<li><a href="furnitures.html">Poudre de Dragon</a></li>
-							<li class="left-gap"><a href="furnitures.html">Fridges</a></li>
-							<li class="left-gap"><a href="furnitures.html">AC</a></li>
-							<li class="left-gap"><a href="furnitures.html">Washing Machine</a></li>
-						</ul>
-					</div>
-					<div class="sitemap-region">
-						<h4>Objets uniques</h4>
-						<ul>
-							<li><a href="services.html">Pierre Philosophale</a></li>
-						</ul>
-					</div>
+					
+					<c:forEach  items="${categories}" var="c">
+						<div class="sitemap-region">
+							<h4>${c.categoryTranslation}</h4>
+								<ul>
+									<c:forEach  items="${products[c.translatedCategory.categoryId]}" var="p">
+										<li><a href="furnitures.html">${p.name}</a></li>
+									</c:forEach>
+								</ul>
+						</div>
+					</c:forEach>
 					
 				</div>
 				<div class="clearfix"></div>

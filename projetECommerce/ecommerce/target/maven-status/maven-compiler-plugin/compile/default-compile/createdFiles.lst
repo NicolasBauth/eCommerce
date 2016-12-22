@@ -1,6 +1,5 @@
 com/spring/henallux/dataAccess/dao/ImageDAO.class
 com/spring/henallux/dataAccess/repository/ProductRepository.class
-com/spring/henallux/dataAccess/entity/OrderLine.class
 com/spring/henallux/dataAccess/entity/TranslationEntity.class
 com/spring/henallux/model/Promotion.class
 com/spring/henallux/model/User.class
@@ -14,7 +13,6 @@ com/spring/henallux/model/Product.class
 com/spring/henallux/dataAccess/dao/UserDAO.class
 com/spring/henallux/dataAccess/dao/OrderLineDAO.class
 com/spring/henallux/dataAccess/repository/UserRepository.class
-com/spring/henallux/service/ProductService.class
 com/spring/henallux/controller/FaqController.class
 com/spring/henallux/dataAccess/dao/CategoryDAO.class
 com/spring/henallux/dataAccess/dao/ProductDAO.class

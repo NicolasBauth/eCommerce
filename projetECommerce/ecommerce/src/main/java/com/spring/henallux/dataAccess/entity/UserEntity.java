@@ -6,6 +6,8 @@ import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -13,10 +15,16 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="utilisateur")
+@NamedQueries({
+	@NamedQuery(
+			name = "findUserByConnection",
+			query = "from UserEntity u where u.pseudo = :pseudo and u.password = :password"
+			),
+})
 public class UserEntity 
 {
 	@Id
-	@Column(name ="idUtilisateur")
+	@Column(name ="idutilisateur")
 	private Integer userId;
 	@Column(name ="nom")
 	private String lastName;
@@ -28,9 +36,9 @@ public class UserEntity
 	private Integer phoneNumber;
 	@Column(name="email")
 	private String email;
-	@Column(name="motDePasse")
+	@Column(name="motdepasse")
 	private String password;
-	@Column(name="dateNaissance")
+	@Column(name="datenaissance")
 	private java.util.Date birthDate;
 	@Column(name="rue")
 	private String street;
@@ -38,7 +46,7 @@ public class UserEntity
 	private Integer numberOfStreet;
 	@Column(name="ville")
 	private String town;
-	@Column(name="codePostal")
+	@Column(name="codepostal")
 	private Integer zipCode;
 	@Column(name="pays")
 	private String country;

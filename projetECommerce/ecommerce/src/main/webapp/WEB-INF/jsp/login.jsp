@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="include/importTags.jsp" %>
 
 	 <section>
 			<div id="page-wrapper" class="sign-in-wrapper">
@@ -9,7 +11,7 @@
 						<div class="signin">
 							<div class="signin-rit">
 								<span class="checkbox1">
-									 <label class="checkbox"><input type="checkbox" name="checkbox" checked="">Mot de passe oublié</label>
+									 <label class="checkbox"><input type="checkbox" name="checkbox" checked="">Mot de passe oubliÃ©</label>
 								</span>
 								<p><a href="#">Ici</a> </p>
 								<div class="clearfix"> </div>

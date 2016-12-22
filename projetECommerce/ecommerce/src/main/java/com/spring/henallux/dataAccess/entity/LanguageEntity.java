@@ -5,15 +5,24 @@ import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="langue")
+@NamedQueries({
+	@NamedQuery(
+			name = "findLanguageByName",
+			query = "from LanguageEntity l where l.name = :langue"
+			),
+})
 public class LanguageEntity 
 {
 	@Id
-	@Column(name="idLangue")
+	@Column(name="idlangue")
 	private Integer languageId;
 	@Column(name="nom")
 	private String name;

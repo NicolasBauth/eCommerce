@@ -5,21 +5,33 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="image")
+@NamedQueries({
+	@NamedQuery(
+			name = "findFirstByReferencedProductProductId",
+			query = "from ImageEntity i where i.referencedProduct.productId = :productId"
+			),
+	@NamedQuery(
+			name = "findImageByReferencedProductProductId",
+			query = "from ImageEntity i where i.referencedProduct.productId = :productId"
+			),
+})
 public class ImageEntity 
 {
 	@Id
-	@Column(name="idImage")
+	@Column(name="idimage")
 	private Integer imageId;
 	@Column(name="nom")
 	private String name;
 	@Column(name="chemin")
 	private String path;
 	@ManyToOne
-	@JoinColumn(name="id_produit",referencedColumnName="idProduit")
+	@JoinColumn(name="id_produit", referencedColumnName="idproduit")
 	private ProductEntity referencedProduct;
 	
 	public ImageEntity()

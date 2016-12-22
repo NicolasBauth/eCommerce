@@ -1,5 +1,5 @@
 package com.spring.henallux.dataAccess.repository;
-import java.sql.Date;
+
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -13,6 +13,7 @@ import com.spring.henallux.dataAccess.entity.ProductEntity;
 @Transactional
 public interface ProductRepository extends JpaRepository<ProductEntity,Integer>
 {
-
+	public List<ProductEntity> findTop12ByOrderByMarketingDateAsc();
+	public List<ProductEntity> findProductByCategoryCategoryId(Integer categoryCategoryId);
 	
 }

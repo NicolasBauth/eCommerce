@@ -11,6 +11,7 @@ public class ProviderConverter
 	{
 		CategoryEntity categoryEntity = new CategoryEntity();
 		categoryEntity.setCategoryId(categoryModel.getCategoryId());
+		categoryEntity.setIcon(categoryModel.getIcon());
 		return categoryEntity;
 	}
 	
@@ -19,6 +20,7 @@ public class ProviderConverter
 	{
 		Category categoryModel = new Category();
 		categoryModel.setCategoryId(categoryEntity.getCategoryId());
+		categoryModel.setIcon(categoryEntity.getIcon());
 		return categoryModel;
 	}
 	
@@ -46,7 +48,7 @@ public class ProviderConverter
 		return imageModel;
 	}
 	
-	
+
 	public LanguageEntity languageModelToLanguageEntity(Language languageModel)
 	{
 		LanguageEntity languageEntity = new LanguageEntity();
@@ -100,7 +102,7 @@ public class ProviderConverter
 	}
 	
 	
-	/*public OrderLine orderLineEntityToOrderLineModel(OrderLineEntity orderLineEntity)
+	public OrderLine orderLineEntityToOrderLineModel(OrderLineEntity orderLineEntity)
 	{
 		OrderLine orderLineModel = new OrderLine();
 		Order order = orderEntityToOrderModel(orderLineEntity.getOrder());
@@ -111,7 +113,7 @@ public class ProviderConverter
 		orderLineModel.setQuantity(orderLineEntity.getQuantity());
 		orderLineModel.setUnitPrice(orderLineEntity.getUnitPrice());
 		return orderLineModel;
-	}*/
+	}
 	
 	
 	public ProductEntity productModelToProductEntity(Product productModel)
@@ -240,22 +242,6 @@ public class ProviderConverter
 	}
 
 
-	public OrderLine orderLineEntityToOrderLineModel(OrderLineEntity orderLineEntity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 }

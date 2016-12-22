@@ -5,215 +5,57 @@
 		<div class="content">
 			<div class="categories">
 				<div class="container">
-					<div class="col-md-2 focus-grid">
-						<a href="<spring:url value='categorie' />">
-							<div class="focus-border">
-								<div class="focus-layout"> 
-									<div class="focus-image"><i class="fa fa-flask"></i></div>
-									<h4 class="clrchg">Potions et Poudres</h4>
+					<c:forEach items="${categories}" var="c">
+						<div class="col-md-2 focus-grid">
+							<spring:url var="category" value="">
+								<spring:param name="category" value="${c.translatedCategory.categoryId}"/>
+							</spring:url>
+							<a href="category${category}">
+								<div class="focus-border">
+									<div class="focus-layout">
+										<div class="focus-image"><i class="fa fa-${c.translatedCategory.icon}"></i></div>
+										<h4 class="clrchg">${c.categoryTranslation}</h4>
+									</div>
 								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-2 focus-grid">
-						<a href="categorie">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-diamond"></i></div>
-									<h4 class="clrchg">Pierres Précieuses et Oeufs</h4>
-								</div>
-							</div>
-						</a>
-					</div>	
-					<div class="col-md-2 focus-grid">
-						<a href="categorie">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-key"></i></div>
-									<h4 class="clrchg">Objets uniques</h4>
-								</div>
-							</div>
-						</a>
-					</div>	
-					<div class="col-md-2 focus-grid">
-						<a href="categorie">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-magic"></i></div>
-									<h4 class="clrchg">Baguettes Magiques</h4>
-								</div>
-							</div>
-						</a>
-					</div>		
-					<div class="col-md-2 focus-grid">
-						<a href="categorie">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-book"></i></div>
-									<h4 class="clrchg">Grimoires et Parchemins</h4>
-								</div>
-							</div>
-						</a>
-					</div>	
-					<div class="col-md-2 focus-grid">
-						<a href="categorie">
-							<div class="focus-border">
-								<div class="focus-layout">
-									<div class="focus-image"><i class="fa fa-leaf"></i></div>
-									<h4 class="clrchg">Plantes et Champignons</h4>
-								</div>
-							</div>
-						</a>
-					</div>	
-					
+							</a>
+						</div>
+					</c:forEach>
+				</div>
 			</div>
 			<div class="trending-ads">
 				<div class="container">
 				<!-- slider -->
-				<div class="trend-ads">
+				<div class="trend-ads" id="news">
 					<h2>Nouveautés</h2>
-					${lastProducts}
-					<ul><c:forEach var="nom"  items="${lastProducts}">
- 
-						          <li>Nom : ${nom.name}<li/>
-						</c:forEach>
-						</ul>
+					
+					<c:forEach items="${productsCat1}" var="t">
+						${t.name}
+					</c:forEach>
 						
-						<c:choose>
-						  <c:when test="${empty lastProducts}">
-						    pas d'information
-						  </c:when>
-						  <c:otherwise>
-						    <c:forEach items="${lastProducts}" var="p">
-						      ${p.name}
-						    </c:forEach>
-						  </c:otherwise>
-						</c:choose>
-						
-							<ul id="flexiselDemo3">
-								<li>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="images/poudre-de-dragon.jpg"/>
-											<span class="price">&#8364; 14,50</span>
-										</a> 
-										<div class="ad-info">
-											<h5>Poudre de dragon</h5>
-										</div>
+						<ul id="flexiselDemo3">
+							<% int i = 0; %>
+							<c:forEach items="${lastProducts}" var="p">
+							<% if(i == 0 || i%4 == 0){ %> <li> <% } %>
+								<div class="col-md-3 biseller-column">
+									<a href="single.html?product=${p.productId}">
+										
+										<img src="images/products/${imageProduct[p.productId].path}"/ title="${imageProduct[p.productId].name}" alt="${imageProduct[p.productId].name}">
+										<span class="price">&#8364; ${p.unitPrice}</span>
+									</a> 
+									<div class="ad-info">
+										<h5>${p.name}</h5>
 									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="images/poudre-de-dragon.jpg"/>
-											<span class="price">&#8364; 14,50</span>
-										</a> 
-										<div class="ad-info">
-											<h5>Poudre de dragon</h5>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="images/poudre-de-dragon.jpg"/>
-											<span class="price">&#8364; 14,50</span>
-										</a> 
-										<div class="ad-info">
-											<h5>Poudre de dragon</h5>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="images/poudre-de-dragon.jpg"/>
-											<span class="price">&#8364; 14,50</span>
-										</a> 
-										<div class="ad-info">
-											<h5>Poudre de dragon</h5>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="images/poudre-de-dragon.jpg"/>
-											<span class="price">&#8364; 14,50</span>
-										</a> 
-										<div class="ad-info">
-											<h5>Poudre de dragon</h5>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="images/poudre-de-dragon.jpg"/>
-											<span class="price">&#8364; 14,50</span>
-										</a> 
-										<div class="ad-info">
-											<h5>Poudre de dragon</h5>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="images/poudre-de-dragon.jpg"/>
-											<span class="price">&#8364; 14,50</span>
-										</a> 
-										<div class="ad-info">
-											<h5>Poudre de dragon</h5>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="images/poudre-de-dragon.jpg"/>
-											<span class="price">&#8364; 14,50</span>
-										</a> 
-										<div class="ad-info">
-											<h5>Poudre de dragon</h5>
-										</div>
-									</div>
-									
-								</li>
-								<li>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="images/poudre-de-dragon.jpg"/>
-											<span class="price">&#8364; 14,50</span>
-										</a> 
-										<div class="ad-info">
-											<h5>Poudre de dragon</h5>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="images/poudre-de-dragon.jpg"/>
-											<span class="price">&#8364; 14,50</span>
-										</a> 
-										<div class="ad-info">
-											<h5>Poudre de dragon</h5>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="images/poudre-de-dragon.jpg"/>
-											<span class="price">&#8364; 14,50</span>
-										</a> 
-										<div class="ad-info">
-											<h5>Poudre de dragon</h5>
-										</div>
-									</div>
-									<div class="col-md-3 biseller-column">
-										<a href="single.html">
-											<img src="images/poudre-de-dragon.jpg"/>
-											<span class="price">&#8364; 14,50</span>
-										</a> 
-										<div class="ad-info">
-											<h5>Poudre de dragon</h5>
-										</div>
-									</div>
-									
-								</li>
+								</div>
+							<% i++; if(i%4 == 0){ %> </li> <% } %>
+							</c:forEach>
+							</li>
 						</ul>
 					<script type="text/javascript">
 						 $(window).load(function() {
 							$("#flexiselDemo3").flexisel({
 								visibleItems:1,
 								animationSpeed: 1000,
-								autoPlay: true,
+								autoPlay: false,
 								autoPlaySpeed: 5000,    		
 								pauseOnHover: true,
 								enableResponsiveBreakpoints: true,

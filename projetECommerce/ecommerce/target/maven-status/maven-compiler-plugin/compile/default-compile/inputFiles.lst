@@ -15,7 +15,6 @@
 /Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/controller/PrivacyController.java
 /Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/model/Order.java
 /Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/dataAccess/dao/PromotionDAO.java
-/Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/dataAccess/entity/OrderLine.java
 /Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/dataAccess/repository/CategoryRepository.java
 /Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/dataAccess/repository/LanguageRepository.java
 /Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/dataAccess/util/ProviderConverter.java
@@ -40,7 +39,6 @@
 /Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/dataAccess/repository/ProductRepository.java
 /Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/dataAccess/entity/LanguageEntity.java
 /Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/dataAccess/repository/TranslationRepository.java
-/Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/service/ProductService.java
 /Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/model/Category.java
 /Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/model/Promotion.java
 /Users/admin/Documents/workspace/ecommerce/src/main/java/com/spring/henallux/config/TilesConfig.java

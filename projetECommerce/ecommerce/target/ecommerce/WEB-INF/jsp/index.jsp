@@ -6,7 +6,7 @@
 			<div class="categories">
 				<div class="container">
 					<div class="col-md-2 focus-grid">
-						<a href="<spring:url value='categorie' />">
+						<a href="<spring:url value='category' />">
 							<div class="focus-border">
 								<div class="focus-layout"> 
 									<div class="focus-image"><i class="fa fa-flask"></i></div>
@@ -16,7 +16,7 @@
 						</a>
 					</div>
 					<div class="col-md-2 focus-grid">
-						<a href="categorie">
+						<a href="category">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-diamond"></i></div>
@@ -26,7 +26,7 @@
 						</a>
 					</div>	
 					<div class="col-md-2 focus-grid">
-						<a href="categorie">
+						<a href="category">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-key"></i></div>
@@ -36,7 +36,7 @@
 						</a>
 					</div>	
 					<div class="col-md-2 focus-grid">
-						<a href="categorie">
+						<a href="category">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-magic"></i></div>
@@ -46,7 +46,7 @@
 						</a>
 					</div>		
 					<div class="col-md-2 focus-grid">
-						<a href="categorie">
+						<a href="category">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-book"></i></div>
@@ -56,7 +56,7 @@
 						</a>
 					</div>	
 					<div class="col-md-2 focus-grid">
-						<a href="categorie">
+						<a href="category">
 							<div class="focus-border">
 								<div class="focus-layout">
 									<div class="focus-image"><i class="fa fa-leaf"></i></div>
@@ -72,10 +72,9 @@
 				<!-- slider -->
 				<div class="trend-ads">
 					<h2>Nouveautés</h2>
-					${lastProducts}
 					<ul><c:forEach var="nom"  items="${lastProducts}">
  
-						          <li>${nom}<li/>
+						          <li>Nom : ${nom.name}<li/>
 						</c:forEach>
 						</ul>
 						

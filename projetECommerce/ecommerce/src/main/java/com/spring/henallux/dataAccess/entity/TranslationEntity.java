@@ -5,22 +5,34 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="traduction")
+@NamedQueries({
+	@NamedQuery(
+			name = "findTranslationByTargetedLanguageLanguageId",
+			query = "from TranslationEntity t where t.targetedLanguage.languageId = :targetedLanguageLanguageId"
+			),
+	@NamedQuery(
+			name = "findTranslationByTargetedLanguageLanguageIdAndTranslatedCategoryCategoryId",
+			query = "from TranslationEntity t where t.targetedLanguage.languageId = :targetedLanguageLanguageId and t.translatedCategory.categoryId = :translatedCategoryCategoryId"
+			),
+})
 public class TranslationEntity 
 {
 	@Id
-	@Column(name="idTraduction")
+	@Column(name="idtraduction")
 	private Integer translationId;
 	@Column(name="libelle")
 	private String categoryTranslation;
 	@ManyToOne
-	@JoinColumn(name="id_categorie",referencedColumnName="idCategorie")
+	@JoinColumn(name="id_categorie",referencedColumnName="idcategorie")
 	private CategoryEntity translatedCategory;
 	@ManyToOne
-	@JoinColumn(name="id_langue", referencedColumnName="idLangue")
+	@JoinColumn(name="id_langue", referencedColumnName="idlangue")
 	private LanguageEntity targetedLanguage;
 	public TranslationEntity()
 	{

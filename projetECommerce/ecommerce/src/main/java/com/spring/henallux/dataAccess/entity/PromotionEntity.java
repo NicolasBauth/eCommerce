@@ -5,14 +5,20 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="promotion")
+@NamedQueries({
+	@NamedQuery(
+			name = "findPromotionByProduct",
+			query = "from PromotionEntity p where p.promoId = :idPromo and p.startDate < :dateNow and p.endDate > :dateNow"
+			),
+})
 public class PromotionEntity 
 {
 	@Id
-	@Column(name="idPromo")
+	@Column(name="idpromo")
 	private Integer promoId;
-	@Column(name="dateDeb")
+	@Column(name="datedeb")
 	private java.util.Date startDate;
-	@Column(name="dateFin")
+	@Column(name="datefin")
 	private java.util.Date endDate;
 	@Column(name="pourcentage")
 	private java.math.BigDecimal percentage;

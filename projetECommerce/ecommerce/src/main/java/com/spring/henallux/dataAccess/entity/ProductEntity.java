@@ -1,44 +1,47 @@
 package com.spring.henallux.dataAccess.entity;
+
 import java.util.Collection;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="produit")
-/*@NamedQueries({
+@NamedQueries({
 	@NamedQuery(
-			name = "findProductbyNewArrivals",
-			query = "from productEntity p where p.dateCommercialisation > :date"
+			name = "findProductByCategoryCategoryId",
+			query = "from ProductEntity p where p.category.categoryId = :categoryCategoryId"
 			),
-})*/
+})
 
 public class ProductEntity 
 {
 	@Id
-	@Column(name="idProduit")
+	@Column(name="idproduit")
 	private Integer productId;
 	@Column(name="nom")
 	private String name;
-	@Column(name="dateCommercialisation")
+	@Column(name="datecommercialisation")
 	private java.util.Date marketingDate;
-	@Column(name="prixUnitaire")
+	@Column(name="prixunitaire")
 	private java.math.BigDecimal unitPrice;
 	@Column(name="description")
 	private String description;
-	@Column(name="quantiteIndividuelle")
+	@Column(name="quantiteindividuelle")
 	private String quantityPerPack;
-	@Column(name="quantiteEnStock")
+	@Column(name="quantiteenstock")
 	private Integer storedQuantity;
-	@JoinColumn(name="id_promotion", referencedColumnName="idPromo")
+	@JoinColumn(name="id_promotion", referencedColumnName="idpromo")
 	@ManyToOne
 	private PromotionEntity promotion;
-	@JoinColumn(name="id_categorie",referencedColumnName="idCategorie")
+	@JoinColumn(name="id_categorie",referencedColumnName="idcategorie")
 	@ManyToOne
 	private CategoryEntity category;
+	
 	@OneToMany(mappedBy="referencedProduct")
 	private Collection<ImageEntity> images;
 	@OneToMany(mappedBy="orderedProduct")
 	private Collection<OrderLineEntity> orderLines;
+	
 	public ProductEntity()
 	{
 		

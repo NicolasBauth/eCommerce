@@ -1,6 +1,5 @@
 package com.spring.henallux.dataAccess.dao;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,19 +27,34 @@ public class ProductDAO
 	@Autowired
 	private ProviderConverter providerConverter;
 	
-	/*public ArrayList<Product> findProductByNewArrivals(){
-		Session session = sessionFactory.getCurrentSession();
-		session.beginTransaction();
-		Query query = session.getNamedQuery("findProductbyNewArrivals").setDate("date", new Date(0));
-		List<ProductEntity> productEntities = query.list();
+	public ArrayList<Product> findProductByNewArrivals(){
+		//Session session = sessionFactory.getCurrentSession();
+		//session.beginTransaction();
+		//Query query = session.getNamedQuery("findTop12ByOrderByMarketingDateAsc");
+		List<ProductEntity> productEntities = productRepository.findTop12ByOrderByMarketingDateAsc();
 		ArrayList<Product> products = new ArrayList<>();
 		for(ProductEntity entity : productEntities){
 			Product product = providerConverter.productEntityToProductModel(entity);
 			products.add(product);
 		}
-		session.getTransaction().commit();
+		//session.getTransaction().commit();
 		return products;
-	}*/
+	}
+	
+	public ArrayList<Product> findProductByCategoryCategoryId(Integer categoryCategoryId){
+		//Session session = sessionFactory.getCurrentSession();
+		//session.beginTransaction();
+		//Query query = session.getNamedQuery("findProductByCategoryCategoryId").setInteger("categoryCategoryId", 1);
+		List<ProductEntity> productEntities = productRepository.findProductByCategoryCategoryId(categoryCategoryId);
+		ArrayList<Product> products = new ArrayList<>();
+		for(ProductEntity entity : productEntities){
+			Product product = providerConverter.productEntityToProductModel(entity);
+			products.add(product);
+		}
+		//session.getTransaction().commit();
+		return products;
+	}
+	
 	public Product save(Product product)
 	{
 		ProductEntity productEntity = providerConverter.productModelToProductEntity(product);
@@ -58,16 +72,16 @@ public class ProductDAO
 			Product product = providerConverter.productEntityToProductModel(productEntity);
 			products.add(product);
 		}
-		Product product = new Product("CacaPIPIhihiHAHA");
-		products.add(product);
-		System.out.println("ICI LA");
-		for (Product v : products)
-		      System.out.print(v.getName() + " HAHA ");
-		System.out.println();
+		
 		return products;
 	}
-	Date s = new Date(0);
-	Date e = new Date(0);
 	
-	//productRepository.findByStartDateBetween(s, e);
+	public Product getProduct(Integer productId)
+	{
+		ProductEntity productEntity = productRepository.findOne(productId);
+		Product product = providerConverter.productEntityToProductModel(productEntity);
+		
+		return product;
+	}
+	
 }
