@@ -5,11 +5,14 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.logging.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -37,9 +40,11 @@ public class CategoryController {
 	private HashMap<Integer, Image> result;
 	private Translation categoryProducts;
 	private ArrayList<Translation> categories;
+	
+	
 
-	@RequestMapping(method=RequestMethod.GET)
-	public String home(Model model, String category, Locale locale){
+	@RequestMapping(value="/{c}", method=RequestMethod.GET)
+	public String home(Model model, @PathVariable("c") String category, Locale locale){
 		
 		model.addAttribute("bannerMainText", messageSource.getMessage("bannerMainText", null, locale));
 		model.addAttribute("bannerSecText", messageSource.getMessage("bannerSecText", null, locale));

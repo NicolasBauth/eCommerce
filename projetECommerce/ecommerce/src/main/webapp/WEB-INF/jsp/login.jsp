@@ -41,7 +41,7 @@
 						<div class="new_people">
 							<h2>Pour les nouveaux</h2>
 							<p>Commandez et profitez de plein d'avantages</p>
-							<a href="register.html">Inscrivez-vous maintenant</a>
+							<a href="/ecommerce/register">Inscrivez-vous maintenant</a>
 						</div>
 					</div>
 				</div>

@@ -6,7 +6,7 @@
 		<div class="container">
 			<c:forEach items="${categories}" var="c">
 				<div class="col-md-2 focus-grid">
-					<a href="category?category=${c.translatedCategory.categoryId}">
+					<a href="${c.translatedCategory.categoryId}">
 						<div class="focus-border">
 							<div class="focus-layout">
 								<div class="focus-image"><i class="fa fa-${c.translatedCategory.icon}"></i></div>
@@ -50,7 +50,7 @@
 				<div class="clearfix"></div>
 			</div-->
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
-			  <li><a href="index.html">Accueil</a></li>
+			  <li><a href="../index">Accueil</a></li>
 			  <li class="active">${category.categoryTranslation}</li>
 			</ol>
 			<div class="ads-grid">
@@ -130,9 +130,9 @@
 								<div class="clearfix"></div>
 							<ul class="list">
 								<c:forEach items="${products}" var="p">
-									<a href="single?product=${p.productId}">
+									<a href="<spring:url value='/single/${p.productId}' />">
 										<li>
-										<img src="images/products/${image[p.productId].path}" title="${image[p.productId].name}" alt="${image[p.productId].name}" />
+										<img src="<spring:url value='/images/products/${image[p.productId].path}' />" title="${image[p.productId].name}" alt="${image[p.productId].name}" />
 										<section class="list-left">
 										<h5 class="title">${p.name}</h5>
 										<span class="adprice">€ ${p.unitPrice}</span>

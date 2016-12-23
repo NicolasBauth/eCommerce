@@ -39,6 +39,8 @@ public class Config extends WebMvcConfigurerAdapter {
 		return resolver;
 	}
 	
+	
+	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry){
 		LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();

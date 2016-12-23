@@ -208,6 +208,7 @@ li.dropdown-header {
 a.account {
     float: left;
     margin-top: 20px;
+    margin-left: 10px;
     font-size: 15px;
     color: #fff;
     background-color: #01a185;
@@ -218,21 +219,6 @@ a.account:hover {
 	background-color: #f3c500;
 }
 
-a.login {
-	float: left;
-    margin-top: 20px;
-    padding: 7px;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: rgba(1, 161, 133, 0.36);
-    margin: 20px 10px;
-}
-
-a.login:hover {
-	background-color: #f3c500;
-}
 span.active.uls-trigger {
     float: left;
     cursor: pointer;

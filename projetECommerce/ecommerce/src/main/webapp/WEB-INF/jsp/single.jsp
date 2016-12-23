@@ -6,8 +6,8 @@
 	<div class="single-page main-grid-border">
 		<div class="container">
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
-				<li><a href="index">Accueil</a></li>
-				<li class="active"><a href="category?category=${category.translatedCategory.categoryId}">${category.categoryTranslation}</a></li>
+				<li><a href="/ecommerce/index">Accueil</a></li>
+				<li class="active"><a href="/ecommerce/category/${category.translatedCategory.categoryId}">${category.categoryTranslation}</a></li>
 				<li class="active">${product.name}</li>
 			</ol>
 			<div class="product-desc">
@@ -17,15 +17,16 @@
 					<div class="flexslider">
 						<ul class="slides">
 						<c:forEach items="${images}" var="i">
-							<li data-thumb="images/products/${i.path}">
-								<img src="images/products/${i.path}" title="${i.name}" alt="${i.name}" />
+							<li data-thumb="<spring:url value='/images/products/${i.path}' />">
+								<img src="<spring:url value='/images/products/${i.path}' />" title="${i.name}" alt="${i.name}" />
 							</li>
 						</c:forEach>	
 						</ul>
 					</div>
+
 					<!-- FlexSlider -->
-					  <script defer src="js/jquery.flexslider.js"></script>
-					<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+					  <script defer src="<spring:url value='/js/jquery.flexslider.js' />"></script>
+					<link rel="stylesheet" href="<spring:url value='/css/flexslider.css' />" type="text/css" media="screen" />
 
 						<script>
 					// Can also be used with $(document).ready()

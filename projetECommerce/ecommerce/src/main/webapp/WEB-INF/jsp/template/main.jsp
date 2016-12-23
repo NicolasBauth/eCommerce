@@ -30,7 +30,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->	
 <!-- js -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="<spring:url value='/js/jquery.min.js' />"></script>
 <!-- js -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="<spring:url value='/js/bootstrap.min.js' />"></script>
@@ -82,11 +82,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index"><span>Magic</span>abrac</a>
+				<a href="/ecommerce/index"><span>Magic</span>abrac</a>
 			</div>
 			<div class="header-right">
-				<a class="account" href=""><i class="glyphicon glyphicon-shopping-cart"></i> 0 article(s)</a>
-				<a class="login" href="login"><i class="glyphicon glyphicon-user"></i></a>
+				<a class="account" href="/ecommerce/cart"><i class="glyphicon glyphicon-shopping-cart"></i> 0 article(s)</a>
+				<a class="account" href="/ecommerce/login"><i class="glyphicon glyphicon-user"></i> Se connecter</a>
 				<spring:url var="localeFr" value="">
 					<spring:param name="locale" value="fr"/>
 				</spring:url>
@@ -111,7 +111,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  <div class="container">    
 			<h1><spring:message code="bannerMainText"/></h1>
 			<p><spring:message code="bannerSecText"/></p>
-			<a href="index#news"><spring:message code="bannerCatalogue"/></a>
+			<a href="/ecommerce/index#news"><spring:message code="bannerCatalogue"/></a>
 	  </div>
 	</div>
 		
@@ -130,17 +130,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="col-md-3 footer-grid">
 							<h4 class="footer-head">Aide</h4>
 							<ul>
-								<li><a href="sitemap">Plan du site</a></li>
-								<li><a href="faq">Faq</a></li>
+								<li><a href="/ecommerce/sitemap">Plan du site</a></li>
+								<li><a href="/ecommerce/faq">Faq</a></li>
 								<!-- li><a href="contact.html">Contact</a></li -->
 							</ul>
 						</div>
 						<div class="col-md-3 footer-grid">
 							<h4 class="footer-head">Information</h4>
 							<ul>
-								<li><a href="terms">Conditions d'utilisations</a></li>
-								<li><a href="livraison">Livraison, expédition et retour</a></li>	
-								<li><a href="privacy">Politique de confidentialité</a></li>	
+								<li><a href="/ecommerce/terms">Conditions d'utilisations</a></li>
+								<li><a href="/ecommerce/livraison">Livraison, expédition et retour</a></li>	
+								<li><a href="/ecommerce/privacy">Politique de confidentialité</a></li>	
 							</ul>
 						</div>
 						<div class="col-md-3 footer-grid">
@@ -170,7 +170,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="footer-bottom text-center">
 			<div class="container">
 				<div class="footer-logo">
-					<a href="index"><span>Magic</span>abrac</a>
+					<a href="/ecommerce/index"><span>Magic</span>abrac</a>
 				</div>
 				<div class="footer-social-icons">
 					<ul>

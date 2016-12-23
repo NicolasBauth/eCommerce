@@ -7,10 +7,7 @@
 				<div class="container">
 					<c:forEach items="${categories}" var="c">
 						<div class="col-md-2 focus-grid">
-							<spring:url var="category" value="">
-								<spring:param name="category" value="${c.translatedCategory.categoryId}"/>
-							</spring:url>
-							<a href="category${category}">
+							<a href="/ecommerce/category/${c.translatedCategory.categoryId}">
 								<div class="focus-border">
 									<div class="focus-layout">
 										<div class="focus-image"><i class="fa fa-${c.translatedCategory.icon}"></i></div>
@@ -37,9 +34,9 @@
 							<c:forEach items="${lastProducts}" var="p">
 							<% if(i == 0 || i%4 == 0){ %> <li> <% } %>
 								<div class="col-md-3 biseller-column">
-									<a href="single.html?product=${p.productId}">
+									<a href="<spring:url value='/single/${p.productId}' />">
 										
-										<img src="images/products/${imageProduct[p.productId].path}"/ title="${imageProduct[p.productId].name}" alt="${imageProduct[p.productId].name}">
+										<img src="<spring:url value='/images/products/${imageProduct[p.productId].path}' />" title="${imageProduct[p.productId].name}" alt="${imageProduct[p.productId].name}">
 										<span class="price">&#8364; ${p.unitPrice}</span>
 									</a> 
 									<div class="ad-info">
