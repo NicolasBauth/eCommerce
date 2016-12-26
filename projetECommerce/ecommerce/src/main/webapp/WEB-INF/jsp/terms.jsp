@@ -4,7 +4,7 @@
 	<!-- Terms of use -->
 	<div class="terms main-grid-border">
 		<div class="container">
-			<h2 class="head">Conditions Générales de Vente</h2>
+			<h2 class="head">${terms }</h2>
 				<div class="panel-group" id="accordion">
 				<!-- First Panel -->
 					<div class="panel panel-default">

@@ -4,7 +4,7 @@
 	<!-- Privacy -->
 	<div class="privacy main-grid-border">
 		<div class="container">
-			<h2 class="head">Politique de confidentialité</h2>
+			<h2 class="head">${privacy }</h2>
 				<p>La protection de vos données personnelles revêt une importance capitale à nos yeux, de façon à garantir un niveau de sécurité optimal. Pour vous garantir des achats en toute sécurité sur le site de Magicabrac nous avons fait tout notre possible pour protéger vos données de tout accès par des tiers. Magicabrac va stocker les données que vous avez fournies uniquement dans le contexte de vos commandes et de façon à traiter votre commande.</p>
 				<p>Toutes les données recueillies en connexion avec votre commande ne seront utilisées que pour traiter et exécuter votre commande. Lors de la collecte, du traitement et de l'utilisation de vos informations personnelles, nous respecterons toutes les lois et provisions en vigueur sur la protection des données. Vos données, votre adresse y comprise, ne seront pas transmises à des tiers, à l'exception de nos partenaires de service qui en ont besoin pour le déroulement de vos commandes. Dans ces cas précis, la quantité de données communiquées se limite toutefois au strict minimum.</p>
 				<p>Vous avez la possibilité d'obtenir en permanence des renseignements sur les données stockées sur vous et vous bénéficiez d'un droit de correction, de blocage ou de suppression de ces données. Pour tout complément d'information, veuillez vous adresser à notre support par mail (info@magicabrac.com).</p>

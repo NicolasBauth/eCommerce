@@ -6,8 +6,8 @@
 	<div class="single-page main-grid-border">
 		<div class="container">
 			<ol class="breadcrumb" style="margin-bottom: 5px;">
-				<li><a href="/ecommerce/index">Accueil</a></li>
-				<li class="active"><a href="/ecommerce/category/${category.translatedCategory.categoryId}">${category.categoryTranslation}</a></li>
+				<li><a href="<spring:url value='/index' />">${home}</a></li>
+				<li class="active"><a href="<spring:url value='/category/${category.translatedCategory.categoryId}' />">${category.categoryTranslation}</a></li>
 				<li class="active">${product.name}</li>
 			</ol>
 			<div class="product-desc">
@@ -40,48 +40,50 @@
 					<!-- //FlexSlider -->
 					<div class="product-details">
 						
-						<p><strong>Description</strong> : ${product.description}</p>
+						<p><strong>${description}</strong> : ${product.description}</p>
 						
-						<p><strong>Quantité individuelle	</strong> : ${product.quantityPerPack}</p>
+						<p><strong>${qtInd}</strong> : ${product.quantityPerPack}</p>
 						<h4>Ref : <strong>C${product.category.categoryId}A${product.productId}</strong></h4>
 					</div>
 				</div>
 				<div class="col-md-5 product-details-grid">
 					<div class="item-price">
 						<div class="product-price">
-							<p class="p-price">Prix</p>
+							<p class="p-price">${price}</p>
 							<h3 class="rate">€ ${product.unitPrice}</h3>
 							<div class="clearfix"></div>
 						</div>
 						<div class="condition">
-							<p class="p-price">Stock</p>
+							<p class="p-price">${stock}</p>
 							<c:choose>
 							    <c:when test="${product.storedQuantity > 5}">
-							        <h4>Disponible</h4>
+							        <h4>${instock}</h4>
 							    </c:when>
 							    <c:when test="${product.storedQuantity > 1}">
-							        <h4>Plus que ${product.storedQuantity} !</h4>
+							        <h4>${lesstock} ${product.storedQuantity} !</h4>
 							    </c:when>
 							    <c:when test="${product.storedQuantity == 1}">
-							        <h4>Dernier en stock !</h4>
+							        <h4>${laststock}</h4>
 							    </c:when>
 							    <c:otherwise>
-							    	<h4>Non-disponible</h4>
+							    	<h4>${outstock}</h4>
 							    </c:otherwise>
 							</c:choose>
 							<div class="clearfix"></div>
 						</div>
 						<div class="itemtype">
-							<p class="p-price">Type</p>
+							<p class="p-price">${type}</p>
 							<h4>${category.categoryTranslation}</h4>
 							<div class="clearfix"></div>
 						</div>
 					</div>
 					<div class="interested text-center">
-						<h4>Quantité</h4>
-						<form>
+						<h4>${qt}</h4>
+						<form:form 	id="form"
+									method="POST"
+									action="/ecommerce/single/send" modelAttribute="titi2">
 							<p>
-								<input type="number" min="1" max="${product.storedQuantity}" value="1" class="input-qt" id="input-qt">
+								<form:input type="number" path="nbArticles" min="1" max="${product.storedQuantity}" value="1" class="input-qt" id="input-qt" />
 								<i class="glyphicon glyphicon-plus link" id="plus-qt"></i>
 								<i class="glyphicon glyphicon-minus link" id="moins-qt"></i>
 								
@@ -110,8 +112,8 @@
 									
 								</script>
 							</p>
-							<p><button class="button-qt">Ajouter au panier</button></p>
-						</form>
+							<p><button class="button-qt">${ajoutPanier}</button></p>
+						</form:form>
 					</div>
 					<!-- div class="tips">
 						<h4>Cet objet est fourni avec :</h4>

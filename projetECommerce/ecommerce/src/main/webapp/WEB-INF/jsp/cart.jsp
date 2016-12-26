@@ -25,10 +25,10 @@
 								
 								<div class="clearfix"></div>
 							<c:choose>
-								<c:when test="${not empty products}">
+								<c:when test="${not empty currentCart}">
 									<ul class="list">
 										<c:forEach items="${products}" var="p">
-											<a href="single?product=${p.productId}">
+											<a href="<spring:url value='/single/${p.productId}' />" >
 												<li>
 												<img src="images/products/${image[p.productId].path}" title="${image[p.productId].name}" alt="${image[p.productId].name}" />
 												<section class="list-left">
@@ -39,7 +39,7 @@
 												<span class="date">Ref : C${p.category.categoryId}A${p.productId}</span>
 												<c:choose>
 												    <c:when test="${p.storedQuantity > 0}">
-												        <span class="cityname">En stock</span>
+												        <span class="cityname">Quantité commandée ${currentCart[p.productId] }</span>
 												    </c:when>    
 												    <c:otherwise>
 												        <span class="cityname">Plus disponible</span>
@@ -53,7 +53,7 @@
 									</ul>
 								</c:when>
 								<c:otherwise>
-									<h4>Votre panier est vide</h4>
+									<h4>${emptyCart }</h4>
 								</c:otherwise>
 							</c:choose>
 							
@@ -69,5 +69,4 @@
 			</div>
 		</div>	
 	</div>
-	<!-- // Pets -->
-	
+</div>

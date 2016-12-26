@@ -20,5 +20,5 @@ public interface TranslationRepository extends JpaRepository<TranslationEntity,I
 	//public List<TranslationEntity> findLibelleCategorieByLangage(@Param("idlang")Integer idlang);
 	
 	public List<TranslationEntity> findTranslationByTargetedLanguageLanguageId(Integer targetedLanguageLanguageId);
-	public Translation findTranslationByTargetedLanguageLanguageIdAndTranslatedCategoryCategoryId(Integer targetedLanguageLanguageId, Integer translatedCategoryCategoryId);
+	public TranslationEntity findTranslationByTargetedLanguageLanguageIdAndTranslatedCategoryCategoryId(Integer targetedLanguageLanguageId, Integer translatedCategoryCategoryId);
 }

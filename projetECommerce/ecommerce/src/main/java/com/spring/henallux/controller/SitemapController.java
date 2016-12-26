@@ -50,8 +50,23 @@ public class SitemapController {
 		model.addAttribute("bannerSecText", messageSource.getMessage("bannerSecText", null, locale));
 		model.addAttribute("bannerCatalogue", messageSource.getMessage("bannerCatalogue", null, locale));
 		
+		model.addAttribute("footerQui", messageSource.getMessage("footerQui", null, locale));
+		model.addAttribute("footerQuiText", messageSource.getMessage("footerQuiText", null, locale));
+		model.addAttribute("footerAide", messageSource.getMessage("footerAide", null, locale));
+		model.addAttribute("footerInfo", messageSource.getMessage("footerInfo", null, locale));
+		model.addAttribute("footerContact", messageSource.getMessage("footerContact", null, locale));
 		
-		categories = translationDAO.findTranslationByTargetedLanguageLanguageId(1);
+		model.addAttribute("panier", messageSource.getMessage("panier", null, locale));
+		model.addAttribute("connexion", messageSource.getMessage("connexion", null, locale));
+		
+		model.addAttribute("terms", messageSource.getMessage("terms", null, locale));
+		model.addAttribute("privacy", messageSource.getMessage("privacy", null, locale));
+		model.addAttribute("sitemap", messageSource.getMessage("sitemap", null, locale));
+		model.addAttribute("shipping", messageSource.getMessage("shipping", null, locale));
+		
+		int idLang = Integer.parseInt(messageSource.getMessage("idLang", null, locale));
+		
+		categories = translationDAO.findTranslationByTargetedLanguageLanguageId(idLang);
 		test = new HashMap<Integer, ArrayList<Product>>();
 		
 		for(Translation category : categories){

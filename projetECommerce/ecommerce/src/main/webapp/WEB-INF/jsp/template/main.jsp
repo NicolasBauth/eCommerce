@@ -85,8 +85,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<a href="/ecommerce/index"><span>Magic</span>abrac</a>
 			</div>
 			<div class="header-right">
-				<a class="account" href="/ecommerce/cart"><i class="glyphicon glyphicon-shopping-cart"></i> 0 article(s)</a>
-				<a class="account" href="/ecommerce/login"><i class="glyphicon glyphicon-user"></i> Se connecter</a>
+				<a class="account" href="/ecommerce/cart">
+					<i class="glyphicon glyphicon-shopping-cart"></i> 
+					<c:choose>
+					    <c:when test="${not empty nbArticlesTotal}">
+					        ${nbArticlesTotal} ${nbArticles} ${panier} ICI currentTotal ${currentTotal}
+					    </c:when>    
+					    <c:otherwise>
+					        0 ICI currentTotal ${currentTotal} ${panier}
+					    </c:otherwise>
+					</c:choose>
+				</a>
+				<a class="account" href="/ecommerce/login">
+					<i class="glyphicon glyphicon-user"></i>
+					<c:choose>
+					    <c:when test="${not empty currentUser.pseudo}">
+					        Bonjour ${currentUser.pseudo}
+					    </c:when>    
+					    <c:otherwise>
+					         ${connexion}
+					    </c:otherwise>
+					</c:choose>	
+					  
+				</a>
 				<spring:url var="localeFr" value="">
 					<spring:param name="locale" value="fr"/>
 				</spring:url>
@@ -123,28 +144,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="container">
 					<div class="foo-grids">
 						<div class="col-md-3 footer-grid">
-							<h4 class="footer-head">Qui sommes-nous?</h4>
-							<p>Nous sommes l'unique magasin de magie professionnel en ligne qui propose des objets uniques et rare. <br/>
-							Nous sélectionnons pour vous les meilleurs produits de magie.</p>
+							<h4 class="footer-head">${footerQui}</h4>
+							<p>${footerQuiText}</p>
 						</div>
 						<div class="col-md-3 footer-grid">
-							<h4 class="footer-head">Aide</h4>
+							<h4 class="footer-head">${footerAide}</h4>
 							<ul>
-								<li><a href="/ecommerce/sitemap">Plan du site</a></li>
+								<li><a href="/ecommerce/sitemap">${sitemap }</a></li>
 								<li><a href="/ecommerce/faq">Faq</a></li>
 								<!-- li><a href="contact.html">Contact</a></li -->
 							</ul>
 						</div>
 						<div class="col-md-3 footer-grid">
-							<h4 class="footer-head">Information</h4>
+							<h4 class="footer-head">${footerInfo}</h4>
 							<ul>
-								<li><a href="/ecommerce/terms">Conditions d'utilisations</a></li>
-								<li><a href="/ecommerce/livraison">Livraison, expédition et retour</a></li>	
-								<li><a href="/ecommerce/privacy">Politique de confidentialité</a></li>	
+								<li><a href="/ecommerce/terms">${terms }</a></li>
+								<li><a href="/ecommerce/livraison">${shipping }</a></li>	
+								<li><a href="/ecommerce/privacy">${privacy }</a></li>	
 							</ul>
 						</div>
 						<div class="col-md-3 footer-grid">
-							<h4 class="footer-head">Nous contacter</h4>
+							<h4 class="footer-head">${footerContact}</h4>
 							<address>
 								<ul class="location">
 									<li><span class="glyphicon glyphicon-map-marker"></span></li>

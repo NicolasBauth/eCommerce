@@ -7,7 +7,7 @@
 				<div class="container">
 					<c:forEach items="${categories}" var="c">
 						<div class="col-md-2 focus-grid">
-							<a href="/ecommerce/category/${c.translatedCategory.categoryId}">
+							<a href="<spring:url value='/category/${c.translatedCategory.categoryId}' />">
 								<div class="focus-border">
 									<div class="focus-layout">
 										<div class="focus-image"><i class="fa fa-${c.translatedCategory.icon}"></i></div>
@@ -23,11 +23,7 @@
 				<div class="container">
 				<!-- slider -->
 				<div class="trend-ads" id="news">
-					<h2>Nouveautés</h2>
-					
-					<c:forEach items="${productsCat1}" var="t">
-						${t.name}
-					</c:forEach>
+					<h2>${titreNouv}</h2>
 						
 						<ul id="flexiselDemo3">
 							<% int i = 0; %>
@@ -74,7 +70,7 @@
 							
 						});
 					   </script>
-					   <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+					   <script type="text/javascript" src="<spring:url value='/js/jquery.flexisel.js' />"></script>
 					</div>   
 			</div>
 			<!-- //slider -->				

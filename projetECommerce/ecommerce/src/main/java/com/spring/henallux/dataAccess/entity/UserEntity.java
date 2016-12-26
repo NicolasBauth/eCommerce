@@ -17,7 +17,7 @@ import javax.persistence.Table;
 @Table(name="utilisateur")
 @NamedQueries({
 	@NamedQuery(
-			name = "findUserByConnection",
+			name = "findUserByPseudoAndPassword",
 			query = "from UserEntity u where u.pseudo = :pseudo and u.password = :password"
 			),
 })

@@ -50,6 +50,25 @@ public class CategoryController {
 		model.addAttribute("bannerSecText", messageSource.getMessage("bannerSecText", null, locale));
 		model.addAttribute("bannerCatalogue", messageSource.getMessage("bannerCatalogue", null, locale));
 		
+		model.addAttribute("footerQui", messageSource.getMessage("footerQui", null, locale));
+		model.addAttribute("footerQuiText", messageSource.getMessage("footerQuiText", null, locale));
+		model.addAttribute("footerAide", messageSource.getMessage("footerAide", null, locale));
+		model.addAttribute("footerInfo", messageSource.getMessage("footerInfo", null, locale));
+		model.addAttribute("footerContact", messageSource.getMessage("footerContact", null, locale));
+		
+		model.addAttribute("panier", messageSource.getMessage("panier", null, locale));
+		model.addAttribute("connexion", messageSource.getMessage("connexion", null, locale));
+		
+		model.addAttribute("home", messageSource.getMessage("home", null, locale));
+		
+		model.addAttribute("instock", messageSource.getMessage("instock", null, locale));
+		model.addAttribute("outstock", messageSource.getMessage("outstock", null, locale));
+		
+		model.addAttribute("terms", messageSource.getMessage("terms", null, locale));
+		model.addAttribute("privacy", messageSource.getMessage("privacy", null, locale));
+		model.addAttribute("sitemap", messageSource.getMessage("sitemap", null, locale));
+		model.addAttribute("shipping", messageSource.getMessage("shipping", null, locale));
+		
 		int idLang = Integer.parseInt(messageSource.getMessage("idLang", null, locale));
 		
 		int categoryId = Integer.parseInt(category);
