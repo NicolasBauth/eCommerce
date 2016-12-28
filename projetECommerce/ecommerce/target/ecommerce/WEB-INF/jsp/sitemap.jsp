@@ -1,29 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="include/importTags.jsp" %>
 
-	<!-- Regions -->
-		<div class="container">
-			<h2 class="head">Sitemap</h2>
-		</div>
-		<div class="sitemap-regions">
-			<div class="container">
-				<div class="sitemap-region-grid">
-					<div class="sitemap-region">
-						<h4>Poudres et Potions</h4>
+<div class="container">
+	<h2 class="head">${sitemap }</h2>
+</div>
+<div class="sitemap-regions">
+	<div class="container">
+		<div class="sitemap-region-grid">
+			
+			<c:forEach  items="${categories}" var="c">
+				<div class="sitemap-region">
+					<h4>${c.categoryTranslation}</h4>
 						<ul>
-							<li><a href="furnitures.html">Poudre de Dragon</a></li>
-							<li class="left-gap"><a href="furnitures.html">Fridges</a></li>
-							<li class="left-gap"><a href="furnitures.html">AC</a></li>
-							<li class="left-gap"><a href="furnitures.html">Washing Machine</a></li>
+							<c:forEach  items="${products[c.translatedCategory.categoryId]}" var="p">
+								<li><a href="<spring:url value='/single/${p.productId}' />">${p.name}</a></li>
+							</c:forEach>
 						</ul>
-					</div>
-					<div class="sitemap-region">
-						<h4>Objets uniques</h4>
-						<ul>
-							<li><a href="services.html">Pierre Philosophale</a></li>
-						</ul>
-					</div>
-					
 				</div>
-				<div class="clearfix"></div>
-			</div>
+			</c:forEach>
+			
 		</div>
-	<!-- //Regions -->
+		<div class="clearfix"></div>
+	</div>
+</div>

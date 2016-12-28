@@ -208,6 +208,7 @@ li.dropdown-header {
 a.account {
     float: left;
     margin-top: 20px;
+    margin-left: 10px;
     font-size: 15px;
     color: #fff;
     background-color: #01a185;
@@ -217,6 +218,7 @@ a.account {
 a.account:hover {
 	background-color: #f3c500;
 }
+
 span.active.uls-trigger {
     float: left;
     cursor: pointer;
@@ -244,12 +246,13 @@ span.active.uls-trigger {
 
 
 /********** QT *********/
+
 .input-qt {
-	width:50px;
+	width:60px;
 	margin-right:15px;
 	border:none;
 	padding:5px 10px;
-	
+	text-align:center;
 }
 
 .button-qt {
@@ -259,6 +262,24 @@ span.active.uls-trigger {
     background-color: #f3c500;
     padding: 10px 20px;
     border: none;
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+
+.link {
+	transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+
+.link:hover {
+	background-color: #f3c500;
+	cursor:pointer;	
 }
 
 .button-qt:hover {
@@ -268,7 +289,7 @@ span.active.uls-trigger {
 .lng-sprite {
 	text-indent: 99999px;
 	display: block;
-	width: 35px;
+	width: 34px;
 	height: 21px;
 	margin: 25px 10px;
 	float: right;
@@ -749,7 +770,7 @@ p.creating{
 	margin:1em 0;
 	}
 .sign-up h2{
-	margin: 0 0 2em;
+	margin: 2em 0;
 	color:#01a185;
 	font-size: 20px;
 	}
@@ -2193,7 +2214,7 @@ form.submit {
 }
 p.p-price {
     float: left;
-    width: 50%;
+    width: 25%;
     margin: 0;
     font-size: 16px;
     font-weight: 400;
@@ -2236,7 +2257,7 @@ h3.rate {
 }
 .interested  h4 {
 	color:#000;
-	font-size:19px;
+	font-size:22px;
 }
 .interested  p {
 	color:#000;
@@ -3886,6 +3907,8 @@ label {
 		font-size: 14px;
 		padding: 5px 19px;
 	}
+	
+	
 	span.active.uls-trigger,.btn-primary {
 		font-size: 14px;
 		margin-top: 24px;
@@ -4156,6 +4179,9 @@ label {
 		background: transparent;
 		color: #6D6D6D;		
 	}
+	
+	
+	
 	.app-right {
 		margin-top: 20px;
 		width: 100%;

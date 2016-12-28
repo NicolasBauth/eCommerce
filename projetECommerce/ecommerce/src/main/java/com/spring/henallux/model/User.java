@@ -6,7 +6,7 @@ public class User
 	private String lastName;
 	private String firstName;
 	private String pseudo;
-	private Integer phoneNumber;
+	private String phoneNumber;
 	private String email;
 	private String password;
 	private java.util.Date birthDate;
@@ -53,11 +53,11 @@ public class User
 		this.pseudo = pseudo;
 	}
 
-	public Integer getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
 
-	public void setPhoneNumber(Integer phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -127,3 +127,4 @@ public class User
 	
 	
 }
+

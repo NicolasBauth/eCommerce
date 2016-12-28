@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -17,13 +18,14 @@ import javax.persistence.Table;
 @Table(name="utilisateur")
 @NamedQueries({
 	@NamedQuery(
-			name = "findUserByPseudoAndPassword",
+			name = "findUserByConnection",
 			query = "from UserEntity u where u.pseudo = :pseudo and u.password = :password"
 			),
 })
 public class UserEntity 
 {
 	@Id
+	@GeneratedValue
 	@Column(name ="idutilisateur")
 	private Integer userId;
 	@Column(name ="nom")
@@ -33,7 +35,7 @@ public class UserEntity
 	@Column(name="pseudo")
 	private String pseudo;
 	@Column(name="telephone")
-	private Integer phoneNumber;
+	private String phoneNumber;
 	@Column(name="email")
 	private String email;
 	@Column(name="motdepasse")
@@ -80,10 +82,10 @@ public class UserEntity
 	public void setPseudo(String pseudo) {
 		this.pseudo = pseudo;
 	}
-	public Integer getPhoneNumber() {
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(Integer phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public String getEmail() {

@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="include/importTags.jsp" %>
 
 	<!-- Terms of use -->
 	<div class="terms main-grid-border">
 		<div class="container">
-			<h2 class="head">Conditions Générales de Vente</h2>
+			<h2 class="head">${terms }</h2>
 				<div class="panel-group" id="accordion">
 				<!-- First Panel -->
 					<div class="panel panel-default">
@@ -13,22 +15,22 @@
 						</div>
 						<div id="collapseOne" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>Les présentes conditions générales de vente ont pour objet, d'une part, d'informer tout éventuel consommateur sur les conditions et 
-									modalités dans lesquelles le vendeur procède à la vente et à la livraison des produits commandés et, d'autre part, de définir les droits et obligations des 
+								<p>Les prÃ©sentes conditions gÃ©nÃ©rales de vente ont pour objet, d'une part, d'informer tout Ã©ventuel consommateur sur les conditions et 
+									modalitÃ©s dans lesquelles le vendeur procÃ¨de Ã  la vente et Ã  la livraison des produits commandÃ©s et, d'autre part, de dÃ©finir les droits et obligations des 
 									parties dans le cadre de la vente de produits par le vendeur au consommateur.</p>
 									
-								<p>Elles s'appliquent, sans restriction ni réserve, à l'ensemble des ventes, des produits proposés sur 
-									son site Internet magicabrac.com (ci-après le "Site").
-									En conséquence, le fait pour toute personne de commander un produit proposé à la vente sur le site Internet de la société emporte acceptation pleine et entière des présentes conditions générales de vente dont l'Acheteur reconnaît avoir pris connaissance préalablement à sa commande.
-									Les produits sont proposés à la vente dans le monde entier à l'exception de certaines destinations pour lesquelles la livraison n'est pas assurée ou proposée.
-									L'Acheteur préalablement à sa commande, déclare que :</p>
+								<p>Elles s'appliquent, sans restriction ni rÃ©serve, Ã  l'ensemble des ventes, des produits proposÃ©s sur 
+									son site Internet magicabrac.com (ci-aprÃ¨s le "Site").
+									En consÃ©quence, le fait pour toute personne de commander un produit proposÃ© Ã  la vente sur le site Internet de la sociÃ©tÃ© emporte acceptation pleine et entiÃ¨re des prÃ©sentes conditions gÃ©nÃ©rales de vente dont l'Acheteur reconnaÃ®t avoir pris connaissance prÃ©alablement Ã  sa commande.
+									Les produits sont proposÃ©s Ã  la vente dans le monde entier Ã  l'exception de certaines destinations pour lesquelles la livraison n'est pas assurÃ©e ou proposÃ©e.
+									L'Acheteur prÃ©alablement Ã  sa commande, dÃ©clare que :</p>
 									<ul>
-									 	<li>l'achat de produits sur le site Internet de la société est sans rapport direct avec son activité professionnelle et est limité à une utilisation strictement personnelle ;
+									 	<li>l'achat de produits sur le site Internet de la sociÃ©tÃ© est sans rapport direct avec son activitÃ© professionnelle et est limitÃ© Ã  une utilisation strictement personnelle ;
 									 	</li>
-									 	<li>avoir la pleine capacité juridique, lui permettant de s'engager au titre des présentes conditions générales de vente.
+									 	<li>avoir la pleine capacitÃ© juridique, lui permettant de s'engager au titre des prÃ©sentes conditions gÃ©nÃ©rales de vente.
 									 	</li>
 									</ul>
-									<p>La société se réserve le droit de modifier à tout moment les présentes conditions générales de vente.</p>
+									<p>La sociÃ©tÃ© se rÃ©serve le droit de modifier Ã  tout moment les prÃ©sentes conditions gÃ©nÃ©rales de vente.</p>
 							</div>
 						</div>
 					</div>
@@ -37,7 +39,7 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							 <h4 class="panel-title" data-toggle="collapse"  data-target="#collapseTwo">
-								<span>2.</span> Identité de la Société
+								<span>2.</span> IdentitÃ© de la SociÃ©tÃ©
 							 </h4>
 						</div>
 						<div id="collapseTwo" class="panel-collapse collapse">
@@ -45,10 +47,10 @@
 								<p>Nom : Magicabrac</p>
 								<p>Service client: 1 Place Wiertz 5000 Namur.</p>
 								<p>Statut: SARL</p>
-								<p>RCS BESANÇON 538 710 989 (2011 B 843)</p>
+								<p>RCS BESANÃ‡ON 538 710 989 (2011 B 843)</p>
 								<p>TVA intracommunautaire: BE71538710989</p>
 								<p>Tel: 081 75 75 65</p>
-								<p>La société met en place une activité de vente au détail à distance sur catalogue, par l'intermédiaire du Site, au travers d'un site Web relié au réseau Internet, de produits de décoration, farces et attrapes, produits insolites et accessoires, à des particuliers. Le Site met gratuitement (à l'exception des coûts éventuels de connexion au site) à la disposition des internautes des informations sur les produits fabriqués par différents fabricants référencés en ligne dans le catalogue, ainsi qu'un système de passation de commandes et de paiement en ligne.
+								<p>La sociÃ©tÃ© met en place une activitÃ© de vente au dÃ©tail Ã  distance sur catalogue, par l'intermÃ©diaire du Site, au travers d'un site Web reliÃ© au rÃ©seau Internet, de produits de dÃ©coration, farces et attrapes, produits insolites et accessoires, Ã  des particuliers. Le Site met gratuitement (Ã  l'exception des coÃ»ts Ã©ventuels de connexion au site) Ã  la disposition des internautes des informations sur les produits fabriquÃ©s par diffÃ©rents fabricants rÃ©fÃ©rencÃ©s en ligne dans le catalogue, ainsi qu'un systÃ¨me de passation de commandes et de paiement en ligne.
 																	</p>								
 							</div>
 						</div>
@@ -58,12 +60,12 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseThree">
-								<span>3.</span> Accès au Site
+								<span>3.</span> AccÃ¨s au Site
 							 </h4>
 						</div>
 						<div id="collapseThree" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>L'Acheteur fait son affaire personnelle de la mise en place des moyens informatiques et de télécommunications permettant l'accès au site de la société. L'Acheteur conserve à sa charge les frais de télécommunication lors de l'accès à l'Internet et de l'utilisation du site insolite.
+								<p>L'Acheteur fait son affaire personnelle de la mise en place des moyens informatiques et de tÃ©lÃ©communications permettant l'accÃ¨s au site de la sociÃ©tÃ©. L'Acheteur conserve Ã  sa charge les frais de tÃ©lÃ©communication lors de l'accÃ¨s Ã  l'Internet et de l'utilisation du site insolite.
 								</p>
 							</div>
 						</div>
@@ -78,37 +80,37 @@
 						<div id="collapseFour" class="panel-collapse collapse">
 							<div class="panel-body">
 								4.1. Prix
-								<p>Les prix de vente des produits en ligne sur le Site, indiqués en euros ou éventuellement à titre indicatif dans d'autres devises, sont ceux en vigueur au moment de l'enregistrement du bon de commande par l'Acheteur.
-								Ils ne comprennent pas les frais d'expédition, facturés en supplément du prix des produits achetés suivant le montant de la commande insolite. Les frais d'expédition seront indiqués avant l'enregistrement de la commande par l'Acheteur.
-								Les prix comprennent la taxe sur la valeur ajoutée (TVA) applicable au jour de la commande et tout changement du taux applicable sera automatiquement répercuté sur le prix des produits vendus par la société au sein de son site Internet.
-								Les prix de vente des produits peuvent être modifiés par la société à tout moment. Cette modification sera signalée à l'Acheteur avant toute commande.</p>
+								<p>Les prix de vente des produits en ligne sur le Site, indiquÃ©s en euros ou Ã©ventuellement Ã  titre indicatif dans d'autres devises, sont ceux en vigueur au moment de l'enregistrement du bon de commande par l'Acheteur.
+								Ils ne comprennent pas les frais d'expÃ©dition, facturÃ©s en supplÃ©ment du prix des produits achetÃ©s suivant le montant de la commande insolite. Les frais d'expÃ©dition seront indiquÃ©s avant l'enregistrement de la commande par l'Acheteur.
+								Les prix comprennent la taxe sur la valeur ajoutÃ©e (TVA) applicable au jour de la commande et tout changement du taux applicable sera automatiquement rÃ©percutÃ© sur le prix des produits vendus par la sociÃ©tÃ© au sein de son site Internet.
+								Les prix de vente des produits peuvent Ãªtre modifiÃ©s par la sociÃ©tÃ© Ã  tout moment. Cette modification sera signalÃ©e Ã  l'Acheteur avant toute commande.</p>
 								
-								4.2. Caractéristiques des produits et informations accessibles sur le Site
+								4.2. CaractÃ©ristiques des produits et informations accessibles sur le Site
 								
-								<p>Le Site est un site de vente en ligne produits insolites et d'accessoires originaux, cadeaux et idées cadeau, et autres produits amusants.
-								La Société s'approvisionne en Produits auprès de fabricants et fournisseurs ayant accepté expressément d'être référencés sur le Site. Les caractéristiques essentielles (qualitatives et quantitatives) des Produits obtenues directement des fabricants sont décrites sur le Site. Ces produits sont vendus neufs.
-								Conformément à l'article L. 111-1 du code de la consommation, l'Acheteur peut, préalablement à sa commande, prendre connaissance, sur le Site de la société, des caractéristiques essentielles du ou des produits qu'il désire commander.
-								L'Acheteur sélectionne un ou plusieurs produits parmi les différentes catégories proposées sur le Site.
-								Les offres présentées par la société sont valables dans la limite des stocks disponibles. Pour les produits non stockés dans ses entrepôts, les offres présentées par la société sont valables sous réserve de disponibilités chez ses fournisseurs.
-								La société se réserve expressément le droit à tout moment d'ajouter de nouveaux Produits, de supprimer tout ou partie des Produits vendus ou présentés sur le Site, de changer leur présentation ou cesser leur commercialisation sur son Site, et cela, sans qu'elle soit contrainte d'en aviser au préalable, ni d'en justifier au Client.
-								Au cas où un fournisseur modifierait un produit, la représentation graphique de celui-ci ne saurait engager la responsabilité du vendeur ni même affecter la validité de la vente. La société ne saurait être tenue responsable des inexactitudes, erreurs ou omissions qui se seraient éventuellement glissées dans le descriptif des Produits.
-								La société ne pourra pas être tenue responsable des erreurs typographiques figurant dans le Site indépendamment de sa volonté.
-								De même, les photographies et graphismes du Catalogue du Site illustrant, à l'appui du texte, les Produits ne sont qu'indicatifs et n'entrent pas dans le champ contractuel. Ils n'engagent donc nullement la société qui ne pourra pas être tenue pour responsable des inexactitudes ou des erreurs qui y seraient introduites.
-								La société ne pourra pas être tenue responsable : 
-								- des interruptions ou retards enregistrés sur le Site en raison de l'exécution de travaux de maintenance, de pannes techniques, d'un cas de force majeure, du fait de tiers ou de toutes circonstances (insolites ou non) quelles qu'elles soient ;
-								- de l'impossibilité d'accéder momentanément au Site, due à des faits indépendants de sa volonté, tels que les cas d'interruptions du réseau Internet ou de défaillance de l'accès au réseau Internet par le Client.</p>
+								<p>Le Site est un site de vente en ligne produits insolites et d'accessoires originaux, cadeaux et idÃ©es cadeau, et autres produits amusants.
+								La SociÃ©tÃ© s'approvisionne en Produits auprÃ¨s de fabricants et fournisseurs ayant acceptÃ© expressÃ©ment d'Ãªtre rÃ©fÃ©rencÃ©s sur le Site. Les caractÃ©ristiques essentielles (qualitatives et quantitatives) des Produits obtenues directement des fabricants sont dÃ©crites sur le Site. Ces produits sont vendus neufs.
+								ConformÃ©ment Ã  l'article L. 111-1 du code de la consommation, l'Acheteur peut, prÃ©alablement Ã  sa commande, prendre connaissance, sur le Site de la sociÃ©tÃ©, des caractÃ©ristiques essentielles du ou des produits qu'il dÃ©sire commander.
+								L'Acheteur sÃ©lectionne un ou plusieurs produits parmi les diffÃ©rentes catÃ©gories proposÃ©es sur le Site.
+								Les offres prÃ©sentÃ©es par la sociÃ©tÃ© sont valables dans la limite des stocks disponibles. Pour les produits non stockÃ©s dans ses entrepÃ´ts, les offres prÃ©sentÃ©es par la sociÃ©tÃ© sont valables sous rÃ©serve de disponibilitÃ©s chez ses fournisseurs.
+								La sociÃ©tÃ© se rÃ©serve expressÃ©ment le droit Ã  tout moment d'ajouter de nouveaux Produits, de supprimer tout ou partie des Produits vendus ou prÃ©sentÃ©s sur le Site, de changer leur prÃ©sentation ou cesser leur commercialisation sur son Site, et cela, sans qu'elle soit contrainte d'en aviser au prÃ©alable, ni d'en justifier au Client.
+								Au cas oÃ¹ un fournisseur modifierait un produit, la reprÃ©sentation graphique de celui-ci ne saurait engager la responsabilitÃ© du vendeur ni mÃªme affecter la validitÃ© de la vente. La sociÃ©tÃ© ne saurait Ãªtre tenue responsable des inexactitudes, erreurs ou omissions qui se seraient Ã©ventuellement glissÃ©es dans le descriptif des Produits.
+								La sociÃ©tÃ© ne pourra pas Ãªtre tenue responsable des erreurs typographiques figurant dans le Site indÃ©pendamment de sa volontÃ©.
+								De mÃªme, les photographies et graphismes du Catalogue du Site illustrant, Ã  l'appui du texte, les Produits ne sont qu'indicatifs et n'entrent pas dans le champ contractuel. Ils n'engagent donc nullement la sociÃ©tÃ© qui ne pourra pas Ãªtre tenue pour responsable des inexactitudes ou des erreurs qui y seraient introduites.
+								La sociÃ©tÃ© ne pourra pas Ãªtre tenue responsable : 
+								- des interruptions ou retards enregistrÃ©s sur le Site en raison de l'exÃ©cution de travaux de maintenance, de pannes techniques, d'un cas de force majeure, du fait de tiers ou de toutes circonstances (insolites ou non) quelles qu'elles soient ;
+								- de l'impossibilitÃ© d'accÃ©der momentanÃ©ment au Site, due Ã  des faits indÃ©pendants de sa volontÃ©, tels que les cas d'interruptions du rÃ©seau Internet ou de dÃ©faillance de l'accÃ¨s au rÃ©seau Internet par le Client.</p>
 								4.3. Commande
 								
-								<p>Toute commande suppose l'adhésion sans restriction ni réserve aux présentes conditions générales de vente. Seuls les clients majeurs sont autorisés à commander.
-								La prise de commande sur le Site est soumise au strict respect d'une procédure décrite ci-dessous et concrétisée en ligne par une succession de différents écrans sur lesquels sont indiquées les différentes phases que le Client doit suivre pour que sa commande soit validée par la Société.
-								Les commandes sont passées en ligne, conformément au bon de commande du Site qui est dématérialisé sous la forme d'un panier d'achat dont le contenu est choisi par le Client lors de sa navigation sur les différentes pages Web du Site. Le fait de compléter le panier ne constitue pas en soi une commande pouvant engager la Société.
-								A partir du moment où l'Acheteur a enregistré sa commande en cliquant sur l'icône "Valider", il est considéré comme ayant accepté en connaissance de cause et sans réserve les présentes conditions générales de vente, les prix, volumes et quantités des produits proposés à la vente et commandés.
-								La commande de l'Acheteur devra être confirmée par la société, par courrier électronique ou téléphone.
-								La vente ne sera considérée comme définitive qu'après l'envoi à l'Acheteur de la confirmation de la commande par la société et encaissement par celle-ci de l'intégralité du prix.
-								La société recommande à l'Acheteur de conserver ces informations sur un document papier ou informatique.
-								Le Client s'engage à ce que les informations communiquées à la Société soient complètes, exactes et à jour. En cas d'informations incomplètes ou inexactes, la Société se réserve le droit d'annuler purement et simplement la commande ainsi que le paiement.
-								Dans certains cas, la Société pourra demander au Client une copie d'un document d'identité afin de sécuriser le processus de commande.
-								Important : Contenu des packs : dans certains cas, le contenu des produits en "pack" peuvent être modifiés sans préavis.</p>
+								<p>Toute commande suppose l'adhÃ©sion sans restriction ni rÃ©serve aux prÃ©sentes conditions gÃ©nÃ©rales de vente. Seuls les clients majeurs sont autorisÃ©s Ã  commander.
+								La prise de commande sur le Site est soumise au strict respect d'une procÃ©dure dÃ©crite ci-dessous et concrÃ©tisÃ©e en ligne par une succession de diffÃ©rents Ã©crans sur lesquels sont indiquÃ©es les diffÃ©rentes phases que le Client doit suivre pour que sa commande soit validÃ©e par la SociÃ©tÃ©.
+								Les commandes sont passÃ©es en ligne, conformÃ©ment au bon de commande du Site qui est dÃ©matÃ©rialisÃ© sous la forme d'un panier d'achat dont le contenu est choisi par le Client lors de sa navigation sur les diffÃ©rentes pages Web du Site. Le fait de complÃ©ter le panier ne constitue pas en soi une commande pouvant engager la SociÃ©tÃ©.
+								A partir du moment oÃ¹ l'Acheteur a enregistrÃ© sa commande en cliquant sur l'icÃ´ne "Valider", il est considÃ©rÃ© comme ayant acceptÃ© en connaissance de cause et sans rÃ©serve les prÃ©sentes conditions gÃ©nÃ©rales de vente, les prix, volumes et quantitÃ©s des produits proposÃ©s Ã  la vente et commandÃ©s.
+								La commande de l'Acheteur devra Ãªtre confirmÃ©e par la sociÃ©tÃ©, par courrier Ã©lectronique ou tÃ©lÃ©phone.
+								La vente ne sera considÃ©rÃ©e comme dÃ©finitive qu'aprÃ¨s l'envoi Ã  l'Acheteur de la confirmation de la commande par la sociÃ©tÃ© et encaissement par celle-ci de l'intÃ©gralitÃ© du prix.
+								La sociÃ©tÃ© recommande Ã  l'Acheteur de conserver ces informations sur un document papier ou informatique.
+								Le Client s'engage Ã  ce que les informations communiquÃ©es Ã  la SociÃ©tÃ© soient complÃ¨tes, exactes et Ã  jour. En cas d'informations incomplÃ¨tes ou inexactes, la SociÃ©tÃ© se rÃ©serve le droit d'annuler purement et simplement la commande ainsi que le paiement.
+								Dans certains cas, la SociÃ©tÃ© pourra demander au Client une copie d'un document d'identitÃ© afin de sÃ©curiser le processus de commande.
+								Important : Contenu des packs : dans certains cas, le contenu des produits en "pack" peuvent Ãªtre modifiÃ©s sans prÃ©avis.</p>
 							</div>
 						</div>
 					</div>
@@ -121,20 +123,20 @@
 						</div>
 						<div id="collapseFive" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>Le paiement doit être réalisé lors de la commande par l'Acheteur. A aucun moment, les sommes versées ne pourront être considérées comme des arrhes ou acomptes.
+								<p>Le paiement doit Ãªtre rÃ©alisÃ© lors de la commande par l'Acheteur. A aucun moment, les sommes versÃ©es ne pourront Ãªtre considÃ©rÃ©es comme des arrhes ou acomptes.
 									Toutes les commandes sont payables en euros.
-									Pour régler sa commande, l'Acheteur dispose des modes de paiement suivants : Paypal, chèque bancaire ou postal, virement bancaire, carte bancaire. Les mandats administratifs sont acceptés au même titre que les virements, le paiement devant intervenir au plus tard à la fin du mois de la commande. Certains autres modes de paiement peuvent être proposés.
-									L'Acheteur garantit à la société qu'il dispose des  autorisations éventuellement nécessaires pour utiliser le mode de paiement qu'il aura choisi, lors de l'enregistrement du bon de commande.
-									La société se réserve le droit de suspendre ou d'annuler toute commande et/ou livraison, quelle que soit sa nature et niveau d'exécution, en cas de non-paiement de toute somme qui serait due par l'Acheteur ou en cas d'incident de paiement.
-									Des pénalités au taux annuel de 10% sont exigibles sur le montant TTC de la facture, sans rappel préalable, et sont applicables de plein droit aux montants impayés à dès le 31e jour suivant la date de réception des marchandises, ou dès le jour suivant la date de règlement prévue sur la facture. La livraison de  toute nouvelle commande pourra être suspendue en cas de retard de paiement d'une précédente commande et ce nonobstant les dispositions des présentes.
-									La société se réserve le droit de demander une photocopie de la carte d'identité de l'Acheteur ou de tout autre document qu'elle jugera nécessaire, pour tout paiement. Nous attirons votre attention sur le fait que le mode de règlement par chèque ralentit le cursus de traitement de votre commande.
-									Dans le cadre de la lutte contre les fraudes sur Internet, les informations relatives à votre commande pourront être transmises à tout tiers pour vérification.
-									Conditions de règlement et de validation, clauses pénales :
-									Nous ne pratiquons pas d'escompte pour paiement anticipé.
-									Le règlement n'est validé qu'après encaissement. Les frais et commissions de virement et d'éventuelles conversions de devises sont à la charge du client.
-									En cas de paiement tardif, il est prévu une pénalité de retard au taux annuel de 10%. Ces pénalités sont exigibles sans rappel préalable.
-									Nous n'acceptons pas les paiements par lettre de change, traite, billet à ordre. Si des frais bancaires nous sont facturés pour le traitement d'un de ces moyens de paiement, ils sont refacturés au client.
-									Notre réserve de propriété porte aussi bien sur les marchandises que sur leurs prix si elles ont été revendues (Loi n° 80.335 du 12 mai 1980)
+									Pour rÃ©gler sa commande, l'Acheteur dispose des modes de paiement suivants : Paypal, chÃ¨que bancaire ou postal, virement bancaire, carte bancaire. Les mandats administratifs sont acceptÃ©s au mÃªme titre que les virements, le paiement devant intervenir au plus tard Ã  la fin du mois de la commande. Certains autres modes de paiement peuvent Ãªtre proposÃ©s.
+									L'Acheteur garantit Ã  la sociÃ©tÃ© qu'il dispose des  autorisations Ã©ventuellement nÃ©cessaires pour utiliser le mode de paiement qu'il aura choisi, lors de l'enregistrement du bon de commande.
+									La sociÃ©tÃ© se rÃ©serve le droit de suspendre ou d'annuler toute commande et/ou livraison, quelle que soit sa nature et niveau d'exÃ©cution, en cas de non-paiement de toute somme qui serait due par l'Acheteur ou en cas d'incident de paiement.
+									Des pÃ©nalitÃ©s au taux annuel de 10% sont exigibles sur le montant TTC de la facture, sans rappel prÃ©alable, et sont applicables de plein droit aux montants impayÃ©s Ã  dÃ¨s le 31e jour suivant la date de rÃ©ception des marchandises, ou dÃ¨s le jour suivant la date de rÃ¨glement prÃ©vue sur la facture. La livraison de  toute nouvelle commande pourra Ãªtre suspendue en cas de retard de paiement d'une prÃ©cÃ©dente commande et ce nonobstant les dispositions des prÃ©sentes.
+									La sociÃ©tÃ© se rÃ©serve le droit de demander une photocopie de la carte d'identitÃ© de l'Acheteur ou de tout autre document qu'elle jugera nÃ©cessaire, pour tout paiement. Nous attirons votre attention sur le fait que le mode de rÃ¨glement par chÃ¨que ralentit le cursus de traitement de votre commande.
+									Dans le cadre de la lutte contre les fraudes sur Internet, les informations relatives Ã  votre commande pourront Ãªtre transmises Ã  tout tiers pour vÃ©rification.
+									Conditions de rÃ¨glement et de validation, clauses pÃ©nales :
+									Nous ne pratiquons pas d'escompte pour paiement anticipÃ©.
+									Le rÃ¨glement n'est validÃ© qu'aprÃ¨s encaissement. Les frais et commissions de virement et d'Ã©ventuelles conversions de devises sont Ã  la charge du client.
+									En cas de paiement tardif, il est prÃ©vu une pÃ©nalitÃ© de retard au taux annuel de 10%. Ces pÃ©nalitÃ©s sont exigibles sans rappel prÃ©alable.
+									Nous n'acceptons pas les paiements par lettre de change, traite, billet Ã  ordre. Si des frais bancaires nous sont facturÃ©s pour le traitement d'un de ces moyens de paiement, ils sont refacturÃ©s au client.
+									Notre rÃ©serve de propriÃ©tÃ© porte aussi bien sur les marchandises que sur leurs prix si elles ont Ã©tÃ© revendues (Loi nÂ° 80.335 du 12 mai 1980)
 								</p>
 							</div>
 						</div>
@@ -148,8 +150,8 @@
 						</div>
 						<div id="collapseSix" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>L'Acheteur ayant pris connaissance des produits et de leurs caractéristiques, commercialisés par la société, a sous sa seule responsabilité et en fonction de ses besoins tels qu'ils les a préalablement déterminés avant  toute commande, porté son choix sur le ou les produits faisant l'objet de sa  commande. En outre, l'Acheteur connaissant seul les produits qu'il possède et  utilise, est seul juge de la compatibilité des produits commandés avec ceux  utilisés par lui.
-Il appartient exclusivement à l'Acheteur, s'il ne s'estime pas suffisamment compétent, de se faire assister d'un conseil.
+								<p>L'Acheteur ayant pris connaissance des produits et de leurs caractÃ©ristiques, commercialisÃ©s par la sociÃ©tÃ©, a sous sa seule responsabilitÃ© et en fonction de ses besoins tels qu'ils les a prÃ©alablement dÃ©terminÃ©s avant  toute commande, portÃ© son choix sur le ou les produits faisant l'objet de sa  commande. En outre, l'Acheteur connaissant seul les produits qu'il possÃ¨de et  utilise, est seul juge de la compatibilitÃ© des produits commandÃ©s avec ceux  utilisÃ©s par lui.
+Il appartient exclusivement Ã  l'Acheteur, s'il ne s'estime pas suffisamment compÃ©tent, de se faire assister d'un conseil.
 								</p>
 							</div>
 						</div>
@@ -158,67 +160,67 @@ Il appartient exclusivement à l'Acheteur, s'il ne s'estime pas suffisamment comp
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseSeven">
-								<span>7.</span> Livraison et réception
+								<span>7.</span> Livraison et rÃ©ception
 							 </h4>
 						</div>
 						<div id="collapseSeven" class="panel-collapse collapse">
 							<div class="panel-body">
-								7.1. Règles générales
+								7.1. RÃ¨gles gÃ©nÃ©rales
 									<p>
-									Les produits seront livrés à l'adresse indiquée par l'Acheteur sur le bon de commande.
-									Par défaut, les factures sont transmises sur l'adresse de messagerie indiquée par le Client lors de son enregistrement ou seront accessibles par le client sur son espace client dans le site.
-									Faute de respect des procédures exposées ici, aucune réclamation de l'Acheteur ne sera acceptée.</p>
+									Les produits seront livrÃ©s Ã  l'adresse indiquÃ©e par l'Acheteur sur le bon de commande.
+									Par dÃ©faut, les factures sont transmises sur l'adresse de messagerie indiquÃ©e par le Client lors de son enregistrement ou seront accessibles par le client sur son espace client dans le site.
+									Faute de respect des procÃ©dures exposÃ©es ici, aucune rÃ©clamation de l'Acheteur ne sera acceptÃ©e.</p>
 
-								7.2. Caractéristiques du système
+								7.2. CaractÃ©ristiques du systÃ¨me
 
-									<p>L'Acheteur est tenu de vérifier, en présence du préposé de la poste ou du livreur, l'état de l'emballage de la marchandise et son contenu à la livraison.
-									Dans l'hypothèse où l'Acheteur aurait un quelconque doute de quelque nature que ce soit sur l'état ou le contenu de son colis, il est tenu :
-									- de faire constater le problème par le livreur par écrit
+									<p>L'Acheteur est tenu de vÃ©rifier, en prÃ©sence du prÃ©posÃ© de la poste ou du livreur, l'Ã©tat de l'emballage de la marchandise et son contenu Ã  la livraison.
+									Dans l'hypothÃ¨se oÃ¹ l'Acheteur aurait un quelconque doute de quelque nature que ce soit sur l'Ã©tat ou le contenu de son colis, il est tenu :
+									- de faire constater le problÃ¨me par le livreur par Ã©crit
 									- et de refuser le colis
-									- et de signaler cet incident à la société.
-									En cas d'absence, l'Acheteur ou le destinataire du produit commandé reçoit un avis de passage, ce qui lui permet de prendre contact avec le transporteur afin de convenir d'un autre jour de livraison. Selon le transporteur choisi, il pourra appartenir à l'acheteur de se déplacer pour obtenir son colis.
-									Lorsque le consommateur prend personnellement livraison des produits transportés et lorsque le livreur (voiturier) ne justifie pas lui avoir laissé la possibilité de vérifier effectivement leur bon état, le délai mentionné à l'article L 133.3 du code du Commerce est porté à dix jours.
-									L'article L 133.3 du code du Commerce prévise : la réception des objets transportés éteint toute action contre le voiturier pour avarie ou perte partielle si dans les trois jours, non compris les jours fériés, qui suivent celui de cette réception, le destinataire n'a pas notifié au voiturier, par acte extrajudiciaire ou par lettre recommandée, sa protestation motivée. Si dans le délai ci dessus prévu il est formé une demande d'expertise en application de l'article L133-4 cette demande vaut protestation sans qu'il soit nécessaire de procéder comme il est dit au premier alinéa. Cette disposition n'est pas applicable aux transports internationaux.
+									- et de signaler cet incident Ã  la sociÃ©tÃ©.
+									En cas d'absence, l'Acheteur ou le destinataire du produit commandÃ© reÃ§oit un avis de passage, ce qui lui permet de prendre contact avec le transporteur afin de convenir d'un autre jour de livraison. Selon le transporteur choisi, il pourra appartenir Ã  l'acheteur de se dÃ©placer pour obtenir son colis.
+									Lorsque le consommateur prend personnellement livraison des produits transportÃ©s et lorsque le livreur (voiturier) ne justifie pas lui avoir laissÃ© la possibilitÃ© de vÃ©rifier effectivement leur bon Ã©tat, le dÃ©lai mentionnÃ© Ã  l'article L 133.3 du code du Commerce est portÃ© Ã  dix jours.
+									L'article L 133.3 du code du Commerce prÃ©vise : la rÃ©ception des objets transportÃ©s Ã©teint toute action contre le voiturier pour avarie ou perte partielle si dans les trois jours, non compris les jours fÃ©riÃ©s, qui suivent celui de cette rÃ©ception, le destinataire n'a pas notifiÃ© au voiturier, par acte extrajudiciaire ou par lettre recommandÃ©e, sa protestation motivÃ©e. Si dans le dÃ©lai ci dessus prÃ©vu il est formÃ© une demande d'expertise en application de l'article L133-4 cette demande vaut protestation sans qu'il soit nÃ©cessaire de procÃ©der comme il est dit au premier alinÃ©a. Cette disposition n'est pas applicable aux transports internationaux.
 								</p>
-								7.3. Délais
+								7.3. DÃ©lais
 									<p>
-									Les délais estimés de livraison, suite à validation de votre commande, sont les suivants:
+									Les dÃ©lais estimÃ©s de livraison, suite Ã  validation de votre commande, sont les suivants:
 									</p>
 									<ul>
-										<li>Envoi Suivi de la POSTE : 3 à 5 jours ouvrés en Europe, 5 à 15 jours ouvrés dans le reste du monde.</li>
-										<li>GLS : 1 à 2 jours en métropole, 2 à 3 jours en Europe</li>
-										<li>Chronopost : 2 à 3 jours ouvrés en Europe</li>
-										<li>UPS : 2 à 3 jours ouvrés en Europe</li>
-										<li>relais : aucun engagement de délai</li>
+										<li>Envoi Suivi de la POSTE : 3 Ã  5 jours ouvrÃ©s en Europe, 5 Ã  15 jours ouvrÃ©s dans le reste du monde.</li>
+										<li>GLS : 1 Ã  2 jours en mÃ©tropole, 2 Ã  3 jours en Europe</li>
+										<li>Chronopost : 2 Ã  3 jours ouvrÃ©s en Europe</li>
+										<li>UPS : 2 Ã  3 jours ouvrÃ©s en Europe</li>
+										<li>relais : aucun engagement de dÃ©lai</li>
 									</ul>
-									<p>Pour toute commande confirmée avant 11h, du lundi au vendredi (hors jours fériés), l'envoi de la commande aura lieu dans les 3 jours dans la limite du stock disponible, sous réserve de disponibilité de nos préparateurs de commandes.
-									Ces délais sont communiqués à titre indicatif, pour certains produits un délai plus long peut s'appliquer. Un dépassement éventuel ne pourra donner lieu à des dommages et intérêts, retenue ou annulation de la commande par l'Acheteur sauf dispositions légales.
-									En cas de retard de livraison par rapport à la date initialement fixée, l'Acheteur devra le signaler par écrit (courrier, mail) à la société afin d'améliorer la qualité de service et de permettre à la société de procéder à une enquête auprès du transporteur. Une enquête auprès du transporteur peut durer jusqu'à 21 jours ouvrés. Si pendant ce délai, le produit est retrouvé, il sera immédiatement ré-acheminé au lieu de livraison désigné dans le bon de commande.
-									En revanche, si le produit commandé n'est pas retrouvé à l'issue de ce délai de 21 jours d'enquête, la société procèdera à ses frais à une nouvelle expédition des produits commandés par l'Acheteur ou au remboursement intégral (produit + frais de port).
-									Dans l'hypothèse où le produit commandé ne serait alors plus disponible, il sera fait application des dispositions visées à l'article 8. En cas d'échange de produit, les frais de livraison seront à la charge du consommateur.
+									<p>Pour toute commande confirmÃ©e avant 11h, du lundi au vendredi (hors jours fÃ©riÃ©s), l'envoi de la commande aura lieu dans les 3 jours dans la limite du stock disponible, sous rÃ©serve de disponibilitÃ© de nos prÃ©parateurs de commandes.
+									Ces dÃ©lais sont communiquÃ©s Ã  titre indicatif, pour certains produits un dÃ©lai plus long peut s'appliquer. Un dÃ©passement Ã©ventuel ne pourra donner lieu Ã  des dommages et intÃ©rÃªts, retenue ou annulation de la commande par l'Acheteur sauf dispositions lÃ©gales.
+									En cas de retard de livraison par rapport Ã  la date initialement fixÃ©e, l'Acheteur devra le signaler par Ã©crit (courrier, mail) Ã  la sociÃ©tÃ© afin d'amÃ©liorer la qualitÃ© de service et de permettre Ã  la sociÃ©tÃ© de procÃ©der Ã  une enquÃªte auprÃ¨s du transporteur. Une enquÃªte auprÃ¨s du transporteur peut durer jusqu'Ã  21 jours ouvrÃ©s. Si pendant ce dÃ©lai, le produit est retrouvÃ©, il sera immÃ©diatement rÃ©-acheminÃ© au lieu de livraison dÃ©signÃ© dans le bon de commande.
+									En revanche, si le produit commandÃ© n'est pas retrouvÃ© Ã  l'issue de ce dÃ©lai de 21 jours d'enquÃªte, la sociÃ©tÃ© procÃ¨dera Ã  ses frais Ã  une nouvelle expÃ©dition des produits commandÃ©s par l'Acheteur ou au remboursement intÃ©gral (produit + frais de port).
+									Dans l'hypothÃ¨se oÃ¹ le produit commandÃ© ne serait alors plus disponible, il sera fait application des dispositions visÃ©es Ã  l'article 8. En cas d'Ã©change de produit, les frais de livraison seront Ã  la charge du consommateur.
 								</p>
 								7.4. Retour des produits
 									<p>
-									En cas d'anomalie technique du Produit, ou d'erreur sur la référence livrée, le Client suivra la procédure de Retour de Produit décrite ci-après.
-									Les frais de port du colis de retour demeurent à la charge de l'Acheteur.
-									La société n'accepte pas les colis adressés en port dû.
-									Tout risque lié au retour du produit est à la charge de l'Acheteur.
-									Les anomalies techniques ou erreurs sur la référence doivent être communiquées à la Société par courrier recommandé avec accusé de réception dans un délai de 14 jours, suivant la date de livraison, en indiquant les références du Client, le numéro et la date de facture, la référence du Produit, la quantité ainsi que le motif exact de la demande. Le client doit conserver l'emballage et le bon de livraison. Il est conseillé de téléphoner à la société dans un premier temps.
-									Les produits doivent impérativement être retournés à la société, dans un parfait état de revente, dans leur état d'origine (emballage, documents, accessoires, notice...), dûment scellés, et accompagnés du bon de retour signé en prenant soin de ne placer aucune écriture, ni adhésif sur les emballages originaux.
-									La Société se réserve le droit de refuser tout retour non conforme aux conditions mentionnées ci-dessus. Aucun avoir ne peut être émis à réception d'un produit abîmé ou ouvert, si cet état n'a pas été indiqué à la Société préalablement à son accord de retour des Produits défectueux.
-									Toute reprise acceptée par la Société, après vérification qualitative et quantitative des Produits retournés, entraînera, au bénéfice exclusif du Client, constitution d'un avoir à son profit, à l'exclusion de toute indemnité ou de dommages et intérêts.
-									Procédure de retour :
+									En cas d'anomalie technique du Produit, ou d'erreur sur la rÃ©fÃ©rence livrÃ©e, le Client suivra la procÃ©dure de Retour de Produit dÃ©crite ci-aprÃ¨s.
+									Les frais de port du colis de retour demeurent Ã  la charge de l'Acheteur.
+									La sociÃ©tÃ© n'accepte pas les colis adressÃ©s en port dÃ».
+									Tout risque liÃ© au retour du produit est Ã  la charge de l'Acheteur.
+									Les anomalies techniques ou erreurs sur la rÃ©fÃ©rence doivent Ãªtre communiquÃ©es Ã  la SociÃ©tÃ© par courrier recommandÃ© avec accusÃ© de rÃ©ception dans un dÃ©lai de 14 jours, suivant la date de livraison, en indiquant les rÃ©fÃ©rences du Client, le numÃ©ro et la date de facture, la rÃ©fÃ©rence du Produit, la quantitÃ© ainsi que le motif exact de la demande. Le client doit conserver l'emballage et le bon de livraison. Il est conseillÃ© de tÃ©lÃ©phoner Ã  la sociÃ©tÃ© dans un premier temps.
+									Les produits doivent impÃ©rativement Ãªtre retournÃ©s Ã  la sociÃ©tÃ©, dans un parfait Ã©tat de revente, dans leur Ã©tat d'origine (emballage, documents, accessoires, notice...), dÃ»ment scellÃ©s, et accompagnÃ©s du bon de retour signÃ© en prenant soin de ne placer aucune Ã©criture, ni adhÃ©sif sur les emballages originaux.
+									La SociÃ©tÃ© se rÃ©serve le droit de refuser tout retour non conforme aux conditions mentionnÃ©es ci-dessus. Aucun avoir ne peut Ãªtre Ã©mis Ã  rÃ©ception d'un produit abÃ®mÃ© ou ouvert, si cet Ã©tat n'a pas Ã©tÃ© indiquÃ© Ã  la SociÃ©tÃ© prÃ©alablement Ã  son accord de retour des Produits dÃ©fectueux.
+									Toute reprise acceptÃ©e par la SociÃ©tÃ©, aprÃ¨s vÃ©rification qualitative et quantitative des Produits retournÃ©s, entraÃ®nera, au bÃ©nÃ©fice exclusif du Client, constitution d'un avoir Ã  son profit, Ã  l'exclusion de toute indemnitÃ© ou de dommages et intÃ©rÃªts.
+									ProcÃ©dure de retour :
 									<ol>
-										<li>Utiliser l'emballage d'origine pour retourner le produit placé dans un carton vierge.</li>
-										<li>Remplir et y joindre le Bon de Retour à obtenir depuis l'espace client, historique de commande. Les retours sans Bon de Retour ne sont pas acceptés.</li>
-										<li>Envoyer le colis à l'adresse suivante :
+										<li>Utiliser l'emballage d'origine pour retourner le produit placÃ© dans un carton vierge.</li>
+										<li>Remplir et y joindre le Bon de Retour Ã  obtenir depuis l'espace client, historique de commande. Les retours sans Bon de Retour ne sont pas acceptÃ©s.</li>
+										<li>Envoyer le colis Ã  l'adresse suivante :
 											ACRS SARL
 											A l'attention du Service Retour 
-											20 l'orée du bois 25320 Grandfontaine, France</li>
+											20 l'orÃ©e du bois 25320 Grandfontaine, France</li>
 									</ol>
 
-									Dès réception du produit en bonne et due forme, la société renverra, à ses frais, le produit initialement commandé s'il s'agissait d'une erreur de produit ou d'un produit défectueux.
-									Faute de respect de la procédure exposée ci-dessus et des  délais indiqués, l'Acheteur ne pourra formuler aucune réclamation pour non-conformité ou vice apparent des produits livrés, les produits étant alors réputés conformes et exempts de tout vice apparent.
+									DÃ¨s rÃ©ception du produit en bonne et due forme, la sociÃ©tÃ© renverra, Ã  ses frais, le produit initialement commandÃ© s'il s'agissait d'une erreur de produit ou d'un produit dÃ©fectueux.
+									Faute de respect de la procÃ©dure exposÃ©e ci-dessus et des  dÃ©lais indiquÃ©s, l'Acheteur ne pourra formuler aucune rÃ©clamation pour non-conformitÃ© ou vice apparent des produits livrÃ©s, les produits Ã©tant alors rÃ©putÃ©s conformes et exempts de tout vice apparent.
 								</p>
 							</div>
 						</div>
@@ -227,20 +229,20 @@ Il appartient exclusivement à l'Acheteur, s'il ne s'estime pas suffisamment comp
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseEight">
-								<span>8.</span> Droit de rétractation : 99 jours
+								<span>8.</span> Droit de rÃ©tractation : 99 jours
 							 </h4>
 						</div>
 						<div id="collapseEight" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>L'Acheteur dispose d'un délai de 99 jours francs à compter de la date de réception, pour retourner à ses frais, les produits commandés, pour remboursement.
-Cette rétractation doit être notifiée à la Société par courrier électronique avec demande de réception d'avis de lecture ou par courrier recommandé avec accusé de réception à l'adresse suivante :
+								<p>L'Acheteur dispose d'un dÃ©lai de 99 jours francs Ã  compter de la date de rÃ©ception, pour retourner Ã  ses frais, les produits commandÃ©s, pour remboursement.
+Cette rÃ©tractation doit Ãªtre notifiÃ©e Ã  la SociÃ©tÃ© par courrier Ã©lectronique avec demande de rÃ©ception d'avis de lecture ou par courrier recommandÃ© avec accusÃ© de rÃ©ception Ã  l'adresse suivante :
 ACRS SARL
-A l'attention du Service Rétractation
-20 l'orée du bois 25320 Grandfontaine, France
-en indiquant les références du Client, le numéro et la date de facture, la référence du Produit, la quantité. Il est préférable de commencer par téléphoner à la société pour validation de votre retour.
-Vous pouvez aussi faire une demande de rétractation avec le formulaire simplifié.
-Dans tous les cas de retour des produits, le retour ne pourra être accepté et l'échange ou le remboursement effectué, que pour les produits complets, dans un parfait état de revente, dans leur état d'origine (emballage,documents, accessoires, notice...), dûment scellés, et accompagnés de la facture d'origine et du bon de retour signé selon la procédure décrite à l'article 7.5 ci-dessus en prenant soin de ne placer aucune écriture, ni adhésif ni autre indication sur les emballages originaux.
-Il n'est pas accepté de rétractation sur les produits préparés à la demande, tels que produits au mètre ou au kilo, produits sur-mesure ou personnalisés, produits ayant été portés (vêtements, lentilles de contact, maquillage) et CD ou DVD ainsi que les livres.
+A l'attention du Service RÃ©tractation
+20 l'orÃ©e du bois 25320 Grandfontaine, France
+en indiquant les rÃ©fÃ©rences du Client, le numÃ©ro et la date de facture, la rÃ©fÃ©rence du Produit, la quantitÃ©. Il est prÃ©fÃ©rable de commencer par tÃ©lÃ©phoner Ã  la sociÃ©tÃ© pour validation de votre retour.
+Vous pouvez aussi faire une demande de rÃ©tractation avec le formulaire simplifiÃ©.
+Dans tous les cas de retour des produits, le retour ne pourra Ãªtre acceptÃ© et l'Ã©change ou le remboursement effectuÃ©, que pour les produits complets, dans un parfait Ã©tat de revente, dans leur Ã©tat d'origine (emballage,documents, accessoires, notice...), dÃ»ment scellÃ©s, et accompagnÃ©s de la facture d'origine et du bon de retour signÃ© selon la procÃ©dure dÃ©crite Ã  l'article 7.5 ci-dessus en prenant soin de ne placer aucune Ã©criture, ni adhÃ©sif ni autre indication sur les emballages originaux.
+Il n'est pas acceptÃ© de rÃ©tractation sur les produits prÃ©parÃ©s Ã  la demande, tels que produits au mÃ¨tre ou au kilo, produits sur-mesure ou personnalisÃ©s, produits ayant Ã©tÃ© portÃ©s (vÃªtements, lentilles de contact, maquillage) et CD ou DVD ainsi que les livres.
 								</p>
 							</div>
 						</div>
@@ -249,12 +251,12 @@ Il n'est pas accepté de rétractation sur les produits préparés à la demande, tel
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseNine">
-								<span>9.</span> Réserve de propriété
+								<span>9.</span> RÃ©serve de propriÃ©tÃ©
 							 </h4>
 						</div>
 						<div id="collapseNine" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>La société conserve la propriété pleine et entière des produits vendus jusqu'au parfait encaissement du prix, en principal, frais et taxes compris.
+								<p>La sociÃ©tÃ© conserve la propriÃ©tÃ© pleine et entiÃ¨re des produits vendus jusqu'au parfait encaissement du prix, en principal, frais et taxes compris.
 								</p>
 							</div>
 						</div>
@@ -263,16 +265,16 @@ Il n'est pas accepté de rétractation sur les produits préparés à la demande, tel
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseTen">
-								<span>10.</span> Responsabilité 
+								<span>10.</span> ResponsabilitÃ© 
 							 </h4>
 						</div>
 						<div id="collapseTen" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>La société ne pourra être tenue pour responsable de l'inexécution du contrat en cas de rupture de stock ou indisponibilité du produit du fait d'un cas de force majeure, de perturbation ou grève totale ou partielle notamment des services postaux et moyens de transport et/ou communications.
-La société ne pourra être tenue pour responsable de tous dommages indirects qui pourraient survenir du fait de l'achat des produits.
-La société ne saurait être responsable de toute perte de données ou fichiers du fait de l'utilisation de son site internet. Il appartient à l'Acheteur de procéder à toutes les sauvegardes nécessaires.
-Le Site contient également des informations provenant de tierces personnes, et des liens vers d'autres sites Internet. 
-La société ne pourra en aucun cas être tenue pour responsable des dommages résultant de l'utilisation, de l'accès à, ou de l'incapacité à utiliser ces informations tierces, ni au contenu des autres sites Internet. C'est une boutique insolite.
+								<p>La sociÃ©tÃ© ne pourra Ãªtre tenue pour responsable de l'inexÃ©cution du contrat en cas de rupture de stock ou indisponibilitÃ© du produit du fait d'un cas de force majeure, de perturbation ou grÃ¨ve totale ou partielle notamment des services postaux et moyens de transport et/ou communications.
+La sociÃ©tÃ© ne pourra Ãªtre tenue pour responsable de tous dommages indirects qui pourraient survenir du fait de l'achat des produits.
+La sociÃ©tÃ© ne saurait Ãªtre responsable de toute perte de donnÃ©es ou fichiers du fait de l'utilisation de son site internet. Il appartient Ã  l'Acheteur de procÃ©der Ã  toutes les sauvegardes nÃ©cessaires.
+Le Site contient Ã©galement des informations provenant de tierces personnes, et des liens vers d'autres sites Internet. 
+La sociÃ©tÃ© ne pourra en aucun cas Ãªtre tenue pour responsable des dommages rÃ©sultant de l'utilisation, de l'accÃ¨s Ã , ou de l'incapacitÃ© Ã  utiliser ces informations tierces, ni au contenu des autres sites Internet. C'est une boutique insolite.
 								</p>
 							</div>
 						</div>
@@ -281,12 +283,12 @@ La société ne pourra en aucun cas être tenue pour responsable des dommages résul
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseEleven">
-								<span>11.</span> Non-validité partielle
+								<span>11.</span> Non-validitÃ© partielle
 							 </h4>
 						</div>
 						<div id="collapseEleven" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>Si une ou plusieurs stipulations des présentes conditions générales de vente sont tenues pour non valides ou déclarées comme telles en application d'une loi, d'un règlement ou à la suite d'une décision définitive d'une juridiction compétente, les autres stipulations garderont toute leur force et leur portée.
+								<p>Si une ou plusieurs stipulations des prÃ©sentes conditions gÃ©nÃ©rales de vente sont tenues pour non valides ou dÃ©clarÃ©es comme telles en application d'une loi, d'un rÃ¨glement ou Ã  la suite d'une dÃ©cision dÃ©finitive d'une juridiction compÃ©tente, les autres stipulations garderont toute leur force et leur portÃ©e.
 								</p>
 							</div>
 						</div>
@@ -300,7 +302,7 @@ La société ne pourra en aucun cas être tenue pour responsable des dommages résul
 						</div>
 						<div id="collapseTwelve" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>Le fait pour l'une des parties de ne pas se prévaloir d'un manquement auprès de l'autre partie à l'une quelconque des obligations visées au sein des présentes conditions générales de vente ne saurait être interprété pour l'avenir comme une renonciation à l'obligation en cause.
+								<p>Le fait pour l'une des parties de ne pas se prÃ©valoir d'un manquement auprÃ¨s de l'autre partie Ã  l'une quelconque des obligations visÃ©es au sein des prÃ©sentes conditions gÃ©nÃ©rales de vente ne saurait Ãªtre interprÃ©tÃ© pour l'avenir comme une renonciation Ã  l'obligation en cause.
 								</p>
 							
 							</div>
@@ -310,12 +312,12 @@ La société ne pourra en aucun cas être tenue pour responsable des dommages résul
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseThirteen">
-								<span>13.</span> Loi applicable et juridiction compétente
+								<span>13.</span> Loi applicable et juridiction compÃ©tente
 							 </h4>
 						</div>
 						<div id="collapseThirteen" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>Les ventes de produits de la société sont soumises à la loi française. Tout litige relatif à l'interprétation, l'exécution ou la rupture du contrat conclu entre la société et l'Acheteur, même en cas de pluralité de défendeurs, sera, du tribunal compétent.</p>
+								<p>Les ventes de produits de la sociÃ©tÃ© sont soumises Ã  la loi franÃ§aise. Tout litige relatif Ã  l'interprÃ©tation, l'exÃ©cution ou la rupture du contrat conclu entre la sociÃ©tÃ© et l'Acheteur, mÃªme en cas de pluralitÃ© de dÃ©fendeurs, sera, du tribunal compÃ©tent.</p>
 							</div>
 						</div>
 					</div>

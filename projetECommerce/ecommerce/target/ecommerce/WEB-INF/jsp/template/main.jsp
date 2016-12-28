@@ -30,7 +30,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!--//fonts-->	
 <!-- js -->
-<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="<spring:url value='/js/jquery.min.js' />"></script>
 <!-- js -->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="<spring:url value='/js/bootstrap.min.js' />"></script>
@@ -82,10 +82,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="header">
 		<div class="container">
 			<div class="logo">
-				<a href="index.html"><span>Magic</span>abrac</a>
+				<a href="/ecommerce/index"><span>Magic</span>abrac</a>
 			</div>
 			<div class="header-right">
-				<a class="account" href=""><i class="glyphicon glyphicon-shopping-cart"></i> 0 article(s)</a>
+				<a class="account" href="/ecommerce/cart">
+					<i class="glyphicon glyphicon-shopping-cart"></i> 
+					<c:choose>
+					    <c:when test="${not empty nbArticlesTotal}">
+					        ${nbArticlesTotal} ${nbArticles} ${panier} ICI currentTotal ${currentTotal}
+					    </c:when>    
+					    <c:otherwise>
+					        0 ICI currentTotal ${currentTotal} ${panier}
+					    </c:otherwise>
+					</c:choose>
+				</a>
+				<a class="account" href="/ecommerce/login">
+					<i class="glyphicon glyphicon-user"></i>
+					<c:choose>
+					    <c:when test="${not empty currentUser.pseudo}">
+					        Bonjour ${currentUser.pseudo}
+					    </c:when>    
+					    <c:otherwise>
+					         ${connexion}
+					    </c:otherwise>
+					</c:choose>	
+					  
+				</a>
 				<spring:url var="localeFr" value="">
 					<spring:param name="locale" value="fr"/>
 				</spring:url>
@@ -110,7 +132,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  <div class="container">    
 			<h1><spring:message code="bannerMainText"/></h1>
 			<p><spring:message code="bannerSecText"/></p>
-			<a href="post-ad.html">Découvrez notre catalogue</a>
+			<a href="/ecommerce/index#news"><spring:message code="bannerCatalogue"/></a>
 	  </div>
 	</div>
 		
@@ -122,28 +144,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="container">
 					<div class="foo-grids">
 						<div class="col-md-3 footer-grid">
-							<h4 class="footer-head">Qui sommes-nous?</h4>
-							<p>Nous sommes l'unique magasin de magie professionnel en ligne qui propose des objets uniques et rare. <br/>
-							Nous sélectionnons pour vous les meilleurs produits de magie.</p>
+							<h4 class="footer-head">${footerQui}</h4>
+							<p>${footerQuiText}</p>
 						</div>
 						<div class="col-md-3 footer-grid">
-							<h4 class="footer-head">Aide</h4>
+							<h4 class="footer-head">${footerAide}</h4>
 							<ul>
-								<li><a href="sitemap.html">Plan du site</a></li>
-								<li><a href="faq.html">Faq</a></li>
-								<li><a href="contact.html">Contact</a></li>
+								<li><a href="/ecommerce/sitemap">${sitemap }</a></li>
+								<li><a href="/ecommerce/faq">Faq</a></li>
+								<!-- li><a href="contact.html">Contact</a></li -->
 							</ul>
 						</div>
 						<div class="col-md-3 footer-grid">
-							<h4 class="footer-head">Information</h4>
+							<h4 class="footer-head">${footerInfo}</h4>
 							<ul>
-								<li><a href="terms.html">Conditions d'utilisations</a></li>
-								<li><a href="livraison.html">Livraison, expédition et retour</a></li>	
-								<li><a href="privacy.html">Politique de confidentialité</a></li>	
+								<li><a href="/ecommerce/terms">${terms }</a></li>
+								<li><a href="/ecommerce/livraison">${shipping }</a></li>	
+								<li><a href="/ecommerce/privacy">${privacy }</a></li>	
 							</ul>
 						</div>
 						<div class="col-md-3 footer-grid">
-							<h4 class="footer-head">Nous contacter</h4>
+							<h4 class="footer-head">${footerContact}</h4>
 							<address>
 								<ul class="location">
 									<li><span class="glyphicon glyphicon-map-marker"></span></li>
@@ -157,7 +178,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</ul>	
 								<ul class="location">
 									<li><span class="glyphicon glyphicon-envelope"></span></li>
-									<li><a href="mailto:info@example.com">info@magicabrac.com</a></li>
+									<li><a href="mailto:info@magicabrac.com">info@magicabrac.com</a></li>
 									<div class="clearfix"></div>
 								</ul>						
 							</address>
@@ -169,19 +190,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="footer-bottom text-center">
 			<div class="container">
 				<div class="footer-logo">
-					<a href="index.html"><span>Magic</span>abrac</a>
+					<a href="/ecommerce/index"><span>Magic</span>abrac</a>
 				</div>
 				<div class="footer-social-icons">
 					<ul>
 						<li><a class="facebook" href="#"><span>Facebook</span></a></li>
 						<li><a class="twitter" href="#"><span>Twitter</span></a></li>
-						<li><a class="flickr" href="#"><span>Flickr</span></a></li>
 						<li><a class="googleplus" href="#"><span>Google+</span></a></li>
-						<li><a class="dribbble" href="#"><span>Dribbble</span></a></li>
 					</ul>
 				</div>
 				<div class="copyrights">
-					<p> © 2016 Magicabrac. Tous droits réservés | Design by  <a href="http://w3layouts.com/"> W3layouts</a></p>
+					<p> © 2016 Magicabrac. Tous droits réservés | Design by  <a href="http://w3layouts.com/" about="_blank"> W3layouts</a></p>
 				</div>
 				<div class="clearfix"></div>
 			</div>

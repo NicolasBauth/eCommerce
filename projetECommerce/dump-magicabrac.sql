@@ -129,7 +129,7 @@ CREATE TABLE `magicabrac`.`utilisateur` (
   `nom` VARCHAR(45) NOT NULL,
   `prenom` VARCHAR(45) NOT NULL,
   `pseudo` VARCHAR(45) NOT NULL,
-  `telephone` INT(15) NULL,
+  `telephone` VARCHAR(15) NULL,
   `email` VARCHAR(45) NOT NULL,
   `motDePasse` VARCHAR(45) NOT NULL,
   `dateNaissance` date NOT NULL,

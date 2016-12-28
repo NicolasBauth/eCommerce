@@ -129,7 +129,7 @@ INSERT INTO `magicabrac`.`traduction` (`idTraduction`, `libelle`, `id_categorie`
 --
 
 INSERT INTO `magicabrac`.`utilisateur` (`idUtilisateur`, `nom`, `prenom`, `pseudo`, `telephone`, `email`, `motDePasse`, `dateNaissance`, `rue`, `numero`, `ville`, `codePostal`, `pays`) VALUES
-(1, 'Denis', 'Jennifer', 'Brodylive', 0472757565, 'brodylive@gmail.com', '456456', '1992-11-04', 'Rue de Mons', 10, 'Estinnes', 7120, 'Belgique');
+(1, 'Denis', 'Jennifer', 'Brodylive', '0472757565', 'brodylive@gmail.com', '456456', '1992-11-04', 'Rue de Mons', 10, 'Estinnes', 7120, 'Belgique');
 
 
 --

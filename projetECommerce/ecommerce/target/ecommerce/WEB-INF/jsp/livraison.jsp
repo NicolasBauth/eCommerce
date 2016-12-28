@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="include/importTags.jsp" %>
 
 	<!-- Terms of use -->
 	<div class="terms main-grid-border">
 		<div class="container">
-			<h2 class="head">Livraison</h2>
+			<h2 class="head">${shipping}</h2>
 				<div class="panel-group" id="accordion">
 				<!-- First Panel -->
 					<div class="panel panel-default">
@@ -19,13 +21,13 @@
 									<li>Visa et MasterCard</li>									
 									<li>iDEAL (Pays-Bas)</li>
 									<li>Carte Bleue (France)</li>
-									<li>Sofortüberweisung (Allemagne/Autriche/Suisse)</li>
-									<li>Nordea (Finlande/Suède)</li>
+									<li>SofortÃ¼berweisung (Allemagne/Autriche/Suisse)</li>
+									<li>Nordea (Finlande/SuÃ¨de)</li>
 									<li>Postepay (Italie)</li>
 									<li>Dankort (Danemark)</li>
 									<li>Dexia/Belfius (Belgique)</li>
 								</ul>
-								<p>Quelques modes de paiement sont réalisés par nos partenaires Docdata et Stripe. Si vous avez des questions en ce qui concerne le paiement ou si votre mode de paiement préféré n'est pas mentionné, vous pouvez toujours nous contacter par mail à info@magicabrac.com. Nous serons ravis de vous renseigner !</p>
+								<p>Quelques modes de paiement sont rÃ©alisÃ©s par nos partenaires Docdata et Stripe. Si vous avez des questions en ce qui concerne le paiement ou si votre mode de paiement prÃ©fÃ©rÃ© n'est pas mentionnÃ©, vous pouvez toujours nous contacter par mail Ã  info@magicabrac.com. Nous serons ravis de vous renseigner !</p>
 							</div>
 						</div>
 					</div>
@@ -34,12 +36,12 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							 <h4 class="panel-title" data-toggle="collapse"  data-target="#collapseTwo">
-								<span>2.</span> Expédition
+								<span>2.</span> ExpÃ©dition
 							 </h4>
 						</div>
 						<div id="collapseTwo" class="panel-collapse collapse">
 							<div class="panel-body">								
-								<p>Grâce à notre stock énorme nous pouvons expédier 98% des commandes à la date de réception du paiement ou le jour suivant. Toutes les commandes sont envoyées par fret aérien à notre centre de distribution en Europe et ensuite directement à votre maison.</p>
+								<p>GrÃ¢ce Ã  notre stock Ã©norme nous pouvons expÃ©dier 98% des commandes Ã  la date de rÃ©ception du paiement ou le jour suivant. Toutes les commandes sont envoyÃ©es par fret aÃ©rien Ã  notre centre de distribution en Europe et ensuite directement Ã  votre maison.</p>
 							</div>
 						</div>
 					</div>
@@ -53,7 +55,7 @@
 						</div>
 						<div id="collapseThree" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>Votre commande est livrée par les services postaux nationaux directement à votre domicile. La livraison dure normalement 4-8 jours ouvrables à partir de la date de réception du paiement. En règle générale les commandes entrent parfaitement à la boîte aux lettres, car les commandes sont envoyées dans une enveloppe. Donc vous ne devez pas être à la maison pour prendre la commande ou pour signer un bon de livraison.</p>
+								<p>Votre commande est livrÃ©e par les services postaux nationaux directement Ã  votre domicile. La livraison dure normalement 4-8 jours ouvrables Ã  partir de la date de rÃ©ception du paiement. En rÃ¨gle gÃ©nÃ©rale les commandes entrent parfaitement Ã  la boÃ®te aux lettres, car les commandes sont envoyÃ©es dans une enveloppe. Donc vous ne devez pas Ãªtre Ã  la maison pour prendre la commande ou pour signer un bon de livraison.</p>
 							</div>
 						</div>
 					</div>
@@ -61,13 +63,13 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseFour">
-								<span>4.</span> Les taxes à la valeur ajoutée (T.V.A.) et les frais de dédouanement sont inclus dans l'UE
+								<span>4.</span> Les taxes Ã  la valeur ajoutÃ©e (T.V.A.) et les frais de dÃ©douanement sont inclus dans l'UE
 							 </h4>
 						</div>
 						<div id="collapseFour" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>Aucun coût supplémentaire n'est appliqué aux clients de l'Union européenne. C'est également le cas pour la plupart de nos clients hors de l'UE.</p>
-								<p>Si vous habitez hors de l'Union européenne, il convient de respecter les limites fixées nationales en ce qui concerne le montant des taxes et les frais de dédouanement. Ceci peut générer des frais supplémentaires.</p>
+								<p>Aucun coÃ»t supplÃ©mentaire n'est appliquÃ© aux clients de l'Union europÃ©enne. C'est Ã©galement le cas pour la plupart de nos clients hors de l'UE.</p>
+								<p>Si vous habitez hors de l'Union europÃ©enne, il convient de respecter les limites fixÃ©es nationales en ce qui concerne le montant des taxes et les frais de dÃ©douanement. Ceci peut gÃ©nÃ©rer des frais supplÃ©mentaires.</p>
 							</div>
 						</div>
 					</div>
@@ -75,12 +77,12 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseFive">
-								<span>5.</span> Livraison gratuite à partir de 30,00 &#8364;
+								<span>5.</span> Livraison gratuite Ã  partir de 30,00 &#8364;
 							 </h4>
 						</div>
 						<div id="collapseFive" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>La livraison est gratuite pour toutes les commandes à partir d'une valeur de 30,00 &#8364;, dans le monde entier ! Et pour les commandes inférieures à cette somme les frais de livraison sont de 5,90 &#8364;. Il vaut la peine de commander un peu plus alors !</p>
+								<p>La livraison est gratuite pour toutes les commandes Ã  partir d'une valeur de 30,00 &#8364;, dans le monde entier ! Et pour les commandes infÃ©rieures Ã  cette somme les frais de livraison sont de 5,90 &#8364;. Il vaut la peine de commander un peu plus alors !</p>
 							</div>
 						</div>
 					</div>
@@ -93,11 +95,11 @@
 						</div>
 						<div id="collapseSix" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>Le retour d'articles n'est accepté qu'aux conditions suivantes :</p>
+								<p>Le retour d'articles n'est acceptÃ© qu'aux conditions suivantes :</p>
 								<ul>
-									<li>Retrait d'achat dans les quatorze (14) jours suivant la réception des articles (vous n'aimez pas les articles par exemple)</li>
-									<li>Souhait de remboursement ou d'échange d'articles défectueux ou endommagés</li>
-									<li>Mauvais article(s) reçu(s)</li>
+									<li>Retrait d'achat dans les quatorze (14) jours suivant la rÃ©ception des articles (vous n'aimez pas les articles par exemple)</li>
+									<li>Souhait de remboursement ou d'Ã©change d'articles dÃ©fectueux ou endommagÃ©s</li>
+									<li>Mauvais article(s) reÃ§u(s)</li>
 								</ul>
 							</div>
 						</div>
@@ -111,9 +113,9 @@
 						</div>
 						<div id="collapseSeven" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>Seul l'échange d'articles parfaitement identiques  ou le remboursement de leur prix d'achat est autorisé.</p>
-								<p>L'échange contre d'autres articles ou l'échange de l'article dans une autre caractéristique (couleur, taille, etc.) n'est malheureusement pas possible.</p>
-								<p>Dans ce cas, il vous faudra nous les retourner et passer une nouvelle commande. Les retours doivent être envoyés à notre centre logistique situé en Allemagne. Nous vous remboursons ensuite le prix d'achat des articles retournés via le moyen de paiement qui a été utilisé lors de la commande (PayPal, virement bancaire, etc.), ou nous éditons un bon d'achat qui pourra être utilisé lors de votre prochaine commande.</p>
+								<p>Seul l'Ã©change d'articles parfaitement identiques  ou le remboursement de leur prix d'achat est autorisÃ©.</p>
+								<p>L'Ã©change contre d'autres articles ou l'Ã©change de l'article dans une autre caractÃ©ristique (couleur, taille, etc.) n'est malheureusement pas possible.</p>
+								<p>Dans ce cas, il vous faudra nous les retourner et passer une nouvelle commande. Les retours doivent Ãªtre envoyÃ©s Ã  notre centre logistique situÃ© en Allemagne. Nous vous remboursons ensuite le prix d'achat des articles retournÃ©s via le moyen de paiement qui a Ã©tÃ© utilisÃ© lors de la commande (PayPal, virement bancaire, etc.), ou nous Ã©ditons un bon d'achat qui pourra Ãªtre utilisÃ© lors de votre prochaine commande.</p>
 							</div>
 						</div>
 					</div>
@@ -126,20 +128,20 @@
 						</div>
 						<div id="collapseEight" class="panel-collapse collapse">
 							<div class="panel-body">
-								<p>Pour retourner vos articles à notre centre logistique en Allemagne, vous devez d'abord vous connecter à votre compte client grâce à votre adresse mail et votre mot de passe. Ensuite, vous devez suivre les étapes suivantes :
+								<p>Pour retourner vos articles Ã  notre centre logistique en Allemagne, vous devez d'abord vous connecter Ã  votre compte client grÃ¢ce Ã  votre adresse mail et votre mot de passe. Ensuite, vous devez suivre les Ã©tapes suivantes :
 								</p>
 								<ol>
-									<li>cliquez sur « mon compte » (indiqué par vos nom et prénom) dans la barre en haut de notre site</li>
-									<li>cliquez ensuite sur « réclamation/retour » dans le menu de votre compte client</li>
-									<li>sélectionnez la commande concernée</li>
+									<li>cliquez sur Â« mon compte Â» (indiquÃ© par vos nom et prÃ©nom) dans la barre en haut de notre site</li>
+									<li>cliquez ensuite sur Â« rÃ©clamation/retour Â» dans le menu de votre compte client</li>
+									<li>sÃ©lectionnez la commande concernÃ©e</li>
 									<li>cochez les articles que vous souhaitez retourner</li>
 									<li>indiquez la raison pour laquelle vous retournez l'article</li>
-									<li>choisissez l'option que vous préférez : nouvel envoi de l'article ou remboursement de la valeur de la commande</li>
-									<li>validez votre formulaire de retour personnalisé et imprimez-le.</li>
+									<li>choisissez l'option que vous prÃ©fÃ©rez : nouvel envoi de l'article ou remboursement de la valeur de la commande</li>
+									<li>validez votre formulaire de retour personnalisÃ© et imprimez-le.</li>
 								</ol>
 
-								<p>Il vous suffira ensuite de vous rendre à votre bureau de poste pour l'expédier.</p>
-								<p>Le statut de votre retour et les détails le concernant sont disponibles dans l'onglet « mes anciens retours ». Notre service clients se tient bien entendu à votre disposition pour tout renseignement supplémentaire à l'adresse mail suivante : info@magicabrac.com.</p>								
+								<p>Il vous suffira ensuite de vous rendre Ã  votre bureau de poste pour l'expÃ©dier.</p>
+								<p>Le statut de votre retour et les dÃ©tails le concernant sont disponibles dans l'onglet Â« mes anciens retours Â». Notre service clients se tient bien entendu Ã  votre disposition pour tout renseignement supplÃ©mentaire Ã  l'adresse mail suivante : info@magicabrac.com.</p>								
 							</div>
 						</div>
 					</div>
@@ -147,20 +149,20 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							 <h4 class="panel-title" data-toggle="collapse" data-target="#collapseNine">
-								<span>9.</span> Informations complémentaires à propos des retours
+								<span>9.</span> Informations complÃ©mentaires Ã  propos des retours
 							 </h4>
 						</div>
 						<div id="collapseNine" class="panel-collapse collapse">
 							<div class="panel-body">
 								<p>Lors du retour de vos articles, assurez-vous que :</p>
 								<ul>
-									<li>vos articles n'ont pas été utilisés</li>
+									<li>vos articles n'ont pas Ã©tÃ© utilisÃ©s</li>
 									<li>votre envoi est suffisamment affranchi</li>
-									<li>les articles sont correctement emballés pour parvenir à destination sans être endommagés</li>
+									<li>les articles sont correctement emballÃ©s pour parvenir Ã  destination sans Ãªtre endommagÃ©s</li>
 								</ul>
 								
-								<p>Le retour des articles concernés est à effectuer de préférence dans les emballages d'origine.</p>
-								<p>Les frais de port relatifs à votre retour ne sont malheureusement pas pris en charge par nos services.</p>
+								<p>Le retour des articles concernÃ©s est Ã  effectuer de prÃ©fÃ©rence dans les emballages d'origine.</p>
+								<p>Les frais de port relatifs Ã  votre retour ne sont malheureusement pas pris en charge par nos services.</p>
 							</div>
 						</div>
 					</div>
