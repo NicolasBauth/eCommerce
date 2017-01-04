@@ -65,5 +65,18 @@ public class UserDAO
 		}
 		return users;
 	}
+	
+	public boolean checkWhetherUsernameAlreadyExists(String usernameToCheck)
+	{
+		ArrayList<User> databaseUsers = this.getAllUsers();
+		for(User databaseUser : databaseUsers)
+		{
+			if(usernameToCheck.equals(databaseUser.getPseudo()))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 }
 

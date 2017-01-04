@@ -1,14 +1,21 @@
 package com.spring.henallux.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.validation.Valid;
+
 import org.h2.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -67,36 +74,54 @@ public class RegisterController {
 	}
 	
 	@RequestMapping(value="/sendRegister", method=RequestMethod.POST)
-	public String getFormData(Model model, @ModelAttribute(value="registerForm") RegisterForm form)
+	public String getFormData(Model model, @Valid @ModelAttribute(value="registerForm") RegisterForm form,
+								final BindingResult errors)
 	{
-		if(form.getBirthDate()!="" && form.getCity()!="" && form.getCountry()!="" && form.geteMail()!=""
-				&& form.getFirstName()!= "" && form.getLastName()!="" && form.getNumberOfStreet()!=""
-				&& form.getPassword()!= "" && form.getPasswordConfirmation()!="" && form.getPhoneNumber()!=""
-				&& form.getPseudo()!="" && form.getStreet()!="" && form.getZipCode()!=""
-				&& form.getPassword().equals(form.getPasswordConfirmation())
-				&& StringUtils.isNumber(form.getNumberOfStreet())
-				&& StringUtils.isNumber(form.getPhoneNumber())
-				&& StringUtils.isNumber(form.getZipCode()))
-		{
-			User user = new User();
-			user.setLastName(form.getLastName());
-			user.setFirstName(form.getFirstName());
-			user.setEmail(form.geteMail());
-			user.setCountry(form.getCountry());
-			user.setNumberOfStreet(Integer.parseInt(form.getNumberOfStreet()));
-			user.setPassword(form.getPassword());
-			user.setPhoneNumber(form.getPhoneNumber());
-			user.setPseudo(form.getPseudo());
-			user.setStreet(form.getStreet());
-			user.setTown(form.getCity());
-			user.setZipCode(Integer.parseInt(form.getZipCode()));
-			user.setBirthDate(new Date());
-			userDAO.save(user);
-			return "redirect:/index";
-		}
-		else
-		{
-			return "redirect:/register";
-		}
+		
+			if(!errors.hasErrors())
+			{
+				boolean passwordCheck = form.getPassword().equals(form.getPasswordConfirmation());
+				boolean userNameCheck = !userDAO.checkWhetherUsernameAlreadyExists(form.getPseudo());
+				
+				if(!userNameCheck)
+				{
+					errors.rejectValue("pseudo","error.userNameExists", "Wizard, this username is already used by somebody. Please try another one.");
+					return "integrated:register";
+				}
+				if(!passwordCheck)
+				{
+					errors.rejectValue("password","error.passwordMismatch", "Wizard, your password and password confirmation don't match.");
+					return "integrated:register";
+				}
+				User user = new User();
+				
+				user.setBirthDate(form.getBirthDate());	
+				user.setLastName(form.getLastName());
+				user.setFirstName(form.getFirstName());
+				user.setEmail(form.geteMail());
+				user.setCountry(form.getCountry());
+				user.setNumberOfStreet(form.getNumberOfStreet());
+				user.setStreet(form.getStreet());
+				user.setTown(form.getCity());
+				user.setZipCode(form.getZipCode());
+				if(form.getPhoneNumber().equals(""))
+				{
+					user.setPhoneNumber(null);
+				}
+				else
+				{
+					user.setPhoneNumber(form.getPhoneNumber());
+				}
+				user.setPassword(form.getPassword());
+				user.setPseudo(form.getPseudo());
+				
+				userDAO.save(user);
+				return "redirect:/index";
+			}
+	
+		return "integrated:register";
+				
 	}
+	
+	
 }
