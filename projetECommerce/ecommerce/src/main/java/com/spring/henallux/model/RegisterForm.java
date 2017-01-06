@@ -18,47 +18,47 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 public class RegisterForm 
 {
-	@NotEmpty(message="Every wizard has a first name.")
-	@Size(max=45, message="Your wizard first name is too long for anyone to understand it.")
+	@NotEmpty
+	@Size(max=45)
 	private String firstName;
-	@NotEmpty(message="Last name is mandatory.")
-	@Size(max=45, message="Your last name is too long.")
+	@NotEmpty
+	@Size(max=45)
 	private String lastName;
-	@Size(min=0, max=15, message="Must be a valid phone number.")
+	@Size(min=0, max=15)
 	private String phoneNumber;
-	@NotNull(message="Incorrect number:it must be between 1 and 9999")
+	@NotNull
 	@Min(1)
 	@Max(9999)
 	private Integer numberOfStreet;
-	@NotEmpty(message="No wizard can order out of nowhere. We need to know what's the street you live in.")
-	@Size(max=90, message="Your street name is too long for us mortals to remember.")
+	@NotEmpty
+	@Size(max=90)
 	private String street;
-	@NotNull(message="Your zip code is required.")
-	@Min(0)
+	@NotNull
+	@Min(1)
 	@Max(1000000000)
 	private Integer zipCode;
-	@NotEmpty(message="We only deliver our products to legit wizards. Please tell us where you live so that we can be sure you aren't an exiled dangerous wizard.")
-	@Size(max=45, message="Your city name is way too long. Please use a magic spell to shorten it.")
+	@NotEmpty
+	@Size(max=45)
 	private String city;
-	@Email(message="Your wizard e-mail has to be a valid e-mail.")
-	@NotEmpty(message="Your wizard e-mail is required for us to contact you.")
-	@Size(max=45, message="Your wizard e-mail is too long.")
+	@Email
+	@NotEmpty
+	@Size(max=45)
 	private String eMail;
-	@NotEmpty(message="Please have a password. Even the most powerful wizards need identity protection when it comes to the internet.")
-	@Size(min=6, max=25, message="Your password cannot contain less than 6 characters, and not more than 25")
+	@NotEmpty
+	@Size(min=6, max=25)
 	private String password;
-	@NotEmpty(message="For your own good, don't forget to confirm your password")
-	@Size(min=6,max=25 ,message="Your password cannot contain less than 6 characters, and not more than 25")
+	@NotEmpty
+	@Size(min=6,max=25)
 	private String passwordConfirmation;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@NotNull(message="Every Wizard was born one day. We need to know what day it is.")
-	@Past(message="You can't be born in the future, you are a wizard, not a time traveller.")
+	@NotNull
+	@Past
 	private Date birthDate;
-	@NotEmpty(message="Your username is required.")
-	@Size(min=3,max=45, message="Your username must contain more than 3 characters, but less than 45")
+	@NotEmpty
+	@Size(min=3,max=45)
 	private String pseudo;
-	@NotEmpty(message="We do respect every magic cultures in the world. Don't be scared to tell us your country.")
-	@Size(min=2,max=45, message="Your country name cannot contain less than 2 characters or more than 45")
+	@NotEmpty
+	@Size(min=2,max=45)
 	private String country;
 	
 	public RegisterForm()
