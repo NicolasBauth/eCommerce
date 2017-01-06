@@ -14,13 +14,16 @@ C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\s
 C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\dataAccess\dao\PromotionDAO.java
 C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\dataAccess\entity\TranslationEntity.java
 C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\dataAccess\repository\ProductRepository.java
+C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\service\PasswordEncryptionService.java
 C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\dataAccess\repository\ImageRepository.java
 C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\controller\SitemapController.java
 C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\model\RegisterForm.java
+C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\model\EncryptedLogin.java
 C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\dataAccess\repository\UserRepository.java
 C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\dataAccess\repository\OrderRepository.java
 C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\controller\CategoryController.java
 C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\dataAccess\entity\PromotionEntity.java
+C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\service\UserService.java
 C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\dataAccess\dao\CategoryDAO.java
 C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\controller\LivraisonController.java
 C:\Users\nicol\workspace\eCommerce\projetECommerce\ecommerce\src\main\java\com\spring\henallux\dataAccess\entity\LanguageEntity.java

@@ -40,7 +40,8 @@ public class UserDAO
 	public ArrayList<User> findUserByPseudoAndPassword(String pseudo, String password){
 		Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
-		Query query = session.getNamedQuery("findUserByPseudoAndPassword");
+		//Query query = session.getNamedQuery("findUserByPseudoAndPassword");
+		Query query = session.getNamedQuery("findUserByConnection");
 		query.setString("pseudo", pseudo);
 		query.setString("password", password);
 		List<UserEntity> userEntities = query.list();
@@ -68,15 +69,7 @@ public class UserDAO
 	
 	public boolean checkWhetherUsernameAlreadyExists(String usernameToCheck)
 	{
-		/*ArrayList<User> databaseUsers = this.getAllUsers();
-		for(User databaseUser : databaseUsers)
-		{
-			if(usernameToCheck.equals(databaseUser.getPseudo()))
-			{
-				return true;
-			}
-		}
-		return false;*/
+		
 		
 		List<UserEntity> databaseUsers = userRepository.findUserByPseudo(usernameToCheck);
 		if(databaseUsers.isEmpty())

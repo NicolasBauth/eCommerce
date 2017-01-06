@@ -8,13 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.henallux.dataAccess.dao.*;
 import com.spring.henallux.model.*;
+import com.spring.henallux.service.PasswordEncryptionService;
+import com.spring.henallux.service.UserService;
 
 
 
@@ -34,6 +38,8 @@ public class LoginController {
 	private MessageSource messageSource;
 	@Autowired
 	private UserDAO userDAO;
+	@Autowired
+	private UserService userService;
 
 	@RequestMapping(method=RequestMethod.GET)
 	public String home(Model model, Locale locale, @ModelAttribute(value=USER) User currentUser){
@@ -59,22 +65,42 @@ public class LoginController {
 		model.addAttribute("newPeopleSec", messageSource.getMessage("newPeopleSec", null, locale));
 		model.addAttribute("registerNow", messageSource.getMessage("registerNow", null, locale));
 		
-		model.addAttribute("titi", new LoginForm());
+		if (!model.containsAttribute("loginForm"))
+		{
+			model.addAttribute("loginForm", new LoginForm());
+		}
 		
 		return "integrated:login";
 	}
 
 	@RequestMapping(value="/send", method=RequestMethod.POST)
-	public String getFormDate(Model model, @ModelAttribute(value="titi") LoginForm form, @ModelAttribute(value=USER) User currentUser){
-		//ArrayList<User> users = userDAO.getAllUsers();
-		ArrayList<User> users = userDAO.findUserByPseudoAndPassword(form.getPseudo(), form.getPassword());
-		if(users.isEmpty())
-			return "integrated:login";
-		else {
-			currentUser = users.get(0);
-			return "redirect:/cart";
+	public String getFormData(Model model, @ModelAttribute(value="loginForm") LoginForm form, @ModelAttribute(value=USER) User currentUser,final BindingResult errors, RedirectAttributes attr){
+		if(!errors.hasErrors())
+		{
+			EncryptedLogin encryptedLogin = userService.encryptLogin(form);
+			if(encryptedLogin == null)
+			{
+				errors.rejectValue("password","password.strangePassword", "The password you entered is strange and couldn't be resolved.");
+				attr.addFlashAttribute("org.springframework.validation.BindingResult.loginForm", errors);
+			    attr.addFlashAttribute("loginForm",form);
+				return "redirect:/login";
+			}
+			ArrayList<User> users = userDAO.findUserByPseudoAndPassword(encryptedLogin.getUserName(),encryptedLogin.getEncryptedPassword());
+			if(users.isEmpty())
+			{
+				errors.rejectValue("password","password.noMatch", "There wasn't any match for the given username and password.");
+				attr.addFlashAttribute("org.springframework.validation.BindingResult.loginForm", errors);
+			    attr.addFlashAttribute("loginForm",form);
+				return "redirect:/login";
+			}
+			else {
+				currentUser = users.get(0);
+				return "redirect:/cart";
+			}
 		}
-			
+		attr.addFlashAttribute("org.springframework.validation.BindingResult.loginForm", errors);
+	    attr.addFlashAttribute("loginForm",form);
+		return "redirect:/login";	
 		
 	}
 	

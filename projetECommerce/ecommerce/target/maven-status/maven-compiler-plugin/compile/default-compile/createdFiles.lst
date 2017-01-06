@@ -9,6 +9,7 @@ com\spring\henallux\controller\LivraisonController.class
 com\spring\henallux\dataAccess\repository\TranslationRepository.class
 com\spring\henallux\model\Promotion.class
 com\spring\henallux\dataAccess\dao\LanguageDAO.class
+com\spring\henallux\model\EncryptedLogin.class
 com\spring\henallux\dataAccess\entity\OrderEntity.class
 com\spring\henallux\model\Order.class
 com\spring\henallux\config\Config.class
@@ -47,7 +48,9 @@ com\spring\henallux\dataAccess\repository\PromotionRepository.class
 com\spring\henallux\dataAccess\repository\UserRepository.class
 com\spring\henallux\dataAccess\repository\OrderRepository.class
 com\spring\henallux\dataAccess\dao\OrderLineDAO.class
+com\spring\henallux\service\PasswordEncryptionService.class
 com\spring\henallux\model\Translation.class
+com\spring\henallux\service\UserService.class
 com\spring\henallux\model\Product.class
 com\spring\henallux\dataAccess\entity\ProductEntity.class
 com\spring\henallux\model\Language.class

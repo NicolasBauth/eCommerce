@@ -30,6 +30,7 @@ import com.spring.henallux.model.Product;
 import com.spring.henallux.model.RegisterForm;
 import com.spring.henallux.model.Translation;
 import com.spring.henallux.model.User;
+import com.spring.henallux.service.UserService;
 
 @Controller
 @RequestMapping(value="/register")
@@ -46,6 +47,8 @@ public class RegisterController {
 	private TranslationDAO translationDAO;
 	@Autowired
 	private UserDAO userDAO;
+	@Autowired
+	private UserService userService;
 
 	
 	@RequestMapping(method=RequestMethod.GET)
@@ -121,28 +124,7 @@ public class RegisterController {
 				    attr.addFlashAttribute("registerForm",register );
 					return "redirect:/register";
 				}
-				User user = new User();
-				
-				user.setBirthDate(register.getBirthDate());	
-				user.setLastName(register.getLastName());
-				user.setFirstName(register.getFirstName());
-				user.setEmail(register.geteMail());
-				user.setCountry(register.getCountry());
-				user.setNumberOfStreet(register.getNumberOfStreet());
-				user.setStreet(register.getStreet());
-				user.setTown(register.getCity());
-				user.setZipCode(register.getZipCode());
-				if(register.getPhoneNumber().equals(""))
-				{
-					user.setPhoneNumber(null);
-				}
-				else
-				{
-					user.setPhoneNumber(register.getPhoneNumber());
-				}
-				user.setPassword(register.getPassword());
-				user.setPseudo(register.getPseudo());
-				
+				User user = userService.createUserFromForm(register);
 				userDAO.save(user);
 				return "redirect:/index";
 			}

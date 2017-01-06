@@ -1,7 +1,13 @@
 package com.spring.henallux.model;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class LoginForm {
+	@NotEmpty
 	private String pseudo;
+	@Size(min=6,max=25)
 	private String password;
 	
 	public LoginForm(){
