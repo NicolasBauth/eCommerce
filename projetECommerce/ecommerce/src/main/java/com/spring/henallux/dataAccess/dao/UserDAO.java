@@ -68,7 +68,7 @@ public class UserDAO
 	
 	public boolean checkWhetherUsernameAlreadyExists(String usernameToCheck)
 	{
-		ArrayList<User> databaseUsers = this.getAllUsers();
+		/*ArrayList<User> databaseUsers = this.getAllUsers();
 		for(User databaseUser : databaseUsers)
 		{
 			if(usernameToCheck.equals(databaseUser.getPseudo()))
@@ -76,7 +76,17 @@ public class UserDAO
 				return true;
 			}
 		}
-		return false;
+		return false;*/
+		
+		List<UserEntity> databaseUsers = userRepository.findUserByPseudo(usernameToCheck);
+		if(databaseUsers.isEmpty())
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
 	}
 }
 

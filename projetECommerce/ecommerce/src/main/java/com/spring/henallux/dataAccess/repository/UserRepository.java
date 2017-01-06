@@ -16,4 +16,5 @@ import com.spring.henallux.model.User;
 public interface UserRepository extends JpaRepository<UserEntity, Integer>
 {
 	public List<UserEntity> findUserByPseudoAndPassword(String pseudo, String password);
+	public List<UserEntity> findUserByPseudo(String pseudo);
 }

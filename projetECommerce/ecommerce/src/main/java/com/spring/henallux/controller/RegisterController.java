@@ -109,14 +109,14 @@ public class RegisterController {
 				
 				if(!userNameCheck)
 				{
-					errors.rejectValue("pseudo","error.userNameExists", "Wizard, this username is already used by somebody. Please try another one.");
+					errors.rejectValue("pseudo","pseudo.alreadyExists", "Wizard, this username or password is already used by somebody. Please try another one.");
 					attr.addFlashAttribute("org.springframework.validation.BindingResult.registerForm", errors);
 				    attr.addFlashAttribute("registerForm",register );
 					return "redirect:/register";
 				}
 				if(!passwordCheck)
 				{
-					errors.rejectValue("password","error.passwordMismatch", "Wizard, your password and password confirmation don't match.");
+					errors.rejectValue("password","password.mismatch", "Wizard, your password and password confirmation don't match.");
 					attr.addFlashAttribute("org.springframework.validation.BindingResult.registerForm", errors);
 				    attr.addFlashAttribute("registerForm",register );
 					return "redirect:/register";
