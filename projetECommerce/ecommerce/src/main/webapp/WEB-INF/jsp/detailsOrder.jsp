@@ -24,39 +24,25 @@
 							<div id="container">
 								
 								<div class="clearfix"></div>
-							<c:choose>
-								<c:when test="${not empty currentCart}">
 									<ul class="list">
-										<c:forEach items="${products}" var="p">
-											<a href="<spring:url value='/single/${p.productId}' />" >
+                                        ${order.orderId}  ${order.orderDate}
+										<c:forEach items="${order.orderLines}" var="line">
+											<a href="<spring:url value='/single/${line.orderedProduct.productId}' />" >
 												<li>
-												<img src="images/products/${image[p.productId].path}" title="${image[p.productId].name}" alt="${image[p.productId].name}" />
+												<img src="images/products/${image[line.orderedProduct.productId].path}" title="${image[line.orderedProduct.productId].name}" alt="${image[line.orderedProduct.productId].name}" />
 												<section class="list-left">
-												<h5 class="title">${p.name}</h5>
-												<span class="adprice">€ ${p.unitPrice}</span>
+												<h5 class="title">${line.orderedProduct.name}</h5>
+												<span class="adprice">€ ${line.unitPrice}</span>
 												</section>
 												<section class="list-right">
-												<span class="date">Ref : C${p.category.categoryId}A${p.productId}</span>
-												<c:choose>
-												    <c:when test="${p.storedQuantity > 0}">
-												        <span class="cityname">Quantité commandée ${currentCart[p.productId] }</span>
-												    </c:when>    
-												    <c:otherwise>
-												        <span class="cityname">Plus disponible</span>
-												    </c:otherwise>
-												</c:choose>										
+												<span class="date">Ref : C${line.orderedProduct.category.categoryId}A${line.orderedProduct.productId}</span>
+    									        <span class="cityname">Quantité commandée ${line.quantity}</span>
 												</section>
 												<div class="clearfix"></div>
 												</li> 
 											</a>
 										</c:forEach>
 									</ul>
-									<p><button class="button-qt" onclick="location.replace('<spring:url value='/cart/validate' />')">commander // à traduire</button></p>
-								</c:when>
-								<c:otherwise>
-									<h4>${emptyCart }</h4>
-								</c:otherwise>
-							</c:choose>
 							
 							
 						</div>

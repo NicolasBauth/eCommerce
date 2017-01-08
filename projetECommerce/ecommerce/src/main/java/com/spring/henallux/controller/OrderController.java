@@ -9,6 +9,7 @@ import java.util.Locale;
 import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -37,6 +38,8 @@ public class OrderController {
 	private OrderDAO orderDAO;
 	@Autowired
 	private ProductDAO productDAO;
+	@Autowired
+	private MessageSource messageSource;
 	
 	@ModelAttribute("currentUser")
 	public User user()
@@ -49,6 +52,25 @@ public class OrderController {
 		if(user.getPseudo() == null){
 			return "redirect:/login";
 		}
+		model.addAttribute("bannerMainText", messageSource.getMessage("bannerMainText", null, locale));
+		model.addAttribute("bannerSecText", messageSource.getMessage("bannerSecText", null, locale));
+		model.addAttribute("bannerCatalogue", messageSource.getMessage("bannerCatalogue", null, locale));
+		
+		model.addAttribute("footerQui", messageSource.getMessage("footerQui", null, locale));
+		model.addAttribute("footerQuiText", messageSource.getMessage("footerQuiText", null, locale));
+		model.addAttribute("footerAide", messageSource.getMessage("footerAide", null, locale));
+		model.addAttribute("footerInfo", messageSource.getMessage("footerInfo", null, locale));
+		model.addAttribute("footerContact", messageSource.getMessage("footerContact", null, locale));
+		
+		model.addAttribute("panier", messageSource.getMessage("panier", null, locale));
+		model.addAttribute("connexion", messageSource.getMessage("connexion", null, locale));
+		
+		model.addAttribute("terms", messageSource.getMessage("terms", null, locale));
+		model.addAttribute("privacy", messageSource.getMessage("privacy", null, locale));
+		model.addAttribute("sitemap", messageSource.getMessage("sitemap", null, locale));
+		model.addAttribute("shipping", messageSource.getMessage("shipping", null, locale));
+		
+		model.addAttribute("emptyCart", messageSource.getMessage("emptyCart", null, locale));
 
 		ArrayList<Order> lc = orderDAO.getOrdersByUser(user);
 		model.addAttribute("currentOrders", lc);
@@ -59,6 +81,25 @@ public class OrderController {
 		if(user.getPseudo() == null){
 			return "redirect:/login";
 		}
+		model.addAttribute("bannerMainText", messageSource.getMessage("bannerMainText", null, locale));
+		model.addAttribute("bannerSecText", messageSource.getMessage("bannerSecText", null, locale));
+		model.addAttribute("bannerCatalogue", messageSource.getMessage("bannerCatalogue", null, locale));
+		
+		model.addAttribute("footerQui", messageSource.getMessage("footerQui", null, locale));
+		model.addAttribute("footerQuiText", messageSource.getMessage("footerQuiText", null, locale));
+		model.addAttribute("footerAide", messageSource.getMessage("footerAide", null, locale));
+		model.addAttribute("footerInfo", messageSource.getMessage("footerInfo", null, locale));
+		model.addAttribute("footerContact", messageSource.getMessage("footerContact", null, locale));
+		
+		model.addAttribute("panier", messageSource.getMessage("panier", null, locale));
+		model.addAttribute("connexion", messageSource.getMessage("connexion", null, locale));
+		
+		model.addAttribute("terms", messageSource.getMessage("terms", null, locale));
+		model.addAttribute("privacy", messageSource.getMessage("privacy", null, locale));
+		model.addAttribute("sitemap", messageSource.getMessage("sitemap", null, locale));
+		model.addAttribute("shipping", messageSource.getMessage("shipping", null, locale));
+		
+		model.addAttribute("emptyCart", messageSource.getMessage("emptyCart", null, locale));
 		
 		Order comm = orderDAO.getOrderById(idOrder);
 		
@@ -71,10 +112,30 @@ public class OrderController {
 	}
 
 	@RequestMapping(method=RequestMethod.GET, value="/order")
-	public String passerCommande(Model model, @ModelAttribute(value="currentCart")HashMap<Integer,Integer> cart, @ModelAttribute(value="currentUser")User user){
+	public String passerCommande(Model model, @ModelAttribute(value="currentCart")HashMap<Integer,Integer> cart, @ModelAttribute(value="currentUser")User user, Locale locale){
 		if(user.getPseudo() == null){
 			return "redirect:/login/";
 		}
+		model.addAttribute("bannerMainText", messageSource.getMessage("bannerMainText", null, locale));
+		model.addAttribute("bannerSecText", messageSource.getMessage("bannerSecText", null, locale));
+		model.addAttribute("bannerCatalogue", messageSource.getMessage("bannerCatalogue", null, locale));
+		
+		model.addAttribute("footerQui", messageSource.getMessage("footerQui", null, locale));
+		model.addAttribute("footerQuiText", messageSource.getMessage("footerQuiText", null, locale));
+		model.addAttribute("footerAide", messageSource.getMessage("footerAide", null, locale));
+		model.addAttribute("footerInfo", messageSource.getMessage("footerInfo", null, locale));
+		model.addAttribute("footerContact", messageSource.getMessage("footerContact", null, locale));
+		
+		model.addAttribute("panier", messageSource.getMessage("panier", null, locale));
+		model.addAttribute("connexion", messageSource.getMessage("connexion", null, locale));
+		
+		model.addAttribute("terms", messageSource.getMessage("terms", null, locale));
+		model.addAttribute("privacy", messageSource.getMessage("privacy", null, locale));
+		model.addAttribute("sitemap", messageSource.getMessage("sitemap", null, locale));
+		model.addAttribute("shipping", messageSource.getMessage("shipping", null, locale));
+		
+		model.addAttribute("emptyCart", messageSource.getMessage("emptyCart", null, locale));
+		
 		Order commande = new Order(user);
 		List<OrderLine> lignes = new ArrayList<OrderLine>();
 		BigDecimal prixTotal = new BigDecimal(0);

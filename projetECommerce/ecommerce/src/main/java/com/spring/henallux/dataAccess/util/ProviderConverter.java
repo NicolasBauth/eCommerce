@@ -14,8 +14,8 @@ public class ProviderConverter
 		categoryEntity.setIcon(categoryModel.getIcon());
 		return categoryEntity;
 	}
-	
-	
+
+
 	public Category categoryEntityToCategoryModel(CategoryEntity categoryEntity)
 	{
 		Category categoryModel = new Category();
@@ -23,8 +23,8 @@ public class ProviderConverter
 		categoryModel.setIcon(categoryEntity.getIcon());
 		return categoryModel;
 	}
-	
-	
+
+
 	public ImageEntity imageModelToImageEntity(Image imageModel)
 	{
 		ImageEntity imageEntity = new ImageEntity();
@@ -35,8 +35,8 @@ public class ProviderConverter
 		imageEntity.setReferencedProduct(referencedProduct);
 		return imageEntity;
 	}
-	
-	
+
+
 	public Image imageEntityToImageModel(ImageEntity imageEntity)
 	{
 		Image imageModel = new Image();
@@ -47,7 +47,7 @@ public class ProviderConverter
 		imageModel.setReferencedProduct(referencedProduct);
 		return imageModel;
 	}
-	
+
 
 	public LanguageEntity languageModelToLanguageEntity(Language languageModel)
 	{
@@ -56,8 +56,8 @@ public class ProviderConverter
 		languageEntity.setName(languageModel.getName());
 		return languageEntity;
 	}
-	
-	
+
+
 	public Language languageEntityToLanguageModel(LanguageEntity languageEntity)
 	{
 		Language languageModel = new Language();
@@ -65,7 +65,7 @@ public class ProviderConverter
 		languageModel.setName(languageEntity.getName());
 		return languageModel;
 	}
-	
+
 	public OrderEntity orderModelToOrderEntity(Order orderModel)
 	{
 		OrderEntity orderEntity = new OrderEntity();
@@ -75,8 +75,8 @@ public class ProviderConverter
 		orderEntity.setOrderId(orderModel.getOrderId());
 		return orderEntity;
 	}
-	
-	
+
+
 	public Order orderEntityToOrderModel(OrderEntity orderEntity)
 	{
 		Order orderModel = new Order();
@@ -84,10 +84,17 @@ public class ProviderConverter
 		orderModel.setCustomer(customer);
 		orderModel.setOrderDate(orderEntity.getOrderDate());
 		orderModel.setOrderId(orderEntity.getOrderId());
+		if(orderEntity.getOrderLines() != null){
+			for(OrderLineEntity ent : orderEntity.getOrderLines()){
+				OrderLine line = orderLineEntityToOrderLineModel(ent, false);
+				line.setOrder(orderModel);
+				orderModel.addOrderLine(line);
+			}
+		}
 		return orderModel;
 	}
-	
-	
+
+
 	public OrderLineEntity orderLineModelToOrderLineEntity(OrderLine orderLineModel)
 	{
 		OrderLineEntity orderLineEntity = new OrderLineEntity();
@@ -100,22 +107,26 @@ public class ProviderConverter
 		orderLineEntity.setUnitPrice(orderLineModel.getUnitPrice());
 		return orderLineEntity;
 	}
-	
-	
-	public OrderLine orderLineEntityToOrderLineModel(OrderLineEntity orderLineEntity)
+
+
+	public OrderLine orderLineEntityToOrderLineModel(OrderLineEntity orderLineEntity, boolean setOrder)
 	{
 		OrderLine orderLineModel = new OrderLine();
-		Order order = orderEntityToOrderModel(orderLineEntity.getOrder());
+		if(setOrder){
+			Order order = orderEntityToOrderModel(orderLineEntity.getOrder());
+			orderLineModel.setOrder(order);
+		}
+
 		Product orderedProduct = productEntityToProductModel(orderLineEntity.getOrderedProduct());
-		orderLineModel.setOrder(order);
+
 		orderLineModel.setOrderedProduct(orderedProduct);
 		orderLineModel.setOrderLineId(orderLineEntity.getOrderLineId());
 		orderLineModel.setQuantity(orderLineEntity.getQuantity());
 		orderLineModel.setUnitPrice(orderLineEntity.getUnitPrice());
 		return orderLineModel;
 	}
-	
-	
+
+
 	public ProductEntity productModelToProductEntity(Product productModel)
 	{
 		ProductEntity productEntity = new ProductEntity();
@@ -132,8 +143,8 @@ public class ProviderConverter
 		productEntity.setUnitPrice(productModel.getUnitPrice());
 		return productEntity;
 	}
-	
-	
+
+
 	public Product productEntityToProductModel(ProductEntity productEntity)
 	{
 		Product productModel = new Product();
@@ -150,8 +161,8 @@ public class ProviderConverter
 		productModel.setUnitPrice(productEntity.getUnitPrice());
 		return productModel;
 	}
-	
-	
+
+
 	public PromotionEntity promotionModelToPromotionEntity(Promotion promotionModel)
 	{
 		PromotionEntity promotionEntity = new PromotionEntity();
@@ -161,8 +172,8 @@ public class ProviderConverter
 		promotionEntity.setStartDate(promotionModel.getStartDate());
 		return promotionEntity;
 	}
-	
-	
+
+
 	public Promotion promotionEntityToPromotionModel(PromotionEntity promotionEntity)
 	{
 		Promotion promotionModel = new Promotion();
@@ -172,8 +183,8 @@ public class ProviderConverter
 		promotionModel.setStartDate(promotionEntity.getStartDate());
 		return promotionModel;
 	}
-	
-	
+
+
 	public TranslationEntity translationModelToTranslationEntity(Translation translationModel)
 	{
 		TranslationEntity translationEntity = new TranslationEntity();
@@ -185,8 +196,8 @@ public class ProviderConverter
 		translationEntity.setTranslationId(translationModel.getTranslationId());
 		return translationEntity;
 	}
-	
-	
+
+
 	public Translation translationEntityToTranslationModel(TranslationEntity translationEntity)
 	{
 		Translation translationModel = new Translation();
@@ -198,8 +209,8 @@ public class ProviderConverter
 		translationModel.setTranslationId(translationEntity.getTranslationId());
 		return translationModel;
 	}
-	
-	
+
+
 	public UserEntity userModelToUserEntity(User userModel)
 	{
 		UserEntity userEntity = new UserEntity();
@@ -216,11 +227,11 @@ public class ProviderConverter
 		userEntity.setTown(userModel.getTown());
 		userEntity.setUserId(userModel.getUserId());
 		userEntity.setZipCode(userModel.getZipCode());
-		
+
 		return userEntity;
 	}
-	
-	
+
+
 	public User userEntityToUserModel(UserEntity userEntity)
 	{
 		if(userEntity == null)
@@ -244,6 +255,6 @@ public class ProviderConverter
 	}
 
 
-	
-	
+
+
 }

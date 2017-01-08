@@ -30,7 +30,7 @@ import com.spring.henallux.model.User;
 @Controller
 @RequestMapping(value="/cart")
 //@SessionAttributes({"currentUser"})
-@SessionAttributes({SingleController.CURRENTCART, CartController.NBARTICLESTOTAL})
+@SessionAttributes({"currentUser", SingleController.CURRENTCART, CartController.NBARTICLESTOTAL})
 public class CartController {
 
 	protected static final String CURRENTCART = "currentCart";

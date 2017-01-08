@@ -51,7 +51,7 @@
 											</a>
 										</c:forEach>
 									</ul>
-									<p><button class="button-qt" onclick="location.replace('<spring:url value='/cart/validate' />')">commander // à traduire</button></p>
+                                    <p><button class="button-qt" onclick="location.replace('<spring:url value='/order/order' />')">commander // à traduire</button></p>
 								</c:when>
 								<c:otherwise>
 									<h4>${emptyCart }</h4>
