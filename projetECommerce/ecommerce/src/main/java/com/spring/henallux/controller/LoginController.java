@@ -46,6 +46,14 @@ public class LoginController {
 
 		return "integrated:login";
 	}
+	@RequestMapping(method=RequestMethod.GET, value="logout")
+	public String logout(Model model, Locale locale){
+		addAttr(model, locale);
+
+		model.addAttribute("currentUser", new User());
+
+		return "redirect:/index";
+	}
 
 	@RequestMapping(value="/send", method=RequestMethod.POST)
 	public String getFormData(Model model, @ModelAttribute(value=USER) User currentUser, @ModelAttribute(value="loginForm") LoginForm form,final BindingResult errors, RedirectAttributes attr, Locale locale){
