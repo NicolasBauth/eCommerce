@@ -6,6 +6,7 @@ import javax.persistence.*;
 public class OrderLineEntity 
 {
 	@Id
+	@GeneratedValue
 	@Column(name="numero")
 	private Integer orderLineId;
 	@Column(name="quantite")

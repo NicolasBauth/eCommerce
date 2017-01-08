@@ -1,13 +1,19 @@
 package com.spring.henallux.model;
 
+import java.util.Date;
+
 public class Order 
 {
 	private Integer OrderId;
 	private User customer;
-	private java.util.Date orderDate;
+	private Date orderDate;
 	public Order()
 	{
 		
+	}
+	public Order(User customer){
+		this.customer = customer;
+		this.orderDate = new Date();
 	}
 	public Integer getOrderId() {
 		return OrderId;

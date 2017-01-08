@@ -1,15 +1,23 @@
 package com.spring.henallux.model;
 
+import java.math.BigDecimal;
+
 public class OrderLine 
 {
 	private Integer OrderLineId;
 	private Integer quantity;
-	private java.math.BigDecimal unitPrice;
+	private BigDecimal unitPrice;
 	private Product orderedProduct;
 	private Order order;
 	public OrderLine()
 	{
 		
+	}
+	public OrderLine(Order order, Product product, BigDecimal price, Integer qty){
+		this.order = order;
+		this.orderedProduct = product;
+		this.unitPrice = price;
+		this.quantity = qty;
 	}
 	public Integer getOrderLineId() {
 		return OrderLineId;

@@ -223,6 +223,8 @@ public class ProviderConverter
 	
 	public User userEntityToUserModel(UserEntity userEntity)
 	{
+		if(userEntity == null)
+			return null;
 		User userModel = new User();
 		userModel.setBirthDate(userEntity.getBirthDate());
 		userModel.setCountry(userEntity.getCountry());

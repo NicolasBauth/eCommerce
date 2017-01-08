@@ -37,8 +37,8 @@ public class UserDAO
 		return providerConverter.userEntityToUserModel(userEntity);
 	}
 	
-	public ArrayList<User> findUserByPseudoAndPassword(String pseudo, String password){
-		Session session = sessionFactory.getCurrentSession();
+	public User findUserByPseudoAndPassword(String pseudo, String password){
+		/*Session session = sessionFactory.getCurrentSession();
 		session.beginTransaction();
 		//Query query = session.getNamedQuery("findUserByPseudoAndPassword");
 		Query query = session.getNamedQuery("findUserByConnection");
@@ -52,7 +52,9 @@ public class UserDAO
 		}
 		
 		session.getTransaction().commit();
-		return users;
+		return users;*/
+		UserEntity ent = userRepository.findUserByPseudoAndPassword(pseudo, password);
+		return providerConverter.userEntityToUserModel(ent);
 	}
 	
 	public ArrayList<User> getAllUsers()
@@ -71,8 +73,8 @@ public class UserDAO
 	{
 		
 		
-		List<UserEntity> databaseUsers = userRepository.findUserByPseudo(usernameToCheck);
-		if(databaseUsers.isEmpty())
+		UserEntity databaseUsers = userRepository.findUserByPseudo(usernameToCheck);
+		if(databaseUsers == null)
 		{
 			return false;
 		}

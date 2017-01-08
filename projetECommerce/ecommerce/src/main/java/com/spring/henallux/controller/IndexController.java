@@ -23,14 +23,19 @@ import com.spring.henallux.model.*;
 
 @Controller
 @RequestMapping(value="/index")
-@SessionAttributes({SingleController.CURRENTCART})
+@SessionAttributes({SingleController.CURRENTCART, IndexController.NBARTICLESTOTAL})
 public class IndexController {
 	
 	protected static final String CURRENTCART = "currentCart";
+	protected static final String NBARTICLESTOTAL = "nbArticlesTotal";
 	
 	@ModelAttribute(CURRENTCART)
 	public HashMap<Integer, Integer> getCurrentCart(){
 		return new HashMap<Integer, Integer>();
+	}
+	@ModelAttribute(NBARTICLESTOTAL)
+	public Integer getNbArticlesTotal(){
+		return new Integer(0);
 	}
 	
 	@Autowired
@@ -96,7 +101,7 @@ public class IndexController {
 			nbArticlesTotal += entry.getValue();
 		}
 		
-		model.addAttribute("nbArticles", nbArticlesTotal);
+		model.addAttribute(NBARTICLESTOTAL, nbArticlesTotal);
 		
 		return "integrated:index";
 	}

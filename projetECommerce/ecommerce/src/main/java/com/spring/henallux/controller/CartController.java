@@ -89,7 +89,7 @@ public class CartController {
 			products.add(productDAO.getProduct(key));
 		}*/
 		
-		//int nbArticlesTotal = 0;
+		nbArticlesTotal = 0;
 		
 		for(Map.Entry<Integer, Integer> entry : getCurrentCart.entrySet()) {
 			//Integer key = entry.getKey();
@@ -123,11 +123,65 @@ public class CartController {
 		
 		model.addAttribute("image", result);
 		
-		model.addAttribute("nbArticles", nbArticlesTotal);
+		model.addAttribute(NBARTICLESTOTAL, nbArticlesTotal);
 		System.out.println("TOTAL"+nbArticlesTotal);
 		return "integrated:cart";
 	}
+	@RequestMapping(method=RequestMethod.GET, value="/validate")
+	public String validerCommande(Model model, @ModelAttribute(value="currentCart")HashMap<Integer,Integer> cart, @ModelAttribute(value="currentUser")User user,  Locale locale){
+		model.addAttribute("bannerMainText", messageSource.getMessage("bannerMainText", null, locale));
+		model.addAttribute("bannerSecText", messageSource.getMessage("bannerSecText", null, locale));
+		model.addAttribute("bannerCatalogue", messageSource.getMessage("bannerCatalogue", null, locale));
+		
+		model.addAttribute("footerQui", messageSource.getMessage("footerQui", null, locale));
+		model.addAttribute("footerQuiText", messageSource.getMessage("footerQuiText", null, locale));
+		model.addAttribute("footerAide", messageSource.getMessage("footerAide", null, locale));
+		model.addAttribute("footerInfo", messageSource.getMessage("footerInfo", null, locale));
+		model.addAttribute("footerContact", messageSource.getMessage("footerContact", null, locale));
+		
+		model.addAttribute("panier", messageSource.getMessage("panier", null, locale));
+		model.addAttribute("connexion", messageSource.getMessage("connexion", null, locale));
+		
+		model.addAttribute("terms", messageSource.getMessage("terms", null, locale));
+		model.addAttribute("privacy", messageSource.getMessage("privacy", null, locale));
+		model.addAttribute("sitemap", messageSource.getMessage("sitemap", null, locale));
+		model.addAttribute("shipping", messageSource.getMessage("shipping", null, locale));
+		
+		model.addAttribute("emptyCart", messageSource.getMessage("emptyCart", null, locale));
+		
+		if(user.getPseudo() == null){
+			return "redirect:/login/";
+		}
 
+		if(cart.size() == 0){
+			return "redirect:/cart/";
+		}
+		products = new ArrayList<Product>();
+		
+		int nbArticlesTotal = 0;
+		
+		for(Map.Entry<Integer, Integer> entry : cart.entrySet()) {
+			nbArticlesTotal += entry.getValue();
+			products.add(productDAO.getProduct(entry.getKey()));
+		}
+		
+		model.addAttribute("products", products);
+		
+		result = new HashMap<Integer, Image>();
+			
+		for(Product product : products){
+			
+			imageFromLastProducts = imageDAO.findImageByReferencedProductProductId(product.getProductId());
+			result.put(product.getProductId(), imageFromLastProducts);
+
+		}
+		
+		model.addAttribute("image", result);
+		
+		model.addAttribute(NBARTICLESTOTAL, nbArticlesTotal);
+		
+		return "integrated:validation";
+	}
 	
 	
 }
