@@ -6,27 +6,28 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class LoginForm {
 	@NotEmpty
-	private String pseudo;
+	private String pseudoLogin;
 	@Size(min=6,max=25)
-	private String password;
+	private String passwordLogin;
 	
+	public String getPseudoLogin() {
+		return pseudoLogin;
+	}
+
+	public void setPseudoLogin(String pseudoLogin) {
+		this.pseudoLogin = pseudoLogin;
+	}
+
+	public String getPasswordLogin() {
+		return passwordLogin;
+	}
+
+	public void setPasswordLogin(String passwordLogin) {
+		this.passwordLogin = passwordLogin;
+	}
+
 	public LoginForm(){
 		
 	}
 
-	public String getPseudo() {
-		return pseudo;
-	}
-
-	public void setPseudo(String pseudo) {
-		this.pseudo = pseudo;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
 }

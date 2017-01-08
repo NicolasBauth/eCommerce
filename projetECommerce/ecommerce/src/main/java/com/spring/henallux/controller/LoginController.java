@@ -42,7 +42,7 @@ public class LoginController {
 	private UserService userService;
 
 	@RequestMapping(method=RequestMethod.GET)
-	public String home(Model model, Locale locale, @ModelAttribute(value=USER) User currentUser){
+	public String home(Model model, Locale locale){
 		model.addAttribute("bannerMainText", messageSource.getMessage("bannerMainText", null, locale));
 		model.addAttribute("bannerSecText", messageSource.getMessage("bannerSecText", null, locale));
 		model.addAttribute("bannerCatalogue", messageSource.getMessage("bannerCatalogue", null, locale));
@@ -64,11 +64,8 @@ public class LoginController {
 		model.addAttribute("newPeople", messageSource.getMessage("newPeople", null, locale));
 		model.addAttribute("newPeopleSec", messageSource.getMessage("newPeopleSec", null, locale));
 		model.addAttribute("registerNow", messageSource.getMessage("registerNow", null, locale));
-		
-		if (!model.containsAttribute("loginForm"))
-		{
-			model.addAttribute("loginForm", new LoginForm());
-		}
+
+		model.addAttribute("loginForm", new LoginForm());
 		
 		return "integrated:login";
 	}
@@ -94,7 +91,7 @@ public class LoginController {
 				return "redirect:/login";
 			}
 			else {
-				currentUser = users.get(0);
+				model.addAttribute("currentUser", users.get(0));
 				return "redirect:/cart";
 			}
 		}

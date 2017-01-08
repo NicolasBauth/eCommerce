@@ -14,31 +14,31 @@ public class UserService
 	public User createUserFromForm(RegisterForm register)
 	{
 		
-			User user = new User();
-			
-			user.setBirthDate(register.getBirthDate());	
-			user.setLastName(register.getLastName());
-			user.setFirstName(register.getFirstName());
-			user.setEmail(register.geteMail());
-			user.setCountry(register.getCountry());
-			user.setNumberOfStreet(register.getNumberOfStreet());
-			user.setStreet(register.getStreet());
-			user.setTown(register.getCity());
-			user.setZipCode(register.getZipCode());
-			if(register.getPhoneNumber().equals(""))
-			{
-				user.setPhoneNumber(null);
-			}
-			else
-			{
-				user.setPhoneNumber(register.getPhoneNumber());
-			}
-			try
-			{
-				user.setPassword(PasswordEncryptionService.encryptPassword(register.getPassword()));
-				user.setPseudo(register.getPseudo());
-				return user;
-			}
+		User user = new User();
+		
+		user.setBirthDate(register.getBirthDate());	
+		user.setLastName(register.getLastName());
+		user.setFirstName(register.getFirstName());
+		user.setEmail(register.geteMail());
+		user.setCountry(register.getCountry());
+		user.setNumberOfStreet(register.getNumberOfStreet());
+		user.setStreet(register.getStreet());
+		user.setTown(register.getCity());
+		user.setZipCode(register.getZipCode());
+		if(register.getPhoneNumber().equals(""))
+		{
+			user.setPhoneNumber(null);
+		}
+		else
+		{
+			user.setPhoneNumber(register.getPhoneNumber());
+		}
+		try
+		{
+			user.setPassword(PasswordEncryptionService.encryptPassword(register.getPassword()));
+			user.setPseudo(register.getPseudo());
+			return user;
+		}
 		
 		catch(Exception e)
 		{
@@ -51,10 +51,10 @@ public class UserService
 	public EncryptedLogin encryptLogin(LoginForm form)
 	{
 		EncryptedLogin encryptedLogin = new EncryptedLogin();
-		encryptedLogin.setUserName(form.getPseudo());
+		encryptedLogin.setUserName(form.getPseudoLogin());
 		try
 		{
-			encryptedLogin.setEncryptedPassword(PasswordEncryptionService.encryptPassword(form.getPassword()));
+			encryptedLogin.setEncryptedPassword(PasswordEncryptionService.encryptPassword(form.getPasswordLogin()));
 			return encryptedLogin;
 		}
 		catch(Exception e)

@@ -129,7 +129,7 @@ public class RegisterController {
 				return "redirect:/index";
 			}
 			attr.addFlashAttribute("org.springframework.validation.BindingResult.registerForm", errors);
-		    attr.addFlashAttribute("registerForm",register );
+		    attr.addFlashAttribute("registerForm",register);
 	
 		return "redirect:/register";
 				
