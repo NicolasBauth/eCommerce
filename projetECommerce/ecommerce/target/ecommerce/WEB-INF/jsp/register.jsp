@@ -34,7 +34,7 @@
 					</div>
 					<div class="sign-u">
 						<div class="sign-up1">
-							<h4>${birthdateText }*:</h4>
+							<h4>${birthdateText}*:</h4>
 						</div>
 						<div class="sign-up2">
 							<form:input  placeholder="19-02-1995" required=" " path="birthDate" type="date"/>
@@ -44,7 +44,7 @@
 					</div>
 					<div class="sign-u">
 						<div class="sign-up1">
-							<h4>${phoneNumberText } :</h4>
+							<h4>${phoneNumberText} :</h4>
 						</div>
 						<div class="sign-up2">
 							<form:input type="text" placeholder=" " required=" " path="phoneNumber"/>
@@ -52,10 +52,10 @@
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-					<h2>${deliveryAdressText }</h2>
+					<h2>${deliveryAdressText}</h2>
 					<div class="sign-u">
 						<div class="sign-up1">
-							<h4>${countryText }* :</h4>
+							<h4>${countryText}* :</h4>
 						</div>
 						<div class="sign-up2">
 							<form:input type="text" placeholder=" " required=" " path="country"/>
@@ -65,7 +65,7 @@
 					</div>
 					<div class="sign-u">
 						<div class="sign-up1">
-							<h4>${streetText }* :</h4>
+							<h4>${streetText}* :</h4>
 						</div>
 						<div class="sign-up2">
 							<form:input type="text" placeholder=" " required=" " path="street"/>
@@ -75,7 +75,7 @@
 					</div>
 					<div class="sign-u">
 						<div class="sign-up1">
-							<h4>${numberText }* :</h4>
+							<h4>${numberText}* :</h4>
 						</div>
 						<div class="sign-up2">
 							<form:input type="number" min="1" max="10000" placeholder=" " required=" " path="numberOfStreet"/>
@@ -85,7 +85,7 @@
 					</div>
 					<div class="sign-u">
 						<div class="sign-up1">
-							<h4>${zipCodeText }* :</h4>
+							<h4>${zipCodeText}* :</h4>
 						</div>
 						<div class="sign-up2">
 							<form:input type="number" placeholder=" " required=" " path="zipCode"/>
@@ -95,7 +95,7 @@
 					</div>
 					<div class="sign-u">
 						<div class="sign-up1">
-							<h4>${cityText }* :</h4>
+							<h4>${cityText}* :</h4>
 						</div>
 						<div class="sign-up2">
 							<form:input type="text" placeholder=" " required=" " path="city"/>
@@ -104,10 +104,10 @@
 						<div class="clearfix"> </div>
 					</div>
 					
-					<h2>${idText }</h2>
+					<h2>${idText}</h2>
 					<div class="sign-u">
 						<div class="sign-up1">
-							<h4>${emailText }* :</h4>
+							<h4>${emailText}* :</h4>
 						</div>
 						<div class="sign-up2">
 							<form:input type="text" placeholder=" " required=" " path="eMail"/>
@@ -117,7 +117,7 @@
 					</div>
 					<div class="sign-u">
 						<div class="sign-up1">
-							<h4>${userNameText }* :</h4>
+							<h4>${userNameText}* :</h4>
 						</div>
 						<div class="sign-up2">
 							<form:input type="text" placeholder=" " required=" " path="pseudo"/>
@@ -127,7 +127,7 @@
 					</div>
 					<div class="sign-u">
 						<div class="sign-up1">
-							<h4>${passwordText }* :</h4>
+							<h4>${passwordText}* :</h4>
 						</div>
 						<div class="sign-up2">
 							<form:input type="password" placeholder=" " required=" " path="password"/>
@@ -137,7 +137,7 @@
 					</div>
 					<div class="sign-u">
 						<div class="sign-up1">
-							<h4>${confirmPasswordText }* :</h4>
+							<h4>${confirmPasswordText}* :</h4>
 						</div>
 						<div class="sign-up2">
 							<form:input type="password" placeholder=" " required=" " path="passwordConfirmation"/>
@@ -146,7 +146,7 @@
 						<div class="clearfix"> </div>
 					</div>
 					<div class="sub_home">
-						<input type="submit" value="${createText }">
+						<input type="submit" value="${createText}">
 						
 						<div class="clearfix"> </div>
 					</div>

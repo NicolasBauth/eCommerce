@@ -87,14 +87,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="header-right">
 				<a class="account" href="/ecommerce/cart">
 					<i class="glyphicon glyphicon-shopping-cart"></i> 
-					<c:choose>
-					    <c:when test="${not empty nbArticlesTotal}">
-					        ${nbArticlesTotal} ${nbArticles} ${panier} ICI currentTotal ${currentTotal}
-					    </c:when>    
-					    <c:otherwise>
-					        0 ICI currentTotal ${currentTotal} ${panier}
-					    </c:otherwise>
-					</c:choose>
+					${nbArticlesTotal} ${panier}     
 				</a>
 				<a class="account" href="/ecommerce/login">
 					<i class="glyphicon glyphicon-user"></i>
@@ -122,7 +115,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				
 				<a href="${localeDe}"><span class="lng-sprite all">Allemand</span></a>
 				<a href="${localeEng}"><span class="lng-sprite ngl">Anglais</span></a>
-				<a href="${localeFr}"><span class="lng-sprite fr">Français</span></a>
+				<a href="${localeFr}"><span class="lng-sprite fr">Franï¿½ais</span></a>
 				
 		
 			</div>
@@ -200,7 +193,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</ul>
 				</div>
 				<div class="copyrights">
-					<p> © 2016 Magicabrac. Tous droits réservés | Design by  <a href="http://w3layouts.com/" about="_blank"> W3layouts</a></p>
+					<p> ï¿½ 2016 Magicabrac. Tous droits rï¿½servï¿½s | Design by  <a href="http://w3layouts.com/" about="_blank"> W3layouts</a></p>
 				</div>
 				<div class="clearfix"></div>
 			</div>

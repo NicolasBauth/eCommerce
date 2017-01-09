@@ -1,11 +1,14 @@
 package com.spring.henallux.model;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
 public class Product 
 {
 	private Integer productId;
 	private String name;
 	private java.util.Date marketingDate;
-	private java.math.BigDecimal unitPrice;
+	private BigDecimal unitPrice;
 	private String quantityPerPack;
 	private String description;
 	private Integer storedQuantity;
@@ -14,6 +17,27 @@ public class Product
 	public Product()
 	{
 		
+	}
+	public boolean isPromotionValid(){
+		if(getPromotion() == null)
+			return false;
+		
+		Date now = new Date();
+		if(promotion.getStartDate() == null || promotion.getStartDate().before(now)){
+			if(promotion.getEndDate() ==  null || promotion.getEndDate().after(now)){
+				return true;		
+			}
+		}
+		return false;
+	}
+	public BigDecimal getPrixPromotion(){
+		BigDecimal price = unitPrice;
+		if(isPromotionValid()){
+			BigDecimal cent = new BigDecimal(100);
+			BigDecimal one = new BigDecimal(1);
+			price = price.multiply(one.subtract(getPromotion().getPercentage().divide(cent)));
+		}
+		return price;
 	}
 	public Product(String name)
 	{
@@ -38,6 +62,9 @@ public class Product
 		this.marketingDate = marketingDate;
 	}
 	public java.math.BigDecimal getUnitPrice() {
+		return getPrixPromotion();
+	}
+	public java.math.BigDecimal getUnitBasePrice() {
 		return unitPrice;
 	}
 	public void setUnitPrice(java.math.BigDecimal unitPrice) {

@@ -21,8 +21,8 @@
 								action="/ecommerce/login/send" modelAttribute="loginForm">
 						<div class="log-input">
 							<div class="log-input-left">
-							   <form:input type="text" class="user" path="pseudo" value="Pseudo" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Pseudo';}"/>
-							   <form:errors path="pseudo" style="color:Red"/>
+							   <form:input type="text" class="user" path="pseudoLogin" value="Pseudo" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Pseudo';}"/>
+							   <form:errors path="pseudoLogin" style="color:Red"/>
 							</div>
 							<span class="checkbox2">
 								 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i></label>
@@ -31,8 +31,8 @@
 						</div>
 						<div class="log-input">
 							<div class="log-input-left">
-							   <form:input type="password" class="lock" path="password" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email address:';}"/>
-							   <form:errors path="password" style="color:Red"/>
+							   <form:input type="password" class="lock" path="passwordLogin" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email address:';}"/>
+							   <form:errors path="passwordLogin" style="color:Red"/>
 							</div>
 							<span class="checkbox2">
 								 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i></label>

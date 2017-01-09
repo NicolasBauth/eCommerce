@@ -29,7 +29,6 @@ public class SingleController {
 	protected static final String CURRENTCART = "currentCart";
 	protected static final String CURRENTTOTAL = "currentTotal";
 	
-	//protected static final String NBARTICLESTOTAL = "nbArticlesTotal";
 	
 	@ModelAttribute(CURRENTCART)
 	public HashMap<Integer, Integer> getCurrentCart(){
@@ -41,10 +40,6 @@ public class SingleController {
 		return new Integer(0);
 	}
 	
-	/*@ModelAttribute(NBARTICLESTOTAL)
-	public Integer getNbArticlesTotal(){
-		return 0;
-	}*/
 	
 	@Autowired
 	private MessageSource messageSource;
@@ -128,11 +123,6 @@ public class SingleController {
 		}
 		
 		currentTotal += form.getNbArticles();
-		System.out.println("currentTotal " + currentTotal);
-		
-		/*System.out.println(nbArticlesTotal);
-		nbArticlesTotal += form.getNbArticles();
-		System.out.println(nbArticlesTotal);*/
 	
 		return "redirect:/cart";		
 		

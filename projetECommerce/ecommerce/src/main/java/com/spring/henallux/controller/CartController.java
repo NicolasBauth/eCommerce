@@ -1,5 +1,6 @@
 package com.spring.henallux.controller;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -61,8 +62,6 @@ public class CartController {
 	@RequestMapping(method=RequestMethod.GET)
 	public String home(Model model, Locale locale, String path, @ModelAttribute(value="currentCart") HashMap<Integer, Integer> getCurrentCart, @ModelAttribute(value="nbArticlesTotal") Integer nbArticlesTotal){
 		
-		//currentCart = new HashMap<Integer, Integer>();
-		//model.addAttribute("getCurrentCart", new HashMap<Integer, Integer>());
 		model.addAttribute("bannerMainText", messageSource.getMessage("bannerMainText", null, locale));
 		model.addAttribute("bannerSecText", messageSource.getMessage("bannerSecText", null, locale));
 		model.addAttribute("bannerCatalogue", messageSource.getMessage("bannerCatalogue", null, locale));
@@ -85,32 +84,25 @@ public class CartController {
 		
 		products = new ArrayList<Product>();
 		
-		/*for (Integer key : currentCart.keySet()) {
-			products.add(productDAO.getProduct(key));
-		}*/
-		
 		nbArticlesTotal = 0;
+		BigDecimal prixTotal = new BigDecimal(0);
 		
 		for(Map.Entry<Integer, Integer> entry : getCurrentCart.entrySet()) {
-			//Integer key = entry.getKey();
-			//Integer value = entry.getValue();
-			
-			//System.out.println("ICI " + entry.getKey());
-			//System.out.println("Key " + entry.getKey() + " Value " + entry.getValue());
+
 			nbArticlesTotal += entry.getValue();
-			System.out.println(nbArticlesTotal);
-			products.add(productDAO.getProduct(entry.getKey()));
+			
+			Product product = productDAO.getProduct(entry.getKey());
+			
+			BigDecimal qte = new BigDecimal(entry.getValue());
+			prixTotal = prixTotal.add(qte.multiply(product.getUnitPrice()));
+			
+			products.add(product);
 		}
 		
-		/*Iterator entries = currentCart.entrySet().iterator();
-		while (entries.hasNext()) {
-		  Entry thisEntry = (Entry) entries.next();
-		  Integer key = thisEntry.getKey();
-		  Object value = thisEntry.getValue();
-		  // ...
-		}*/
+
 		
 		model.addAttribute("products", products);
+		model.addAttribute("prixTotal", prixTotal);
 		
 		result = new HashMap<Integer, Image>();
 			
@@ -124,7 +116,6 @@ public class CartController {
 		model.addAttribute("image", result);
 		
 		model.addAttribute(NBARTICLESTOTAL, nbArticlesTotal);
-		System.out.println("TOTAL"+nbArticlesTotal);
 		return "integrated:cart";
 	}
 	@RequestMapping(method=RequestMethod.GET, value="/validate")
@@ -160,12 +151,22 @@ public class CartController {
 		
 		int nbArticlesTotal = 0;
 		
+		BigDecimal prixTotal = new BigDecimal(0);
+		
 		for(Map.Entry<Integer, Integer> entry : cart.entrySet()) {
+
 			nbArticlesTotal += entry.getValue();
-			products.add(productDAO.getProduct(entry.getKey()));
+			
+			Product product = productDAO.getProduct(entry.getKey());
+			
+			BigDecimal qte = new BigDecimal(entry.getValue());
+			prixTotal = prixTotal.add(qte.multiply(product.getUnitPrice()));
+			
+			products.add(product);
 		}
 		
 		model.addAttribute("products", products);
+		model.addAttribute("prixTotal", prixTotal);
 		
 		result = new HashMap<Integer, Image>();
 			

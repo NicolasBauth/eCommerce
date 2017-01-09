@@ -760,7 +760,7 @@ p.creating{
 	width:100%;
 	margin:1em 0;
 	}
-.sign-up2 input[type="password"]{
+.sign-up2 input{
 	outline:none;
 	border:1px solid #BEBEBE;
 	background:none;

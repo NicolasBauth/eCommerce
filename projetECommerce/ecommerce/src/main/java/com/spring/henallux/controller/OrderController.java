@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.spring.henallux.dataAccess.dao.CategoryDAO;
+import com.spring.henallux.dataAccess.dao.ImageDAO;
 import com.spring.henallux.dataAccess.dao.OrderDAO;
 import com.spring.henallux.dataAccess.dao.ProductDAO;
+import com.spring.henallux.model.Image;
 import com.spring.henallux.model.Order;
 import com.spring.henallux.model.OrderLine;
 import com.spring.henallux.model.Product;
@@ -39,6 +42,8 @@ public class OrderController {
 	@Autowired
 	private ProductDAO productDAO;
 	@Autowired
+	private ImageDAO imageDAO;
+	@Autowired
 	private MessageSource messageSource;
 	
 	@ModelAttribute("currentUser")
@@ -46,6 +51,10 @@ public class OrderController {
 	{
 		return new User();
 	}
+	
+	private HashMap<Integer, Image> result;
+	private Image imageFromLastProducts;
+
 	
 	@RequestMapping(method=RequestMethod.GET)
 	public String listeCommandes(Model model, @ModelAttribute("currentUser")User user, Locale locale){
@@ -73,6 +82,8 @@ public class OrderController {
 		model.addAttribute("emptyCart", messageSource.getMessage("emptyCart", null, locale));
 
 		ArrayList<Order> lc = orderDAO.getOrdersByUser(user);
+				
+		
 		model.addAttribute("currentOrders", lc);
 		return "integrated:orders";
 	}
@@ -102,6 +113,20 @@ public class OrderController {
 		model.addAttribute("emptyCart", messageSource.getMessage("emptyCart", null, locale));
 		
 		Order comm = orderDAO.getOrderById(idOrder);
+		
+		result = new HashMap<Integer, Image>();
+		
+		BigDecimal prixTotal = new BigDecimal(0);
+					
+		for(OrderLine line : comm.getOrderLines()) {
+			imageFromLastProducts = imageDAO.findImageByReferencedProductProductId(line.getOrderedProduct().getProductId());
+			result.put(line.getOrderedProduct().getProductId(), imageFromLastProducts);
+			BigDecimal qte = new BigDecimal(line.getQuantity());
+			prixTotal = prixTotal.add(qte.multiply(line.getUnitPrice()));
+		}
+
+		model.addAttribute("prixTotal", prixTotal);
+		model.addAttribute("image", result);
 		
 		if(comm.getCustomer().getUserId() != user.getUserId())
 			return "redirect:/welcome";
@@ -142,8 +167,8 @@ public class OrderController {
 		for(Entry<Integer, Integer> entry : cart.entrySet()){
 			Product article = productDAO.getProduct(entry.getKey());
 
-			BigDecimal prix = getPriceWithReduction(article);
-			prixTotal.add(prix.multiply(new BigDecimal(entry.getValue())));
+			BigDecimal prix = article.getUnitPrice();
+			prixTotal = prixTotal.add(prix.multiply(new BigDecimal(entry.getValue())));
 
 			OrderLine ligne = new OrderLine(commande, article, prix, entry.getValue());
 			lignes.add(ligne);
@@ -155,22 +180,5 @@ public class OrderController {
 		
 		return "redirect:/order/" + commande.getOrderId().toString();
 
-	}
-	private BigDecimal getPriceWithReduction(Product art){
-		BigDecimal prix = art.getUnitPrice();
-
-		//Application d'un éventuelle promo
-		if(art.getPromotion() != null){
-			Promotion promo = art.getPromotion();
-			Date now = new Date();
-			if(promo.getStartDate() == null || promo.getStartDate().before(now)){
-				if(promo.getEndDate() == null || promo.getEndDate().after(now)){
-					BigDecimal cent = new BigDecimal(100);
-					BigDecimal one = new BigDecimal(1);
-					prix.multiply(one.subtract(art.getPromotion().getPercentage().divide(cent)));
-				}
-			}
-		}
-		return prix;
 	}
 }

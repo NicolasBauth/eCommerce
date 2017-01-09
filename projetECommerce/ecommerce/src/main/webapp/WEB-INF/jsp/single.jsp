@@ -50,7 +50,9 @@
 					<div class="item-price">
 						<div class="product-price">
 							<p class="p-price">${price}</p>
-							<h3 class="rate">€ ${product.unitPrice}</h3>
+							<h3 class="rate">€ ${product.unitPrice} 
+								<c:if test="${product.unitBasePrice != product.unitPrice}"><span class="promo">€ ${product.unitBasePrice}</span></c:if>
+							</h3>
 							<div class="clearfix"></div>
 						</div>
 						<div class="condition">
