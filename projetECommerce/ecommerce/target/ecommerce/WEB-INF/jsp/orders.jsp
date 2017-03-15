@@ -7,7 +7,7 @@
 			<div class="ads-grid">
 				<div class="side-bar col-md-3">
 					<div class="search-hotel">
-					<h3 class="sear-head">Payer</h3>
+					<h3 class="sear-head"><spring:message code="tout"/> <spring:message code="commande"/>s</h3>
 					
 				</div>
 				
@@ -28,10 +28,19 @@
 										<c:forEach items="${currentOrders}" var="order">
 											<a href="<spring:url value='/order/${order.orderId}' />" >
 												<li>
-												<h5 class="title">${order.orderDate}</h5>
+												<section class="list-left">
+													<h5 class="title"><spring:message code="commande"/> n°${order.orderId}</h5>
+													
+													
+												</section>
+												<section class="list-right">
+													<span class="date"><fmt:formatDate value="${order.orderDate}" pattern="dd/M/yyyy" /></span>
+												</section>
 												<div class="clearfix"></div>
 												</li> 
 											</a>
+											
+											
 										</c:forEach>
 									</ul>							
 							

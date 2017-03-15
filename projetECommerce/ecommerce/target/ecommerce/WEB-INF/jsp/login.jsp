@@ -9,34 +9,24 @@
 					<h1>${connexion }</h1>
 				</div>
 				<div class="signin">
-					<div class="signin-rit">
-						<span class="checkbox1">
-							 <label class="checkbox"><input type="checkbox" name="checkbox" checked="">Mot de passe oublié</label>
-						</span>
-						<p><a href="#">Ici</a> </p>
-						<div class="clearfix"> </div>
-					</div>
+					
 					<form:form 	id="form"
 								method="POST"
 								action="/ecommerce/login/send" modelAttribute="loginForm">
 						<div class="log-input">
-							<div class="log-input-left">
+							<div class="log-input">
 							   <form:input type="text" class="user" path="pseudoLogin" value="Pseudo" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Pseudo';}"/>
 							   <form:errors path="pseudoLogin" style="color:Red"/>
 							</div>
-							<span class="checkbox2">
-								 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i></label>
-							</span>
+							
 							<div class="clearfix"> </div>
 						</div>
 						<div class="log-input">
-							<div class="log-input-left">
+							<div class="log-input">
 							   <form:input type="password" class="lock" path="passwordLogin" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email address:';}"/>
 							   <form:errors path="passwordLogin" style="color:Red"/>
 							</div>
-							<span class="checkbox2">
-								 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i></label>
-							</span>
+							
 							<div class="clearfix"> </div>
 						</div>
 						<input type="submit" value="${connexion}">

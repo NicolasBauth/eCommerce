@@ -89,18 +89,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<i class="glyphicon glyphicon-shopping-cart"></i> 
 					${nbArticlesTotal} ${panier}     
 				</a>
-				<a class="account" href="/ecommerce/login">
-					<i class="glyphicon glyphicon-user"></i>
+				
 					<c:choose>
 					    <c:when test="${not empty currentUser.pseudo}">
-					        Bonjour ${currentUser.pseudo}
+					        <a class="account" href="/ecommerce/order">
+					        	<i class="glyphicon glyphicon-user"></i>
+					        	Bonjour ${currentUser.pseudo}
+					        </a>
 					    </c:when>    
 					    <c:otherwise>
-					         ${connexion}
+					        <a class="account" href="/ecommerce/login">
+					        	<i class="glyphicon glyphicon-log-in"></i>
+					        	${connexion}
+					        </a>
 					    </c:otherwise>
 					</c:choose>	
+	
 					  
-				</a>
+				<c:if test="${not empty currentUser.pseudo}">
+					<a class="account" href="/ecommerce/login/logout">
+						<i class="glyphicon glyphicon-log-out"></i> 
+					</a>
+				</c:if>
 				<spring:url var="localeFr" value="">
 					<spring:param name="locale" value="fr"/>
 				</spring:url>
@@ -193,7 +203,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</ul>
 				</div>
 				<div class="copyrights">
-					<p> ï¿½ 2016 Magicabrac. Tous droits rï¿½servï¿½s | Design by  <a href="http://w3layouts.com/" about="_blank"> W3layouts</a></p>
+					<p> © 2016 Magicabrac. <spring:message code="droits" /> | Design by  <a href="http://w3layouts.com/" about="_blank"> W3layouts</a></p>
 				</div>
 				<div class="clearfix"></div>
 			</div>

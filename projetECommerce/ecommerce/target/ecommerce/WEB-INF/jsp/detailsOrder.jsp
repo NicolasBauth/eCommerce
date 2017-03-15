@@ -7,7 +7,11 @@
 			<div class="ads-grid">
 				<div class="side-bar col-md-3">
 					<div class="search-hotel">
-					<h3 class="sear-head">Payer</h3>
+					<h3 class="sear-head"><spring:message code="commande" /> n°${order.orderId}</h3>
+					
+					<h3 class="sear-head"><spring:message code="total" /> ${prixTotal} €</h3>
+					<h3 class="sear-head"><fmt:formatDate value="${order.orderDate}" pattern="dd/M/yyyy" />
+					</h3>
 					
 				</div>
 				
@@ -25,18 +29,21 @@
 								
 								<div class="clearfix"></div>
 									<ul class="list">
-                                        ${order.orderId}  ${order.orderDate}
+                                        
 										<c:forEach items="${order.orderLines}" var="line">
 											<a href="<spring:url value='/single/${line.orderedProduct.productId}' />" >
 												<li>
-												<img src="images/products/${image[line.orderedProduct.productId].path}" title="${image[line.orderedProduct.productId].name}" alt="${image[line.orderedProduct.productId].name}" />
+												<img src="../images/products/${image[line.orderedProduct.productId].path}" title="${image[line.orderedProduct.productId].name}" alt="${image[line.orderedProduct.productId].name}" />
 												<section class="list-left">
 												<h5 class="title">${line.orderedProduct.name}</h5>
-												<span class="adprice">€ ${line.unitPrice}</span>
+												
+												<span class="adprice">€ ${line.unitPrice * line.quantity }</span>
+												<span class="cityname">${line.quantity } <spring:message code="qteComm" /></span>
+												
 												</section>
 												<section class="list-right">
 												<span class="date">Ref : C${line.orderedProduct.category.categoryId}A${line.orderedProduct.productId}</span>
-    									        <span class="cityname">Quantité commandée ${line.quantity}</span>
+												<span class="adprice">€ ${line.unitPrice}</span>
 												</section>
 												<div class="clearfix"></div>
 												</li> 

@@ -385,6 +385,14 @@ border:1px solid #e7eaed;
 .focus-layout:hover h4.clrchg {
     color: #fff;
 }
+
+.promo {
+	color: red;
+	margin-left:10px;
+	font-size: 20px;
+	text-decoration: line-through;
+}
+
 .focus-grids {
     margin-top: 5em;
 }
